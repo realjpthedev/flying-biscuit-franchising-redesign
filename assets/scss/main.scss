@@ -1,0 +1,18 @@
+// =============================================
+// FILE: styles/main.scss
+// Main entry point - import all partials in order
+// =============================================
+
+@import "utilities/variables";
+
+@import "base/reset";
+@import "base/typography";
+
+@import "sections/reasons";
+@import "sections/menu";
+@import "sections/meet-the-family";
+@import "sections/testimonials";
+@import "sections/reviews";
+
+@import "components/navbar";
+@import "components/hero";

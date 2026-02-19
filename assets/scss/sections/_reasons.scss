@@ -1,0 +1,291 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Reasons Section Component
+// v1.0
+// ============================================
+
+// --------------------------------------------
+// SECTION WRAPPER
+// --------------------------------------------
+
+.reasons {
+	background-color: $color-surface-warm;
+	padding: $space-4xl 0;
+	position: relative;
+	overflow: hidden;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-3xl 0;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.reasons__inner {
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+// --------------------------------------------
+// HEADER
+// --------------------------------------------
+
+.reasons__header {
+	text-align: center;
+	margin-bottom: $space-xl;
+
+	@media (max-width: $bp-mobile) {
+		margin-bottom: $space-lg;
+	}
+}
+
+.reasons__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-secondary;
+	margin-bottom: $space-xs;
+}
+
+.reasons__title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 42px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-primary-dark;
+	margin: 0;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 34px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+// --------------------------------------------
+// CARD GRID
+// --------------------------------------------
+
+.reasons__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: $space-md;
+
+	@media (max-width: $bp-mobile) {
+		grid-template-columns: 1fr;
+		gap: $space-sm;
+	}
+}
+
+// --------------------------------------------
+// CARD
+// --------------------------------------------
+
+.reasons__card {
+	background-color: $color-white;
+	border: none;
+	border-left: 5px solid $color-primary;
+	border-radius: $radius-xl;
+	padding: $space-xl $space-lg;
+	text-align: left;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base,
+		border-color $transition-base;
+
+	&:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 16px 40px rgba($color-primary, 0.15);
+		border-left-color: $color-secondary;
+	}
+
+	// Alternate accent colors
+	&:nth-child(2) {
+		border-left-color: $color-secondary;
+	}
+	&:nth-child(2):hover {
+		border-left-color: $color-tertiary;
+	}
+
+	&:nth-child(3) {
+		border-left-color: $color-tertiary;
+	}
+	&:nth-child(3):hover {
+		border-left-color: $color-primary;
+	}
+
+	&:nth-child(4) {
+		border-left-color: $color-secondary;
+	}
+	&:nth-child(4):hover {
+		border-left-color: $color-primary;
+	}
+
+	&:nth-child(5) {
+		border-left-color: $color-primary;
+	}
+	&:nth-child(5):hover {
+		border-left-color: $color-tertiary;
+	}
+
+	&:nth-child(6) {
+		border-left-color: $color-tertiary;
+	}
+	&:nth-child(6):hover {
+		border-left-color: $color-secondary;
+	}
+
+	&:nth-child(7) {
+		border-left-color: $color-secondary;
+	}
+	&:nth-child(7):hover {
+		border-left-color: $color-primary;
+	}
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-lg $space-md;
+	}
+
+	// Last card spanning full width when odd count
+	&:last-child:nth-child(odd) {
+		@media (min-width: $bp-mobile + 1) {
+			grid-column: 1 / -1;
+			max-width: calc(50% - #{$space-md} / 2);
+			justify-self: center;
+		}
+	}
+}
+
+.reasons__card-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 30px;
+	line-height: 1.2;
+	color: $color-primary-dark;
+	margin: 0 0 $space-2xs;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-h4;
+	}
+}
+
+.reasons__card-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	line-height: $leading-body;
+	color: $color-neutral-mid;
+	margin: 0;
+}
+
+// --------------------------------------------
+// DISCLAIMER DISCLOSURE
+// --------------------------------------------
+
+.reasons__disclaimer {
+	margin-top: $space-xl;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.reasons__disclaimer-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: $space-2xs;
+	width: 100%;
+	padding: $space-xs $space-sm;
+	border: 1px solid rgba($color-neutral-light, 0.3);
+	border-radius: $radius-pill;
+	background: rgba($color-white, 0.5);
+	cursor: pointer;
+	transition:
+		background-color $transition-base,
+		border-color $transition-base;
+
+	&:hover {
+		background: $color-white;
+		border-color: rgba($color-neutral-light, 0.6);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 2px;
+	}
+}
+
+.reasons__disclaimer-toggle-text {
+	font-family: $font-body;
+	font-weight: $weight-medium;
+	font-size: $text-body-sm;
+	color: $color-neutral-mid;
+}
+
+.reasons__disclaimer-toggle-arrow {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-right: 2px solid $color-neutral-mid;
+	border-bottom: 2px solid $color-neutral-mid;
+	transform: rotate(45deg);
+	transition: transform $transition-base;
+	position: relative;
+	top: -2px;
+
+	.reasons__disclaimer-toggle[aria-expanded="true"] & {
+		transform: rotate(-135deg);
+		top: 2px;
+	}
+}
+
+.reasons__disclaimer-body {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+	.reasons__disclaimer.is-open & {
+		max-height: 2000px;
+	}
+}
+
+.reasons__disclaimer-content {
+	padding: $space-md $space-sm $space-xs;
+
+	p {
+		font-family: $font-body;
+		font-weight: $weight-regular;
+		font-size: $text-caption;
+		line-height: 1.6;
+		color: $color-neutral-light;
+		margin: 0 0 $space-xs;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		strong {
+			font-weight: $weight-semibold;
+			color: $color-neutral-mid;
+		}
+	}
+}

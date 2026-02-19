@@ -1,0 +1,232 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Reviews Section (Marquee)
+// v1.0
+// ============================================
+
+// --------------------------------------------
+// KEYFRAMES
+// --------------------------------------------
+
+@keyframes marquee-left {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+@keyframes marquee-right {
+	0% {
+		transform: translateX(-50%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+// --------------------------------------------
+// SECTION WRAPPER
+// --------------------------------------------
+
+.reviews {
+	background-color: $color-white;
+	padding: $space-4xl 0;
+	overflow: hidden;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-3xl 0;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+// --------------------------------------------
+// HEADER
+// --------------------------------------------
+
+.reviews__header {
+	text-align: center;
+	margin-bottom: $space-2xl;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+		margin-bottom: $space-xl;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+		margin-bottom: $space-lg;
+	}
+}
+
+.reviews__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-secondary;
+	margin-bottom: $space-xs;
+}
+
+.reviews__title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 42px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-primary-dark;
+	margin: 0;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 34px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+// --------------------------------------------
+// MARQUEE ROWS
+// --------------------------------------------
+
+.reviews__marquee {
+	position: relative;
+	width: 100%;
+	margin-bottom: $space-md;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	// Edge fade masks
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 120px;
+		z-index: 2;
+		pointer-events: none;
+
+		@media (max-width: $bp-mobile) {
+			width: 48px;
+		}
+	}
+
+	&::before {
+		left: 0;
+		background: linear-gradient(to right, $color-white, transparent);
+	}
+
+	&::after {
+		right: 0;
+		background: linear-gradient(to left, $color-white, transparent);
+	}
+}
+
+// --------------------------------------------
+// TRACK (contains cards, duplicated for seamless loop)
+// --------------------------------------------
+
+.reviews__track {
+	display: flex;
+	gap: $space-md;
+	width: max-content;
+
+	[data-direction="left"] & {
+		animation: marquee-left 50s linear infinite;
+	}
+
+	[data-direction="right"] & {
+		animation: marquee-right 50s linear infinite;
+	}
+
+	// Pause on hover
+	&:hover {
+		animation-play-state: paused;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none !important;
+	}
+}
+
+// --------------------------------------------
+// CARD
+// --------------------------------------------
+
+.reviews__card {
+	flex-shrink: 0;
+	width: 380px;
+	background-color: $color-surface-warm;
+	border-radius: $radius-xl;
+	padding: $space-lg;
+	display: flex;
+	flex-direction: column;
+	gap: $space-sm;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+	}
+
+	@media (max-width: $bp-mobile) {
+		width: 300px;
+		padding: $space-md;
+	}
+}
+
+// --------------------------------------------
+// STARS
+// --------------------------------------------
+
+.reviews__stars {
+	font-size: 18px;
+	letter-spacing: 2px;
+	color: $color-tertiary;
+	line-height: 1;
+}
+
+// --------------------------------------------
+// TEXT
+// --------------------------------------------
+
+.reviews__text {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	line-height: 1.65;
+	color: $color-neutral-dark;
+	margin: 0;
+	flex-grow: 1;
+
+	// Clamp to 5 lines
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+// --------------------------------------------
+// AUTHOR
+// --------------------------------------------
+
+.reviews__author {
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-body-sm;
+	color: $color-primary-dark;
+	padding-top: $space-2xs;
+	border-top: 1px solid rgba($color-neutral-light, 0.3);
+}

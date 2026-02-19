@@ -1,0 +1,202 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Design System Variables
+// v1.0
+// ============================================
+
+// --------------------------------------------
+// COLORS
+// --------------------------------------------
+
+// Primary
+$color-primary: #6a2c91; // Biscuit Purple
+$color-primary-light: #8b4fb5; // Lavender Jam
+$color-primary-dark: #4a1d66; // Deep Plum
+
+// Secondary
+$color-secondary: #f47b20; // Sunrise Orange
+$color-secondary-light: #f9a35c; // Peach Butter
+
+// Tertiary
+$color-tertiary: #eeb211; // Golden Honey
+$color-tertiary-light: #f5d060; // Lemon Curd
+
+// Neutrals
+$color-neutral-dark: #1e1e2a; // Cast Iron
+$color-neutral-mid: #4a4a5a; // Pepper
+$color-neutral-light: #8e8e9a; // Silver Fork
+
+// Surfaces
+$color-surface: #f8f6f1; // Biscuit Cream
+$color-surface-warm: #fff8ed; // Warm Dough
+$color-white: #ffffff;
+
+// Semantic
+$color-success: #2d8a4e; // Fresh Herb
+$color-error: #c23b22; // Hot Sauce
+
+// --------------------------------------------
+// GRADIENTS
+// --------------------------------------------
+
+$gradient-sunrise: linear-gradient(135deg, $color-secondary, $color-tertiary);
+$gradient-twilight: linear-gradient(
+	135deg,
+	$color-primary-dark,
+	$color-primary
+);
+$gradient-warm-glow: linear-gradient(
+	135deg,
+	$color-surface-warm,
+	$color-surface
+);
+
+// --------------------------------------------
+// TYPOGRAPHY
+// --------------------------------------------
+
+// Font families
+$font-display: "Playfair Display", Georgia, serif;
+$font-body: "Poppins", "Helvetica Neue", sans-serif;
+
+// Font weights
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+$weight-extrabold: 800;
+
+// Type scale — sizes
+$text-display: 64px;
+$text-h1: 48px;
+$text-h2: 36px;
+$text-h3: 28px;
+$text-h4: 22px;
+$text-body-lg: 18px;
+$text-body: 16px;
+$text-body-sm: 14px;
+$text-caption: 12px;
+$text-button: 15px;
+
+// Type scale — line heights
+$leading-display: 1.1;
+$leading-h1: 1.15;
+$leading-h2: 1.2;
+$leading-h3: 1.25;
+$leading-h4: 1.3;
+$leading-body-lg: 1.65;
+$leading-body: 1.6;
+$leading-body-sm: 1.55;
+$leading-caption: 1.5;
+$leading-button: 1;
+
+// Type scale — letter spacing
+$tracking-display: -0.02em;
+$tracking-h1: -0.01em;
+$tracking-h2: -0.01em;
+$tracking-h3: 0;
+$tracking-h4: 0.01em;
+$tracking-body-lg: 0.01em;
+$tracking-body: 0.01em;
+$tracking-body-sm: 0.02em;
+$tracking-caption: 0.06em;
+$tracking-button: 0.04em;
+
+// --------------------------------------------
+// SPACING
+// --------------------------------------------
+
+$space-4xs: 2px;
+$space-3xs: 4px;
+$space-2xs: 8px;
+$space-xs: 12px;
+$space-sm: 16px;
+$space-md: 24px;
+$space-lg: 32px;
+$space-xl: 48px;
+$space-2xl: 64px;
+$space-3xl: 96px;
+$space-4xl: 128px;
+
+// Spacing map (for programmatic use)
+$spacers: (
+	"4xs": $space-4xs,
+	"3xs": $space-3xs,
+	"2xs": $space-2xs,
+	"xs": $space-xs,
+	"sm": $space-sm,
+	"md": $space-md,
+	"lg": $space-lg,
+	"xl": $space-xl,
+	"2xl": $space-2xl,
+	"3xl": $space-3xl,
+	"4xl": $space-4xl,
+);
+
+// --------------------------------------------
+// BORDER RADIUS
+// --------------------------------------------
+
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-2xl: 20px;
+$radius-pill: 9999px;
+
+// --------------------------------------------
+// SHADOWS
+// --------------------------------------------
+
+$shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.06);
+$shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+$shadow-elevated: 0 8px 30px rgba(0, 0, 0, 0.12);
+$shadow-modal: 0 16px 48px rgba(0, 0, 0, 0.16);
+
+// Focus ring (accessibility)
+$shadow-focus: 0 0 0 3px rgba($color-primary, 0.25);
+
+// --------------------------------------------
+// BREAKPOINTS
+// --------------------------------------------
+
+$bp-mobile: 640px;
+$bp-tablet: 1024px;
+$bp-desktop: 1440px;
+
+$breakpoints: (
+	"mobile": $bp-mobile,
+	"tablet": $bp-tablet,
+	"desktop": $bp-desktop,
+);
+
+// --------------------------------------------
+// LAYOUT
+// --------------------------------------------
+
+$grid-columns: 12;
+$grid-gutter: 24px;
+$grid-max-width: 1200px;
+$grid-margin-desktop: 48px;
+$grid-margin-tablet: 24px;
+$grid-margin-mobile: 16px;
+
+// --------------------------------------------
+// TRANSITIONS
+// --------------------------------------------
+
+$transition-fast: 150ms ease;
+$transition-base: 200ms ease;
+$transition-smooth: 300ms ease;
+$transition-slow: 500ms ease;
+
+// --------------------------------------------
+// Z-INDEX
+// --------------------------------------------
+
+$z-base: 1;
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-overlay: 300;
+$z-modal: 400;
+$z-toast: 500;

@@ -1,0 +1,654 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Navbar Component
+// v1.0
+// ============================================
+
+// --------------------------------------------
+// NAVBAR WRAPPER
+// --------------------------------------------
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: $z-sticky;
+	background-color: $color-white;
+	border-bottom: 1px solid darken($color-surface, 5%);
+	transition:
+		box-shadow $transition-smooth,
+		background-color $transition-smooth;
+
+	&.is-scrolled {
+		box-shadow: $shadow-card;
+	}
+}
+
+.navbar__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: $space-sm $grid-margin-desktop;
+	height: 72px;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-sm $grid-margin-tablet;
+		height: 64px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-xs $grid-margin-mobile;
+		height: 60px;
+	}
+}
+
+// --------------------------------------------
+// LOGO
+// --------------------------------------------
+
+.navbar__logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	flex-shrink: 0;
+	transition: opacity $transition-base;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 4px;
+		border-radius: $radius-sm;
+	}
+}
+
+.navbar__logo-img {
+	display: block;
+	width: 180px;
+	height: auto;
+	object-fit: contain;
+
+	@media (max-width: $bp-tablet) {
+		width: 160px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		width: 140px;
+	}
+
+	.navbar__drawer-header & {
+		width: 160px;
+	}
+}
+
+// --------------------------------------------
+// DESKTOP NAV
+// --------------------------------------------
+
+.navbar__links {
+	display: flex;
+	align-items: center;
+	gap: $space-md;
+
+	@media (max-width: $bp-tablet) {
+		display: none;
+	}
+}
+
+.navbar__link {
+	font-family: $font-body;
+	font-weight: $weight-medium;
+	font-size: $text-body-sm;
+	color: $color-neutral-mid;
+	text-decoration: none;
+	padding: $space-3xs 0;
+	position: relative;
+	transition: color $transition-base;
+	white-space: nowrap;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: $gradient-sunrise;
+		border-radius: $radius-pill;
+		transition: width $transition-smooth;
+	}
+
+	&:hover,
+	&.is-active {
+		color: $color-primary;
+
+		&::after {
+			width: 100%;
+		}
+	}
+
+	&.is-active {
+		font-weight: $weight-bold;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 4px;
+		border-radius: $radius-sm;
+	}
+}
+
+// --------------------------------------------
+// DESKTOP DROPDOWN
+// --------------------------------------------
+
+.navbar__dropdown {
+	position: relative;
+}
+
+.navbar__dropdown-trigger {
+	font-family: $font-body;
+	font-weight: $weight-medium;
+	font-size: $text-body-sm;
+	color: $color-neutral-mid;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: $space-3xs 0;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	position: relative;
+	transition: color $transition-base;
+	white-space: nowrap;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: $gradient-sunrise;
+		border-radius: $radius-pill;
+		transition: width $transition-smooth;
+	}
+
+	&:hover,
+	&.is-active {
+		color: $color-primary;
+
+		&::after {
+			width: 100%;
+		}
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 4px;
+		border-radius: $radius-sm;
+	}
+}
+
+.navbar__dropdown-arrow {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	position: relative;
+	top: -1px;
+	transition: transform $transition-base;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 2px;
+		left: 1px;
+		width: 6px;
+		height: 6px;
+		border-right: 1.5px solid currentColor;
+		border-bottom: 1.5px solid currentColor;
+		transform: rotate(45deg);
+	}
+
+	.navbar__dropdown.is-open & {
+		transform: rotate(180deg);
+	}
+}
+
+.navbar__dropdown-menu {
+	position: absolute;
+	top: calc(100% + 12px);
+	left: 50%;
+	transform: translateX(-50%);
+	min-width: 200px;
+	background-color: $color-white;
+	border: 1px solid darken($color-surface, 5%);
+	border-radius: $radius-xl;
+	box-shadow: $shadow-elevated;
+	padding: $space-2xs;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(-50%) translateY(8px);
+	transition:
+		opacity $transition-smooth,
+		visibility $transition-smooth,
+		transform $transition-smooth;
+	z-index: $z-dropdown;
+
+	// Invisible bridge to prevent gap hover loss
+	&::before {
+		content: "";
+		position: absolute;
+		top: -12px;
+		left: 0;
+		right: 0;
+		height: 12px;
+	}
+
+	.navbar__dropdown.is-open & {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(-50%) translateY(0);
+	}
+}
+
+.navbar__dropdown-item {
+	font-family: $font-body;
+	font-weight: $weight-medium;
+	font-size: $text-body-sm;
+	color: $color-neutral-mid;
+	text-decoration: none;
+	display: block;
+	padding: $space-xs $space-sm;
+	border-radius: $radius-lg;
+	transition:
+		background-color $transition-base,
+		color $transition-base;
+	white-space: nowrap;
+
+	&:hover {
+		background-color: $color-surface;
+		color: $color-primary;
+	}
+
+	&.is-active {
+		background-color: rgba($color-primary, 0.06);
+		color: $color-primary;
+		font-weight: $weight-bold;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 2px;
+	}
+}
+
+// --------------------------------------------
+// MOBILE DRAWER DROPDOWN
+// --------------------------------------------
+
+.navbar__drawer-dropdown-trigger {
+	font-family: $font-body;
+	font-weight: $weight-medium;
+	font-size: $text-body;
+	color: $color-neutral-mid;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: $space-xs $space-sm;
+	border-radius: $radius-lg;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	text-align: left;
+	transition:
+		background-color $transition-base,
+		color $transition-base;
+
+	&:hover {
+		background-color: $color-surface;
+		color: $color-primary;
+	}
+
+	&.is-active {
+		background-color: rgba($color-primary, 0.06);
+		color: $color-primary;
+		font-weight: $weight-bold;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 2px;
+	}
+}
+
+.navbar__drawer-dropdown-arrow {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	position: relative;
+	transition: transform $transition-base;
+	flex-shrink: 0;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		width: 7px;
+		height: 7px;
+		border-right: 1.5px solid currentColor;
+		border-bottom: 1.5px solid currentColor;
+		transform: rotate(45deg);
+	}
+
+	.navbar__drawer-dropdown.is-open & {
+		transform: rotate(180deg);
+	}
+}
+
+.navbar__drawer-dropdown-menu {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height $transition-smooth;
+	padding-left: $space-sm;
+
+	.navbar__drawer-dropdown.is-open & {
+		max-height: 300px;
+	}
+}
+
+// --------------------------------------------
+// CTA BUTTON
+// --------------------------------------------
+
+.navbar__cta {
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: 13px;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	color: $color-white;
+	background-color: $color-primary;
+	padding: $space-xs $space-md;
+	border-radius: $radius-pill;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	white-space: nowrap;
+	transition:
+		background-color $transition-base,
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		background-color: $color-primary-light;
+		transform: translateY(-1px);
+		box-shadow: 0 4px 16px rgba($color-primary, 0.3);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 3px;
+	}
+
+	@media (max-width: $bp-tablet) {
+		display: none;
+	}
+}
+
+// --------------------------------------------
+// HAMBURGER BUTTON
+// --------------------------------------------
+
+.navbar__hamburger {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+	border-radius: $radius-md;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	gap: 5px;
+	transition: background-color $transition-base;
+
+	@media (max-width: $bp-tablet) {
+		display: flex;
+	}
+
+	&:hover {
+		background-color: $color-surface;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 2px;
+	}
+}
+
+.navbar__hamburger-line {
+	display: block;
+	width: 22px;
+	height: 2px;
+	border-radius: $radius-pill;
+	background-color: $color-neutral-dark;
+	transition:
+		transform $transition-smooth,
+		opacity $transition-smooth,
+		width $transition-smooth;
+
+	.navbar__hamburger.is-open & {
+		&:nth-child(1) {
+			transform: translateY(7px) rotate(45deg);
+		}
+
+		&:nth-child(2) {
+			opacity: 0;
+			width: 0;
+		}
+
+		&:nth-child(3) {
+			transform: translateY(-7px) rotate(-45deg);
+		}
+	}
+}
+
+// --------------------------------------------
+// MOBILE OVERLAY
+// --------------------------------------------
+
+.navbar__overlay {
+	position: fixed;
+	inset: 0;
+	z-index: $z-overlay - 1;
+	background-color: rgba($color-neutral-dark, 0.5);
+	backdrop-filter: blur(4px);
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		opacity $transition-smooth,
+		visibility $transition-smooth;
+
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+// --------------------------------------------
+// MOBILE DRAWER
+// --------------------------------------------
+
+.navbar__drawer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: $z-overlay;
+	width: 320px;
+	max-width: 85vw;
+	background-color: $color-white;
+	box-shadow: $shadow-modal;
+	transform: translateX(100%);
+	transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+
+	&.is-open {
+		transform: translateX(0);
+	}
+}
+
+.navbar__drawer-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: $space-sm $space-md;
+	border-bottom: 1px solid darken($color-surface, 5%);
+	flex-shrink: 0;
+}
+
+.navbar__drawer-close {
+	width: 40px;
+	height: 40px;
+	border-radius: $radius-md;
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	color: $color-neutral-mid;
+	transition:
+		background-color $transition-base,
+		color $transition-base;
+
+	&:hover {
+		background-color: $color-surface;
+		color: $color-neutral-dark;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 2px;
+	}
+}
+
+.navbar__drawer-body {
+	flex: 1;
+	padding: $space-md;
+	display: flex;
+	flex-direction: column;
+	gap: $space-3xs;
+}
+
+.navbar__drawer-link {
+	font-family: $font-body;
+	font-weight: $weight-medium;
+	font-size: $text-body;
+	color: $color-neutral-mid;
+	text-decoration: none;
+	padding: $space-xs $space-sm;
+	border-radius: $radius-lg;
+	transition:
+		background-color $transition-base,
+		color $transition-base;
+	display: block;
+
+	&:hover {
+		background-color: $color-surface;
+		color: $color-primary;
+	}
+
+	&.is-active {
+		background-color: rgba($color-primary, 0.06);
+		color: $color-primary;
+		font-weight: $weight-bold;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 2px;
+	}
+}
+
+.navbar__drawer-divider {
+	height: 1px;
+	background-color: darken($color-surface, 5%);
+	margin: $space-xs 0;
+}
+
+.navbar__drawer-footer {
+	padding: $space-md;
+	border-top: 1px solid darken($color-surface, 5%);
+	flex-shrink: 0;
+}
+
+.navbar__drawer-cta {
+	display: block;
+	width: 100%;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-button;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	text-align: center;
+	color: $color-white;
+	background-color: $color-primary;
+	padding: $space-sm $space-md;
+	border-radius: $radius-pill;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background-color $transition-base;
+
+	&:hover {
+		background-color: $color-primary-light;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 3px;
+	}
+}
+
+// --------------------------------------------
+// BODY SCROLL LOCK
+// --------------------------------------------
+
+body.nav-open {
+	overflow: hidden;
+}
+
+// --------------------------------------------
+// SPACER — push page content below fixed nav
+// --------------------------------------------
+
+.navbar-spacer {
+	height: 72px;
+
+	@media (max-width: $bp-tablet) {
+		height: 64px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		height: 60px;
+	}
+}

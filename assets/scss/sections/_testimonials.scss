@@ -1,0 +1,351 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Testimonials Section (Premium)
+// v1.0
+// ============================================
+
+// --------------------------------------------
+// SECTION WRAPPER
+// --------------------------------------------
+
+.testimonials {
+	background-color: $color-primary-dark;
+	padding: $space-4xl 0;
+	position: relative;
+	overflow: hidden;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-3xl 0;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.testimonials__inner {
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+// --------------------------------------------
+// HEADER
+// --------------------------------------------
+
+.testimonials__header {
+	text-align: center;
+	margin-bottom: $space-2xl;
+
+	@media (max-width: $bp-mobile) {
+		margin-bottom: $space-xl;
+	}
+}
+
+.testimonials__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+}
+
+.testimonials__title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 42px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-white;
+	margin: 0;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 34px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+// --------------------------------------------
+// SLIDER
+// --------------------------------------------
+
+.testimonials__slider {
+	position: relative;
+}
+
+.testimonials__slides {
+	position: relative;
+	overflow: hidden;
+}
+
+// --------------------------------------------
+// WATERMARK
+// --------------------------------------------
+
+.testimonials__watermark {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 280px;
+	line-height: 1;
+	color: rgba($color-white, 0.03);
+	pointer-events: none;
+	z-index: 0;
+	user-select: none;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 180px;
+		top: -10px;
+	}
+}
+
+// --------------------------------------------
+// INDIVIDUAL SLIDE
+// --------------------------------------------
+
+.testimonials__slide {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	transition:
+		opacity 600ms ease,
+		visibility 600ms ease;
+
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+		position: relative;
+	}
+}
+
+// --------------------------------------------
+// PORTRAIT
+// --------------------------------------------
+
+.testimonials__portrait {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	margin-bottom: $space-xl;
+	flex-shrink: 0;
+	padding: 4px;
+	border-radius: 50%;
+	background: $gradient-sunrise;
+
+	@media (max-width: $bp-mobile) {
+		width: 96px;
+		height: 96px;
+		margin-bottom: $space-lg;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 50%;
+		border: 3px solid $color-primary-dark;
+	}
+}
+
+// Remove the separate ring element — handled by gradient background on portrait
+.testimonials__portrait-ring {
+	display: none;
+}
+
+// --------------------------------------------
+// QUOTE
+// --------------------------------------------
+
+.testimonials__quote {
+	margin: 0;
+	padding: 0;
+	border: none;
+	max-width: 680px;
+	margin-bottom: $space-lg;
+
+	p {
+		font-family: $font-display;
+		font-weight: $weight-regular;
+		font-size: 22px;
+		font-style: italic;
+		line-height: 1.65;
+		color: rgba($color-white, 0.85);
+		margin: 0;
+
+		@media (max-width: $bp-tablet) {
+			font-size: 20px;
+		}
+
+		@media (max-width: $bp-mobile) {
+			font-size: 17px;
+			line-height: 1.6;
+		}
+	}
+}
+
+// --------------------------------------------
+// ATTRIBUTION
+// --------------------------------------------
+
+.testimonials__attribution {
+	display: flex;
+	align-items: center;
+	gap: $space-sm;
+}
+
+.testimonials__name {
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-body-lg;
+	color: $color-white;
+	letter-spacing: 0.01em;
+}
+
+.testimonials__divider {
+	width: 24px;
+	height: 2px;
+	background: $gradient-sunrise;
+	border-radius: $radius-pill;
+}
+
+.testimonials__role {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	color: rgba($color-white, 0.45);
+}
+
+// --------------------------------------------
+// SIDE ARROWS
+// --------------------------------------------
+
+.testimonials__arrow {
+	position: absolute;
+	top: 55%;
+	transform: translateY(-50%);
+	z-index: 2;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: 1px solid rgba($color-white, 0.12);
+	background: rgba($color-white, 0.04);
+	color: rgba($color-white, 0.5);
+	font-size: 26px;
+	line-height: 1;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	backdrop-filter: blur(4px);
+	transition:
+		border-color $transition-base,
+		color $transition-base,
+		background-color $transition-base;
+
+	&:hover {
+		border-color: rgba($color-white, 0.3);
+		color: $color-white;
+		background: rgba($color-white, 0.08);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 3px;
+	}
+
+	&--prev {
+		left: -80px;
+
+		@media (max-width: 1060px) {
+			left: -16px;
+		}
+
+		@media (max-width: $bp-mobile) {
+			display: none;
+		}
+	}
+
+	&--next {
+		right: -80px;
+
+		@media (max-width: 1060px) {
+			right: -16px;
+		}
+
+		@media (max-width: $bp-mobile) {
+			display: none;
+		}
+	}
+}
+
+// --------------------------------------------
+// DOT INDICATORS
+// --------------------------------------------
+
+.testimonials__dots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: $space-xs;
+	margin-top: $space-2xl;
+
+	@media (max-width: $bp-mobile) {
+		margin-top: $space-xl;
+	}
+}
+
+.testimonials__dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: none;
+	background-color: rgba($color-white, 0.15);
+	cursor: pointer;
+	padding: 0;
+	transition:
+		background-color $transition-base,
+		transform $transition-base,
+		width $transition-base;
+
+	&.is-active {
+		background: $gradient-sunrise;
+		width: 28px;
+		border-radius: $radius-pill;
+	}
+
+	&:hover:not(.is-active) {
+		background-color: rgba($color-white, 0.3);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 3px;
+	}
+}
