@@ -1,0 +1,331 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// FAQ Section
+// v1.0
+// ============================================
+
+// --------------------------------------------
+// SECTION WRAPPER
+// --------------------------------------------
+
+.faq {
+	background-color: $color-surface-warm;
+	padding: $space-4xl 0;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-3xl 0;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.faq__inner {
+	display: grid;
+	grid-template-columns: 1fr 1.6fr;
+	gap: $space-3xl;
+	align-items: start;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		grid-template-columns: 1fr;
+		gap: $space-xl;
+		padding: 0 $grid-margin-tablet;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+		gap: $space-lg;
+	}
+}
+
+// --------------------------------------------
+// SIDEBAR (LEFT)
+// --------------------------------------------
+
+.faq__sidebar {
+	position: sticky;
+	top: 120px;
+
+	@media (max-width: $bp-tablet) {
+		position: static;
+		text-align: center;
+	}
+}
+
+.faq__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-secondary;
+	margin-bottom: $space-xs;
+}
+
+.faq__title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 42px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-primary-dark;
+	margin: 0 0 $space-sm;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 34px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+.faq__desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	line-height: $leading-body-lg;
+	color: $color-neutral-mid;
+	margin: 0 0 $space-lg;
+
+	@media (max-width: $bp-tablet) {
+		max-width: 440px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: $space-md;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+.faq__cta {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2xs;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-button;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $color-white;
+	background: $gradient-sunrise;
+	padding: $space-sm $space-lg;
+	border-radius: $radius-pill;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 3px;
+	}
+}
+
+.faq__cta-arrow {
+	font-size: 18px;
+	line-height: 1;
+	transition: transform $transition-base;
+
+	.faq__cta:hover & {
+		transform: translateX(3px);
+	}
+}
+
+// --------------------------------------------
+// ACCORDION LIST
+// --------------------------------------------
+
+.faq__list {
+	display: flex;
+	flex-direction: column;
+	gap: $space-xs;
+}
+
+// --------------------------------------------
+// ACCORDION ITEM
+// --------------------------------------------
+
+.faq__item {
+	background-color: $color-white;
+	border-radius: $radius-lg;
+	overflow: hidden;
+	transition: box-shadow $transition-base;
+
+	&:hover {
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	}
+}
+
+// --------------------------------------------
+// QUESTION TRIGGER
+// --------------------------------------------
+
+.faq__question {
+	margin: 0;
+	font-size: inherit;
+}
+
+.faq__trigger {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: $space-md;
+	width: 100%;
+	padding: $space-md $space-lg;
+	border: none;
+	background: none;
+	cursor: pointer;
+	text-align: left;
+	transition: background-color $transition-base;
+
+	&:hover {
+		background-color: rgba($color-primary, 0.02);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: -2px;
+		border-radius: $radius-lg;
+	}
+
+	&[aria-expanded="true"] {
+		.faq__trigger-icon {
+			&::after {
+				transform: rotate(90deg);
+				opacity: 0;
+			}
+		}
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-sm $space-md;
+		gap: $space-sm;
+	}
+}
+
+.faq__trigger-text {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body-lg;
+	line-height: 1.35;
+	color: $color-primary-dark;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// Plus → minus animated icon
+.faq__trigger-icon {
+	position: relative;
+	flex-shrink: 0;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background-color: $color-surface-warm;
+	transition: background-color $transition-base;
+
+	.faq__trigger:hover & {
+		background-color: rgba($color-secondary, 0.1);
+	}
+
+	.faq__trigger[aria-expanded="true"] & {
+		background-color: $color-secondary;
+
+		&::before,
+		&::after {
+			background-color: $color-white;
+		}
+	}
+
+	// Horizontal bar (always visible = minus)
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 12px;
+		height: 2px;
+		background-color: $color-primary-dark;
+		border-radius: 1px;
+		transition: background-color $transition-base;
+	}
+
+	// Vertical bar (fades out = plus → minus)
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 2px;
+		height: 12px;
+		background-color: $color-primary-dark;
+		border-radius: 1px;
+		transition:
+			transform 0.3s ease,
+			opacity 0.3s ease,
+			background-color $transition-base;
+	}
+}
+
+// --------------------------------------------
+// ANSWER PANEL
+// --------------------------------------------
+
+.faq__answer {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.35s ease;
+
+	&.is-open {
+		grid-template-rows: 1fr;
+	}
+}
+
+.faq__answer-inner {
+	overflow: hidden;
+}
+
+.faq__answer-inner p {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	line-height: 1.7;
+	color: $color-neutral-mid;
+	margin: 0;
+	padding: 0 $space-lg $space-lg;
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $space-md $space-md;
+		font-size: $text-body-sm;
+	}
+}
+
+.faq__answer-inner a {
+	color: $color-secondary;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	transition: color $transition-base;
+
+	&:hover {
+		color: $color-primary;
+	}
+}

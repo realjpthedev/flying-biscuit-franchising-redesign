@@ -120,7 +120,7 @@ foreach ( $about_links as $link ) {
         </div>
 
         <!-- Desktop CTA -->
-        <a href="/get-started/" class="navbar__cta">Get Started</a>
+        <a href="/contact/" class="navbar__cta">Get Started</a>
 
         <!-- Hamburger (tablet/mobile) -->
         <button
@@ -224,7 +224,7 @@ foreach ( $about_links as $link ) {
       </nav>
 
       <div class="navbar__drawer-footer">
-        <a href="/get-started/" class="navbar__drawer-cta">Get Started</a>
+        <a href="/contact" class="navbar__drawer-cta">Get Started</a>
       </div>
     </div>
 

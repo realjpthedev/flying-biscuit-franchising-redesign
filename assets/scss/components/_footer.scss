@@ -1,0 +1,451 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Footer
+// v1.0
+// ============================================
+
+// --------------------------------------------
+// WRAPPER
+// --------------------------------------------
+
+.footer {
+	background-color: darken($color-primary-dark, 5%);
+	color: rgba($color-white, 0.6);
+	border-top: 3px solid $color-secondary;
+}
+
+// --------------------------------------------
+// MAIN FOOTER
+// --------------------------------------------
+
+.footer__main {
+	padding: $space-4xl 0 $space-2xl;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-3xl 0 $space-xl;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0 $space-lg;
+	}
+}
+
+.footer__inner {
+	display: grid;
+	grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+	gap: $space-xl;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		grid-template-columns: 1fr 1fr;
+		gap: $space-xl $space-lg;
+		padding: 0 $grid-margin-tablet;
+	}
+
+	@media (max-width: $bp-mobile) {
+		grid-template-columns: 1fr;
+		gap: $space-xl;
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+// --------------------------------------------
+// BRAND COLUMN
+// --------------------------------------------
+
+.footer__brand {
+	@media (max-width: $bp-tablet) {
+		grid-column: 1 / -1;
+	}
+}
+
+.footer__logo-link {
+	display: inline-block;
+	margin-bottom: $space-md;
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 4px;
+		border-radius: 4px;
+	}
+}
+
+.footer__logo {
+	display: block;
+	width: 180px;
+	height: auto;
+
+	@media (max-width: $bp-mobile) {
+		width: 160px;
+	}
+}
+
+.footer__brand-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	line-height: 1.7;
+	color: rgba($color-white, 0.45);
+	margin: 0 0 $space-lg;
+	max-width: 300px;
+}
+
+// --------------------------------------------
+// SOCIAL LINKS
+// --------------------------------------------
+
+.footer__socials {
+	display: flex;
+	gap: $space-xs;
+}
+
+.footer__social-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: rgba($color-white, 0.06);
+	color: rgba($color-white, 0.5);
+	transition:
+		background-color $transition-base,
+		color $transition-base,
+		transform $transition-base;
+
+	&:hover {
+		background-color: $color-secondary;
+		color: $color-white;
+		transform: translateY(-2px);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 2px;
+	}
+}
+
+.footer__social-icon {
+	display: block;
+}
+
+// --------------------------------------------
+// NAV COLUMNS
+// --------------------------------------------
+
+.footer__col {
+	@media (max-width: $bp-mobile) {
+		// Stack nicely on mobile
+	}
+}
+
+.footer__col-title {
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-body;
+	color: $color-white;
+	margin: 0 0 $space-md;
+	letter-spacing: 0.02em;
+}
+
+.footer__nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: $space-xs;
+}
+
+.footer__nav-link {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	color: rgba($color-white, 0.5);
+	text-decoration: none;
+	transition:
+		color $transition-base,
+		padding-left $transition-base;
+	display: inline-block;
+
+	&:hover {
+		color: $color-white;
+		padding-left: 4px;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+}
+
+// --------------------------------------------
+// CONTACT INFO
+// --------------------------------------------
+
+.footer__contact {
+	font-style: normal;
+	display: flex;
+	flex-direction: column;
+	gap: $space-xs;
+	margin-bottom: $space-lg;
+}
+
+.footer__contact-link {
+	display: flex;
+	align-items: center;
+	gap: $space-xs;
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	color: rgba($color-white, 0.5);
+	text-decoration: none;
+	transition: color $transition-base;
+
+	&:hover {
+		color: $color-white;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+
+	&--address {
+		cursor: default;
+	}
+}
+
+.footer__contact-icon {
+	flex-shrink: 0;
+	opacity: 0.5;
+}
+
+// --------------------------------------------
+// NEWSLETTER
+// --------------------------------------------
+
+.footer__newsletter {
+	padding-top: $space-md;
+	border-top: 1px solid rgba($color-white, 0.08);
+}
+
+.footer__newsletter-label {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body-sm;
+	color: rgba($color-white, 0.7);
+	margin: 0 0 $space-xs;
+}
+
+.footer__newsletter-form {
+	// Reset WPForms container spacing
+	.wpforms-container {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	// Force form into a single row
+	#wpforms-form-15 {
+		display: flex !important;
+		flex-direction: row !important;
+		align-items: stretch !important;
+		gap: 0 !important;
+	}
+
+	// Field container takes remaining space
+	.wpforms-field-container {
+		flex: 1 !important;
+		min-width: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	.wpforms-field {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	// Hide the label
+	.wpforms-field-label {
+		display: none !important;
+	}
+
+	// Submit sits flush right
+	.wpforms-submit-container {
+		flex-shrink: 0 !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		display: flex !important;
+		align-items: stretch !important;
+	}
+
+	// Email input
+	#wpforms-15-field_3 {
+		width: 100% !important;
+		max-width: none !important;
+		height: 100% !important;
+		box-sizing: border-box !important;
+		font-family: $font-body;
+		font-size: $text-body-sm;
+		color: $color-white;
+		background-color: rgba($color-white, 0.06) !important;
+		border: 1px solid rgba($color-white, 0.1) !important;
+		border-right: none !important;
+		border-radius: $radius-pill 0 0 $radius-pill !important;
+		padding: 12px $space-sm !important;
+		line-height: 1.4;
+		transition:
+			border-color $transition-base,
+			background-color $transition-base;
+
+		&::placeholder {
+			color: rgba($color-white, 0.3);
+		}
+
+		&:hover {
+			border-color: rgba($color-white, 0.2) !important;
+		}
+
+		&:focus {
+			outline: none !important;
+			border-color: $color-secondary !important;
+			background-color: rgba($color-white, 0.1) !important;
+			box-shadow: none !important;
+		}
+	}
+
+	// Subscribe button
+	#wpforms-submit-15 {
+		font-family: $font-body !important;
+		font-weight: $weight-bold !important;
+		font-size: $text-body-sm !important;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: $color-white !important;
+		background: $gradient-sunrise !important;
+		border: none !important;
+		border-radius: 0 $radius-pill $radius-pill 0 !important;
+		padding: 12px $space-md !important;
+		white-space: nowrap;
+		cursor: pointer;
+		height: 100%;
+		transition:
+			opacity $transition-base,
+			box-shadow $transition-base;
+
+		&:hover {
+			opacity: 0.9;
+			box-shadow: 0 4px 16px rgba($color-secondary, 0.3);
+		}
+
+		&:active {
+			opacity: 1;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $color-tertiary;
+			outline-offset: 2px;
+		}
+	}
+
+	// Loading spinner
+	.wpforms-submit-spinner {
+		margin-left: $space-xs;
+	}
+
+	// Error message styling
+	.wpforms-error {
+		border-color: #e74c3c !important;
+	}
+
+	label.wpforms-error {
+		font-family: $font-body;
+		font-size: 12px;
+		color: #e74c3c;
+		margin-top: $space-3xs;
+		display: block;
+	}
+
+	// Confirmation message
+	.wpforms-confirmation-container-full {
+		font-family: $font-body;
+		font-size: $text-body-sm;
+		color: $color-tertiary;
+		background: rgba($color-tertiary, 0.1);
+		border: 1px solid rgba($color-tertiary, 0.2);
+		border-radius: $radius-pill;
+		padding: 10px $space-sm;
+		text-align: center;
+	}
+}
+
+// --------------------------------------------
+// BOTTOM BAR
+// --------------------------------------------
+
+.footer__bottom {
+	border-top: 1px solid rgba($color-white, 0.06);
+}
+
+.footer__bottom-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: $space-md $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-md $grid-margin-tablet;
+		flex-direction: column;
+		gap: $space-xs;
+		text-align: center;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-md $grid-margin-mobile;
+	}
+}
+
+.footer__copyright {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: 13px;
+	color: rgba($color-white, 0.3);
+	margin: 0;
+}
+
+.footer__legal {
+	display: flex;
+	align-items: center;
+	gap: $space-xs;
+}
+
+.footer__legal-link {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: 13px;
+	color: rgba($color-white, 0.3);
+	text-decoration: none;
+	transition: color $transition-base;
+
+	&:hover {
+		color: rgba($color-white, 0.7);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+}
+
+.footer__legal-sep {
+	color: rgba($color-white, 0.15);
+	font-size: 13px;
+}

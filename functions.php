@@ -22,3 +22,9 @@ function ms_styles_and_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'ms_styles_and_scripts' );
+
+function fb_franchising_theme_support() {
+  add_theme_support('post-thumbnails');
+}
+
+add_action( 'after_setup_theme', 'fb_franchising_theme_support');

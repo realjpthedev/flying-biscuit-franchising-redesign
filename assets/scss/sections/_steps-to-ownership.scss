@@ -1,0 +1,319 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Steps to Ownership Section
+// v1.0
+// ============================================
+
+// --------------------------------------------
+// SECTION WRAPPER
+// --------------------------------------------
+
+.steps {
+	background-color: $color-white;
+	padding: $space-4xl 0;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-3xl 0;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.steps__inner {
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+// --------------------------------------------
+// HEADER
+// --------------------------------------------
+
+.steps__header {
+	text-align: center;
+	margin-bottom: $space-3xl;
+
+	@media (max-width: $bp-tablet) {
+		margin-bottom: $space-2xl;
+	}
+
+	@media (max-width: $bp-mobile) {
+		margin-bottom: $space-xl;
+	}
+}
+
+.steps__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-secondary;
+	margin-bottom: $space-xs;
+}
+
+.steps__title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 42px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-primary-dark;
+	margin: 0 0 $space-sm;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 34px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+.steps__subtitle {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	line-height: $leading-body-lg;
+	color: $color-neutral-mid;
+	margin: 0 auto;
+	max-width: 500px;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// --------------------------------------------
+// TIMELINE — DESKTOP (3-column grid, 2 rows)
+// --------------------------------------------
+
+.steps__timeline {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: $space-xl $space-lg;
+	position: relative;
+	counter-reset: step-counter;
+
+	@media (max-width: $bp-tablet) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: $space-xl $space-md;
+	}
+
+	@media (max-width: $bp-mobile) {
+		grid-template-columns: 1fr;
+		gap: 0;
+		padding-left: 52px;
+	}
+}
+
+// Connecting gradient line — horizontal on desktop, vertical on mobile
+.steps__line {
+	display: none;
+
+	@media (max-width: $bp-mobile) {
+		display: block;
+		position: absolute;
+		left: 19px;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background: linear-gradient(
+			to bottom,
+			$color-secondary,
+			$color-tertiary 50%,
+			$color-primary
+		);
+		border-radius: $radius-pill;
+	}
+}
+
+// --------------------------------------------
+// INDIVIDUAL STEP
+// --------------------------------------------
+
+.steps__step {
+	position: relative;
+	text-align: center;
+
+	@media (max-width: $bp-mobile) {
+		text-align: left;
+		padding-bottom: $space-xl;
+		padding-left: $space-md;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+
+// --------------------------------------------
+// NUMBERED MARKER
+// --------------------------------------------
+
+.steps__step-marker {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	background: $gradient-sunrise;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto $space-md;
+	position: relative;
+	box-shadow: 0 4px 16px rgba($color-secondary, 0.25);
+
+	@media (max-width: $bp-mobile) {
+		width: 40px;
+		height: 40px;
+		margin: 0 0 $space-sm;
+		position: absolute;
+		left: -52px;
+		top: 0;
+	}
+}
+
+.steps__step-number {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 20px;
+	color: $color-white;
+	line-height: 1;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 16px;
+	}
+}
+
+// --------------------------------------------
+// STEP BODY
+// --------------------------------------------
+
+.steps__step-body {
+	background-color: $color-surface-warm;
+	border-radius: $radius-xl;
+	padding: $space-lg;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-md;
+
+		&:hover {
+			transform: none;
+			box-shadow: none;
+		}
+	}
+}
+
+.steps__step-title {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 20px;
+	line-height: 1.2;
+	color: $color-primary-dark;
+	margin: 0 0 $space-2xs;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 18px;
+	}
+}
+
+.steps__step-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	line-height: 1.6;
+	color: $color-neutral-mid;
+	margin: 0;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body-sm;
+	}
+}
+
+// --------------------------------------------
+// STAGGER: offset even steps down on desktop
+// for a wave/journey feel
+// (line is child 1, so steps 2,4,6 = children 3,5,7)
+// --------------------------------------------
+
+@media (min-width: #{$bp-tablet + 1}) {
+	.steps__step:nth-child(3),
+	.steps__step:nth-child(5),
+	.steps__step:nth-child(7) {
+		padding-top: $space-xl;
+	}
+}
+
+// --------------------------------------------
+// FOOTER CTA
+// --------------------------------------------
+
+.steps__footer {
+	text-align: center;
+	margin-top: $space-2xl;
+
+	@media (max-width: $bp-mobile) {
+		margin-top: $space-xl;
+	}
+}
+
+.steps__cta {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2xs;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-button;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $color-white;
+	background: $gradient-sunrise;
+	padding: $space-sm $space-lg;
+	border-radius: $radius-pill;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 3px;
+	}
+}
+
+.steps__cta-arrow {
+	font-size: 18px;
+	line-height: 1;
+	transition: transform $transition-base;
+
+	.steps__cta:hover & {
+		transform: translateX(3px);
+	}
+}

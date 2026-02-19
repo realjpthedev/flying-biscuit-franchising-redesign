@@ -1,0 +1,306 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Contact / Get Started Section
+// v1.0
+// ============================================
+
+// --------------------------------------------
+// SECTION WRAPPER
+// --------------------------------------------
+
+.contact {
+	background-color: $color-primary-dark;
+	padding: $space-4xl 0;
+	position: relative;
+	overflow: hidden;
+
+	// Subtle radial glow behind the form
+	&::before {
+		content: "";
+		position: absolute;
+		top: -20%;
+		right: -10%;
+		width: 60%;
+		height: 140%;
+		background: radial-gradient(
+			ellipse at center,
+			rgba($color-secondary, 0.06) 0%,
+			transparent 70%
+		);
+		pointer-events: none;
+	}
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-3xl 0;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.contact__inner {
+	display: grid;
+	grid-template-columns: 1fr 1.1fr;
+	gap: $space-3xl;
+	align-items: center;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		grid-template-columns: 1fr;
+		gap: $space-xl;
+		padding: 0 $grid-margin-tablet;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+		gap: $space-lg;
+	}
+}
+
+// --------------------------------------------
+// LEFT COLUMN — CONTENT
+// --------------------------------------------
+
+.contact__content {
+	@media (max-width: $bp-tablet) {
+		text-align: center;
+	}
+}
+
+.contact__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+}
+
+.contact__title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 42px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-white;
+	margin: 0 0 $space-md;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 34px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+.contact__title-accent {
+	background: $gradient-sunrise;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.contact__desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	line-height: $leading-body-lg;
+	color: rgba($color-white, 0.6);
+	margin: 0 0 $space-xl;
+	max-width: 460px;
+
+	@media (max-width: $bp-tablet) {
+		max-width: 540px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// --------------------------------------------
+// PERKS LIST
+// --------------------------------------------
+
+.contact__perks {
+	display: flex;
+	flex-direction: column;
+	gap: $space-sm;
+	margin-bottom: $space-xl;
+
+	@media (max-width: $bp-tablet) {
+		align-items: center;
+	}
+}
+
+.contact__perk {
+	display: flex;
+	align-items: center;
+	gap: $space-xs;
+}
+
+.contact__perk-icon {
+	flex-shrink: 0;
+	color: $color-secondary;
+	display: flex;
+	align-items: center;
+}
+
+.contact__perk-text {
+	font-family: $font-body;
+	font-weight: $weight-medium;
+	font-size: $text-body;
+	color: rgba($color-white, 0.8);
+}
+
+// --------------------------------------------
+// DIRECT CONTACT
+// --------------------------------------------
+
+.contact__direct {
+	padding-top: $space-lg;
+	border-top: 1px solid rgba($color-white, 0.08);
+}
+
+.contact__direct-label {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	color: rgba($color-white, 0.4);
+	margin: 0 0 $space-3xs;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+.contact__direct-link {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body-lg;
+	color: $color-secondary;
+	text-decoration: none;
+	transition: color $transition-base;
+
+	&:hover {
+		color: $color-tertiary;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 3px;
+		border-radius: 2px;
+	}
+}
+
+// --------------------------------------------
+// RIGHT COLUMN — FORM CARD
+// --------------------------------------------
+
+.contact__form-card {
+	background-color: $color-white;
+	border-radius: $radius-2xl;
+	padding: $space-xl;
+	box-shadow:
+		0 20px 60px rgba(0, 0, 0, 0.2),
+		0 0 0 1px rgba($color-white, 0.05);
+	position: relative;
+
+	// Top accent bar
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: $space-lg;
+		right: $space-lg;
+		height: 4px;
+		background: $gradient-sunrise;
+		border-radius: 0 0 $radius-sm $radius-sm;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-lg $space-md;
+		border-radius: $radius-xl;
+	}
+}
+
+.contact__form-header {
+	text-align: center;
+	margin-bottom: $space-lg;
+}
+
+.contact__form-title {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 24px;
+	line-height: 1.2;
+	color: $color-primary-dark;
+	margin: 0 0 $space-3xs;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 20px;
+	}
+}
+
+.contact__form-subtitle {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	color: $color-neutral-mid;
+	margin: 0;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body-sm;
+	}
+}
+
+// --------------------------------------------
+// WPFORMS EMBED
+// --------------------------------------------
+
+.contact__form-embed {
+	// WPForms shortcode renders here — styled externally
+
+	// Submit button override
+	#wpforms-submit-65 {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		font-family: $font-body;
+		font-weight: $weight-bold;
+		font-size: $text-button;
+		letter-spacing: $tracking-button;
+		text-transform: uppercase;
+		color: $color-white;
+		background: $gradient-sunrise;
+		border: none;
+		border-radius: $radius-pill;
+		padding: $space-sm $space-lg;
+		cursor: pointer;
+		transition:
+			transform $transition-base,
+			box-shadow $transition-base;
+
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+		}
+
+		&:active {
+			transform: translateY(0);
+		}
+
+		&:focus-visible {
+			outline: 2px solid $color-tertiary;
+			outline-offset: 3px;
+		}
+	}
+}
