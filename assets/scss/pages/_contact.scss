@@ -1,0 +1,412 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Contact Page
+// v1.0
+// ============================================
+
+// --------------------------------------------
+// HEADER
+// --------------------------------------------
+
+.contact-page__header {
+	background-color: $color-primary-dark;
+	padding: $space-3xl 0 $space-2xl;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+	// Subtle radial glow
+	&::before {
+		content: "";
+		position: absolute;
+		top: -30%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+		height: 160%;
+		background: radial-gradient(
+			ellipse at center,
+			rgba($color-secondary, 0.06) 0%,
+			transparent 70%
+		);
+		pointer-events: none;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0 $space-xl;
+	}
+}
+
+.contact-page__header-inner {
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.contact-page__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+}
+
+.contact-page__title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 48px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-white;
+	margin: 0 0 $space-sm;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 38px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: 30px;
+	}
+}
+
+.contact-page__title-accent {
+	background: $gradient-sunrise;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.contact-page__desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	color: rgba($color-white, 0.5);
+	margin: 0 auto;
+	max-width: 520px;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// --------------------------------------------
+// BODY
+// --------------------------------------------
+
+.contact-page__body {
+	background-color: $color-surface-warm;
+	padding: $space-3xl 0;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-2xl 0;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-xl 0;
+	}
+}
+
+.contact-page__body-inner {
+	display: grid;
+	grid-template-columns: 1fr 1.3fr;
+	gap: $space-2xl;
+	align-items: start;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		grid-template-columns: 1fr;
+		padding: 0 $grid-margin-tablet;
+		gap: $space-xl;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+		gap: $space-lg;
+	}
+}
+
+// --------------------------------------------
+// INFO CARDS (LEFT)
+// --------------------------------------------
+
+.contact-page__info {
+	display: flex;
+	flex-direction: column;
+	gap: $space-md;
+
+	@media (max-width: $bp-tablet) {
+		order: 2;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+	}
+
+	@media (max-width: $bp-mobile) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.contact-page__card {
+	display: flex;
+	gap: $space-md;
+	background-color: $color-white;
+	border-radius: $radius-xl;
+	padding: $space-lg;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-md;
+	}
+}
+
+.contact-page__card-icon {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: rgba($color-secondary, 0.08);
+	color: $color-secondary;
+}
+
+.contact-page__card-body {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.contact-page__card-title {
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-body;
+	color: $color-primary-dark;
+	margin: 0;
+}
+
+.contact-page__card-link {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body;
+	color: $color-secondary;
+	text-decoration: none;
+	transition: color $transition-base;
+
+	&:hover {
+		color: $color-primary;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+
+	&--static {
+		cursor: default;
+		color: $color-primary-dark;
+
+		&:hover {
+			color: $color-primary-dark;
+		}
+	}
+}
+
+.contact-page__card-note {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	color: $color-neutral-mid;
+	margin: 0;
+}
+
+// --------------------------------------------
+// SOCIAL LINKS
+// --------------------------------------------
+
+.contact-page__social {
+	padding-top: $space-sm;
+
+	@media (max-width: $bp-tablet) {
+		grid-column: 1 / -1;
+		text-align: center;
+	}
+}
+
+.contact-page__social-label {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body-sm;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: $color-neutral-mid;
+	margin: 0 0 $space-xs;
+}
+
+.contact-page__social-links {
+	display: flex;
+	gap: $space-xs;
+
+	@media (max-width: $bp-tablet) {
+		justify-content: center;
+	}
+}
+
+.contact-page__social-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background-color: $color-white;
+	color: $color-neutral-mid;
+	transition:
+		background-color $transition-base,
+		color $transition-base,
+		transform $transition-base;
+
+	&:hover {
+		background-color: $color-secondary;
+		color: $color-white;
+		transform: translateY(-2px);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 2px;
+	}
+}
+
+// --------------------------------------------
+// FORM CARD (RIGHT)
+// --------------------------------------------
+
+.contact-page__form-card {
+	background-color: $color-white;
+	border-radius: $radius-2xl;
+	padding: $space-xl;
+	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+	position: relative;
+	overflow: hidden;
+
+	// Top accent bar
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: $space-lg;
+		right: $space-lg;
+		height: 4px;
+		background: $gradient-sunrise;
+		border-radius: 0 0 $radius-sm $radius-sm;
+	}
+
+	@media (max-width: $bp-tablet) {
+		order: 1;
+		padding: $space-lg $space-md;
+		border-radius: $radius-xl;
+	}
+}
+
+.contact-page__form-header {
+	text-align: center;
+	margin-bottom: $space-lg;
+}
+
+.contact-page__form-title {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 24px;
+	line-height: 1.2;
+	color: $color-primary-dark;
+	margin: 0 0 $space-3xs;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 20px;
+	}
+}
+
+.contact-page__form-subtitle {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	color: $color-neutral-mid;
+	margin: 0;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body-sm;
+	}
+}
+
+// --------------------------------------------
+// WPFORMS — SUBMIT BUTTON ONLY
+// --------------------------------------------
+
+.contact-page__form-embed {
+	// Prevent overflow on small screens
+	.wpforms-container,
+	.wpforms-form {
+		max-width: 100% !important;
+	}
+
+	#wpforms-submit-65 {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		font-family: $font-body;
+		font-weight: $weight-bold;
+		font-size: $text-button;
+		letter-spacing: $tracking-button;
+		text-transform: uppercase;
+		color: $color-white;
+		background: $gradient-sunrise;
+		border: none;
+		border-radius: $radius-pill;
+		padding: $space-sm $space-lg;
+		cursor: pointer;
+		transition:
+			transform $transition-base,
+			box-shadow $transition-base;
+
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+		}
+
+		&:active {
+			transform: translateY(0);
+		}
+
+		&:focus-visible {
+			outline: 2px solid $color-tertiary;
+			outline-offset: 3px;
+		}
+	}
+}

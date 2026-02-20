@@ -10,3 +10,7 @@ import Reviews from "../assets/js/reviews";
 import FAQ from "../assets/js/faq";
 import Support from "../assets/js/support";
 import SinglePost from "../assets/js/singlePost";
+import OwnershipFAQ from "../assets/js/stepsToOwnership";
+import Disclaimer from "../assets/js/disclaimer";
+import MenuLightbox from "../assets/js/menuLightbox";
+import MenuReels from "../assets/js/menuReels";

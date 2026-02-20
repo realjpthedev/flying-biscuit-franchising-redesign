@@ -1,0 +1,128 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Shared FDD Disclaimer Dropdown
+// v1.0
+// ============================================
+
+.disclaimer {
+	margin-top: $space-lg;
+	border-top: 1px solid rgba(0, 0, 0, 0.06);
+	padding-top: $space-sm;
+}
+
+.disclaimer__toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2xs;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: $space-2xs 0;
+
+	&:hover .disclaimer__toggle-text {
+		color: $color-secondary;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 2px;
+		border-radius: $radius-sm;
+	}
+}
+
+.disclaimer__toggle-text {
+	font-family: $font-body;
+	font-weight: $weight-medium;
+	font-size: 13px;
+	color: $color-neutral-mid;
+	transition: color $transition-base;
+}
+
+.disclaimer__toggle-arrow {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 5px solid $color-neutral-mid;
+	transition: transform 0.3s ease;
+
+	.disclaimer__toggle[aria-expanded="true"] & {
+		transform: rotate(180deg);
+	}
+}
+
+.disclaimer__body {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.35s ease;
+
+	&.is-open {
+		grid-template-rows: 1fr;
+	}
+}
+
+.disclaimer__content {
+	overflow: hidden;
+
+	p {
+		font-family: $font-body;
+		font-weight: $weight-regular;
+		font-size: 12px;
+		line-height: 1.6;
+		color: $color-neutral-mid;
+		margin: 0 0 $space-xs;
+
+		&:last-child {
+			margin-bottom: $space-sm;
+		}
+
+		strong {
+			font-weight: $weight-semibold;
+			color: $color-primary-dark;
+		}
+	}
+}
+
+// ─── Variant: on dark backgrounds ───
+
+.disclaimer--dark {
+	.disclaimer {
+		border-top-color: rgba($color-white, 0.08);
+	}
+
+	.disclaimer__toggle-text {
+		color: rgba($color-white, 0.35);
+	}
+
+	.disclaimer__toggle:hover .disclaimer__toggle-text {
+		color: rgba($color-white, 0.6);
+	}
+
+	.disclaimer__toggle-arrow {
+		border-top-color: rgba($color-white, 0.35);
+	}
+
+	.disclaimer__content p {
+		color: rgba($color-white, 0.35);
+
+		strong {
+			color: rgba($color-white, 0.6);
+		}
+	}
+}
+
+// ─── Variant: centered ───
+
+.disclaimer--center {
+	text-align: center;
+
+	.disclaimer__toggle {
+		margin: 0 auto;
+	}
+
+	.disclaimer__content {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+}
