@@ -1,0 +1,356 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// FAQ Page
+// v1.0
+// ============================================
+
+// Shared
+.faq-page__accent {
+	background: $gradient-sunrise;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+// --------------------------------------------
+// HERO
+// --------------------------------------------
+
+.faq-page__hero {
+	background-color: $color-primary-dark;
+	padding: $space-3xl 0 $space-2xl;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -30%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+		height: 160%;
+		background: radial-gradient(
+			ellipse at center,
+			rgba($color-secondary, 0.06) 0%,
+			transparent 70%
+		);
+		pointer-events: none;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-3xl 0 $space-xl;
+	}
+}
+
+.faq-page__hero-inner {
+	max-width: 640px;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.faq-page__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+}
+
+.faq-page__hero-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 48px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-white;
+	margin: 0 0 $space-sm;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 38px;
+	}
+	@media (max-width: $bp-mobile) {
+		font-size: 30px;
+	}
+}
+
+.faq-page__hero-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	color: rgba($color-white, 0.5);
+	margin: 0;
+	max-width: 480px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// --------------------------------------------
+// FAQ BODY / ACCORDION
+// --------------------------------------------
+
+.faq-page__body {
+	background-color: $color-white;
+	padding: $space-3xl 0;
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.faq-page__body-inner {
+	max-width: 780px;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.faq-page__list {
+	display: flex;
+	flex-direction: column;
+}
+
+.faq-page__item {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+	&:first-child {
+		border-top: 1px solid rgba(0, 0, 0, 0.06);
+	}
+}
+
+.faq-page__question {
+	margin: 0;
+}
+
+.faq-page__trigger {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: $space-md;
+	width: 100%;
+	padding: $space-md 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-align: left;
+
+	&:hover .faq-page__trigger-text {
+		color: $color-secondary;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: -2px;
+		border-radius: $radius-sm;
+	}
+}
+
+.faq-page__trigger-text {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 18px;
+	line-height: 1.35;
+	color: $color-primary-dark;
+	transition: color $transition-base;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 16px;
+	}
+}
+
+.faq-page__trigger-icon {
+	position: relative;
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background-color: $color-secondary;
+		border-radius: 1px;
+		transition: transform 0.3s ease;
+	}
+
+	&::before {
+		width: 14px;
+		height: 2px;
+		transform: translate(-50%, -50%);
+	}
+
+	&::after {
+		width: 2px;
+		height: 14px;
+		transform: translate(-50%, -50%);
+	}
+
+	.faq-page__trigger[aria-expanded="true"] & {
+		&::after {
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+	}
+}
+
+.faq-page__answer {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.35s ease;
+}
+
+.faq-page__answer-inner {
+	overflow: hidden;
+
+	p {
+		font-family: $font-body;
+		font-weight: $weight-regular;
+		font-size: $text-body;
+		line-height: 1.7;
+		color: $color-neutral-mid;
+		margin: 0;
+		padding-bottom: $space-md;
+	}
+
+	a {
+		color: $color-secondary;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: color $transition-base;
+
+		&:hover {
+			color: darken($color-secondary, 10%);
+		}
+	}
+}
+
+.faq-page__item.is-open .faq-page__answer {
+	grid-template-rows: 1fr;
+}
+
+// --------------------------------------------
+// CTA
+// --------------------------------------------
+
+.faq-page__cta {
+	background-color: $color-surface-warm;
+	padding: $space-3xl 0;
+	text-align: center;
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.faq-page__cta-inner {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.faq-page__cta-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 38px;
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+	color: $color-primary-dark;
+	margin: 0 0 $space-sm;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+.faq-page__cta-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	color: $color-neutral-mid;
+	margin: 0 0 $space-lg;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+.faq-page__cta-actions {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: $space-sm;
+	flex-wrap: wrap;
+}
+
+.faq-page__cta-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2xs;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-button;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: $space-sm $space-lg;
+	border-radius: $radius-pill;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 3px;
+	}
+
+	&--primary {
+		color: $color-white;
+		background: $gradient-sunrise;
+
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+		}
+	}
+
+	&--secondary {
+		color: $color-primary-dark;
+		background: rgba($color-primary-dark, 0.04);
+		border: 1px solid rgba($color-primary-dark, 0.12);
+
+		&:hover {
+			background: rgba($color-primary-dark, 0.08);
+			transform: translateY(-2px);
+		}
+	}
+}

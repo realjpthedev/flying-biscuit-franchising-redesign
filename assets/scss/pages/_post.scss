@@ -10,10 +10,10 @@
 
 .single-post__header {
 	background-color: $color-primary-dark;
-	padding: $space-2xl 0 $space-xl;
+	padding: $space-3xl 0 $space-xl;
 
 	@media (max-width: $bp-mobile) {
-		padding: $space-xl 0 $space-lg;
+		padding: $space-3xl 0 $space-lg;
 	}
 }
 
@@ -26,7 +26,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -129,7 +128,6 @@
 	@media (max-width: $bp-tablet) {
 		font-size: 36px;
 	}
-
 	@media (max-width: $bp-mobile) {
 		font-size: 28px;
 	}
@@ -156,7 +154,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -222,18 +219,15 @@
 // --------------------------------------------
 
 .single-post__share {
-	position: absolute;
-	left: -64px;
-	top: 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: $space-xs;
 	position: sticky;
 	top: 120px;
 	float: left;
 	margin-left: -64px;
 	width: 44px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: $space-xs;
 
 	@media (max-width: 1200px) {
 		display: none;
@@ -279,7 +273,6 @@
 	}
 }
 
-// Tooltip feedback for copy link
 .single-post__share-copy {
 	position: relative;
 
@@ -456,7 +449,6 @@
 		}
 	}
 
-	// WordPress blocks
 	.wp-block-image {
 		margin: $space-lg 0;
 
@@ -598,8 +590,7 @@
 }
 
 // --------------------------------------------
-// SIDEBAR — REUSES .blog__sidebar STYLES
-// Also sticky on single post
+// SIDEBAR
 // --------------------------------------------
 
 .single-post__sidebar {
@@ -629,7 +620,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}

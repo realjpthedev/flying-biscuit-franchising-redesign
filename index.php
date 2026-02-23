@@ -6,6 +6,11 @@
  * v1.0
  */
 
+// Prevent direct file access
+if ( ! defined( 'ABSPATH' ) ) {
+  exit;
+}
+
 get_header();
 
 // Store the blog page URL before any queries
@@ -260,7 +265,7 @@ if ( $paged === 1 && ! $search ) {
   <nav class="blog__pagination" aria-label="Blog pagination">
     <div class="blog__pagination-inner">
       <?php
-      echo paginate_links( array(
+      $pagination_args = array(
         'total'     => $blog_query->max_num_pages,
         'current'   => $paged,
         'prev_text' => '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg><span class="sr-only">Previous</span>',
@@ -268,7 +273,14 @@ if ( $paged === 1 && ! $search ) {
         'type'      => 'list',
         'mid_size'  => 1,
         'end_size'  => 1,
-      ) );
+      );
+
+      // Preserve search query across paginated pages
+      if ( $search ) {
+        $pagination_args['add_args'] = array( 'blog_search' => urlencode( $search ) );
+      }
+
+      echo paginate_links( $pagination_args );
       ?>
     </div>
   </nav>

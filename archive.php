@@ -1,4 +1,13 @@
 <?php
+
+// Prevent direct file access
+if ( ! defined( 'ABSPATH' ) ) {
+  exit;
+}
+
+?>
+
+<?php
 /**
  * Archive Template (Categories, Tags, Date Archives)
  * The Flying Biscuit Café — Franchising

@@ -82,7 +82,7 @@
 	}
 
 	@media (max-width: $bp-mobile) {
-		padding: $space-2xl 0 $space-xl;
+		padding: $space-3xl 0 $space-xl;
 	}
 }
 
@@ -96,7 +96,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -114,7 +113,6 @@
 	@media (max-width: $bp-tablet) {
 		font-size: 38px;
 	}
-
 	@media (max-width: $bp-mobile) {
 		font-size: 30px;
 	}
@@ -189,7 +187,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -320,7 +317,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -379,7 +375,6 @@
 		}
 	}
 
-	// Feature card spans 2 cols on tablet+
 	&--feature {
 		@media (min-width: $bp-mobile) {
 			grid-column: 1 / -1;
@@ -479,7 +474,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -573,7 +567,6 @@
 }
 
 // --------------------------------------------
-// --------------------------------------------
 // LIGHTBOX
 // --------------------------------------------
 
@@ -659,7 +652,6 @@
 
 	&--prev {
 		left: $space-md;
-
 		@media (max-width: $bp-mobile) {
 			left: $space-xs;
 		}
@@ -667,7 +659,6 @@
 
 	&--next {
 		right: $space-md;
-
 		@media (max-width: $bp-mobile) {
 			right: $space-xs;
 		}
@@ -753,7 +744,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -784,7 +774,6 @@
 		gap: $space-xs;
 	}
 
-	// Stack on very small screens
 	@media (max-width: 480px) {
 		grid-template-columns: 1fr;
 		max-width: 240px;
@@ -869,7 +858,6 @@
 	padding: 0;
 	transition: opacity 0.3s ease;
 
-	// Subtle gradient scrim at bottom
 	&::before {
 		content: "";
 		position: absolute;
@@ -941,7 +929,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -1053,7 +1040,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}

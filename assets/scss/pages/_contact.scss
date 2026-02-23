@@ -15,7 +15,6 @@
 	position: relative;
 	overflow: hidden;
 
-	// Subtle radial glow
 	&::before {
 		content: "";
 		position: absolute;
@@ -33,7 +32,7 @@
 	}
 
 	@media (max-width: $bp-mobile) {
-		padding: $space-2xl 0 $space-xl;
+		padding: $space-3xl 0 $space-xl;
 	}
 }
 
@@ -47,7 +46,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -75,7 +73,6 @@
 	@media (max-width: $bp-tablet) {
 		font-size: 38px;
 	}
-
 	@media (max-width: $bp-mobile) {
 		font-size: 30px;
 	}
@@ -112,7 +109,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: $space-2xl 0;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: $space-xl 0;
 	}
@@ -157,7 +153,6 @@
 	@media (max-width: 768px) {
 		grid-template-columns: 1fr;
 	}
-
 	@media (max-width: $bp-mobile) {
 		grid-template-columns: 1fr;
 	}
@@ -315,7 +310,6 @@
 	position: relative;
 	overflow: hidden;
 
-	// Top accent bar
 	&::before {
 		content: "";
 		position: absolute;
@@ -369,7 +363,6 @@
 // --------------------------------------------
 
 .contact-page__form-embed {
-	// Prevent overflow on small screens
 	.wpforms-container,
 	.wpforms-form {
 		max-width: 100% !important;

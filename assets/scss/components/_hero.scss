@@ -32,7 +32,7 @@
 	}
 
 	@media (max-width: $bp-mobile) {
-		padding: $space-2xl $grid-margin-mobile;
+		padding: $space-3xl $grid-margin-mobile $space-2xl;
 		gap: $space-lg;
 	}
 }
@@ -144,7 +144,6 @@
 	@media (max-width: $bp-tablet) {
 		font-size: 42px;
 	}
-
 	@media (max-width: $bp-mobile) {
 		font-size: 32px;
 	}
@@ -381,7 +380,6 @@
 		height: 52px;
 	}
 
-	// CSS play triangle
 	&::after {
 		content: "";
 		display: block;
@@ -410,7 +408,7 @@
 }
 
 // --------------------------------------------
-// VIDEO CLOSE BUTTON (VISIBLE WHILE PLAYING)
+// VIDEO CLOSE BUTTON
 // --------------------------------------------
 
 .hero__video-close {
@@ -475,7 +473,6 @@
 	@media (max-width: $bp-tablet) {
 		padding-bottom: $space-xl;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding-bottom: $space-lg;
 	}
@@ -529,7 +526,6 @@
 	@media (max-width: $bp-tablet) {
 		height: 72px;
 	}
-
 	@media (max-width: $bp-mobile) {
 		height: 60px;
 	}

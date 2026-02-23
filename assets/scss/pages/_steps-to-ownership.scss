@@ -71,7 +71,7 @@
 	}
 
 	@media (max-width: $bp-mobile) {
-		padding: $space-2xl 0;
+		padding: $space-3xl 0 $space-2xl;
 	}
 }
 
@@ -85,7 +85,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -107,7 +106,6 @@
 	@media (max-width: $bp-tablet) {
 		font-size: 38px;
 	}
-
 	@media (max-width: $bp-mobile) {
 		font-size: 30px;
 	}
@@ -182,7 +180,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -203,7 +200,6 @@
 	max-width: 780px;
 	margin: 0 auto;
 
-	// Vertical connecting line
 	&::before {
 		content: "";
 		position: absolute;
@@ -350,7 +346,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -366,7 +361,6 @@
 	}
 }
 
-// Stat cards
 .ownership__stats {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -376,7 +370,6 @@
 	@media (max-width: $bp-tablet) {
 		gap: $space-md;
 	}
-
 	@media (max-width: $bp-mobile) {
 		grid-template-columns: 1fr;
 	}
@@ -454,7 +447,6 @@
 	margin: 0;
 }
 
-// Highlight bar
 .ownership__investment-highlight {
 	display: flex;
 	align-items: center;
@@ -545,7 +537,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -701,7 +692,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}

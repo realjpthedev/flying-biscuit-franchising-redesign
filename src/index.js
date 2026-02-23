@@ -14,3 +14,6 @@ import OwnershipFAQ from "../assets/js/stepsToOwnership";
 import Disclaimer from "../assets/js/disclaimer";
 import MenuLightbox from "../assets/js/menuLightbox";
 import MenuReels from "../assets/js/menuReels";
+import FaqPage from "../assets/js/faqPage";
+import Territories from "../assets/js/territories";
+import utmTracker from "../assets/js/utm";

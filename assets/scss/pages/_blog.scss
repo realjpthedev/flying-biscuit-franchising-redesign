@@ -14,7 +14,7 @@
 	text-align: center;
 
 	@media (max-width: $bp-mobile) {
-		padding: $space-2xl 0 $space-xl;
+		padding: $space-3xl 0 $space-xl;
 	}
 }
 
@@ -26,7 +26,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -54,7 +53,6 @@
 	@media (max-width: $bp-tablet) {
 		font-size: 38px;
 	}
-
 	@media (max-width: $bp-mobile) {
 		font-size: 30px;
 	}
@@ -100,7 +98,6 @@
 	&::placeholder {
 		color: rgba($color-white, 0.3);
 	}
-
 	&:hover {
 		border-color: rgba($color-white, 0.2);
 	}
@@ -171,7 +168,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -241,7 +237,6 @@
 	@media (max-width: $bp-tablet) {
 		font-size: 26px;
 	}
-
 	@media (max-width: $bp-mobile) {
 		font-size: 22px;
 	}
@@ -488,7 +483,6 @@
 	}
 }
 
-// Widget base
 .blog__widget {
 	background-color: $color-surface-warm;
 	border-radius: $radius-xl;
@@ -509,7 +503,6 @@
 	border-bottom: 2px solid rgba($color-secondary, 0.15);
 }
 
-// Category list
 .blog__widget-list {
 	list-style: none;
 	padding: 0;
@@ -555,7 +548,6 @@
 	border-radius: $radius-pill;
 }
 
-// Recent posts
 .blog__widget-recent {
 	list-style: none;
 	padding: 0;
@@ -563,10 +555,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: $space-sm;
-}
-
-.blog__recent-item {
-	// item wrapper
 }
 
 .blog__recent-link {
@@ -622,7 +610,6 @@
 	color: $color-neutral-mid;
 }
 
-// CTA widget
 .blog__widget--cta {
 	background: $gradient-sunrise;
 	text-align: center;
@@ -696,13 +683,11 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
 }
 
-// WordPress paginate_links outputs a <ul> with type="list"
 .blog__pagination-inner .page-numbers {
 	display: flex;
 	align-items: center;
@@ -716,7 +701,6 @@
 		display: flex;
 	}
 
-	// Individual page link / span
 	a,
 	span {
 		display: flex;
@@ -746,13 +730,11 @@
 		outline-offset: 2px;
 	}
 
-	// Current page
 	.current {
 		background: $gradient-sunrise;
 		color: $color-white;
 	}
 
-	// Prev / Next arrows
 	.prev,
 	.next {
 		color: $color-neutral-mid;
@@ -763,7 +745,6 @@
 		}
 	}
 
-	// Dots
 	.dots {
 		color: $color-neutral-mid;
 		pointer-events: none;

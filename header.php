@@ -1,4 +1,13 @@
 <?php
+
+// Prevent direct file access
+if ( ! defined( 'ABSPATH' ) ) {
+  exit;
+}
+
+?>
+
+<?php
 // ============================================
 // The Flying Biscuit Café — Franchising
 // header.php

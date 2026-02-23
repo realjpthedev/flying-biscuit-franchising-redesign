@@ -1,5 +1,11 @@
 <?php
 
+// Prevent direct file access
+if ( ! defined( 'ABSPATH' ) ) {
+  exit;
+}
+
+
 get_header();
 ?>
 <style>
@@ -30,7 +36,7 @@ get_header();
   .container{max-width:1120px;margin-inline:auto;padding:24px}
 
   /* Hero */
-  .hero{background:linear-gradient(180deg, rgba(106,44,145,.08), rgba(106,44,145,0) 60%), radial-gradient(1200px 600px at 85% -20%, rgba(244,123,32,.08), transparent 60%); min-height: 50vh; padding-top: 2rem; padding-bottom: 2rem;}
+  .hero{background:linear-gradient(180deg, rgba(106,44,145,.08), rgba(106,44,145,0) 60%), radial-gradient(1200px 600px at 85% -20%, rgba(244,123,32,.08), transparent 60%); min-height: 50vh; padding-top: 3rem; padding-bottom: 2rem;}
   .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
   @media (max-width:980px){.hero-inner{grid-template-columns:1fr;}}
 

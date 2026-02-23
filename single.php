@@ -5,6 +5,12 @@
  * v1.0
  */
 
+// Prevent direct file access
+if ( ! defined( 'ABSPATH' ) ) {
+  exit;
+}
+
+
 get_header();
 
 $blog_page_url = get_permalink( get_page_by_path( 'blog' ) );

@@ -1,0 +1,653 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Available Territories Page
+// v1.0
+// ============================================
+
+.territories__accent {
+	background: $gradient-sunrise;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+// --------------------------------------------
+// HERO
+// --------------------------------------------
+
+.territories__hero {
+	background-color: $color-primary-dark;
+	padding: $space-3xl 0 $space-2xl;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -30%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+		height: 160%;
+		background: radial-gradient(
+			ellipse at center,
+			rgba($color-secondary, 0.06) 0%,
+			transparent 70%
+		);
+		pointer-events: none;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-3xl 0 $space-xl;
+	}
+}
+
+.territories__hero-inner {
+	max-width: 640px;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.territories__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+}
+
+.territories__hero-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 48px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-white;
+	margin: 0 0 $space-sm;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 38px;
+	}
+	@media (max-width: $bp-mobile) {
+		font-size: 30px;
+	}
+}
+
+.territories__hero-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	color: rgba($color-white, 0.5);
+	margin: 0;
+	max-width: 480px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// --------------------------------------------
+// MAP SECTION
+// --------------------------------------------
+
+.territories__map-section {
+	background-color: $color-white;
+	padding: $space-3xl 0;
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.territories__map-inner {
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+// ─── LEGEND ───
+
+.territories__key {
+	display: flex;
+	justify-content: center;
+	gap: $space-lg;
+	list-style: none;
+	padding: 0;
+	margin: 0 0 $space-xl;
+
+	@media (max-width: $bp-mobile) {
+		gap: $space-md;
+		margin-bottom: $space-lg;
+	}
+}
+
+.territories__key-item {
+	display: flex;
+	align-items: center;
+	gap: $space-2xs;
+}
+
+.territories__key-swatch {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: $radius-sm;
+
+	&--hot {
+		background-color: $color-secondary;
+	}
+	&--available {
+		background-color: $color-primary-dark;
+	}
+	&--limited {
+		background-color: #aaa;
+	}
+}
+
+.territories__key-label {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body;
+	color: $color-primary-dark;
+}
+
+// ─── DESKTOP LAYOUT ───
+
+.territories__map-layout {
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: $space-xl;
+	align-items: start;
+
+	@media (max-width: $bp-tablet) {
+		grid-template-columns: 240px 1fr;
+		gap: $space-lg;
+	}
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+// ─── SIDEBAR CARD ───
+
+.territories__sidebar-card {
+	background-color: $color-primary-dark;
+	padding: $space-lg;
+	border-radius: $radius-xl;
+	color: $color-white;
+}
+
+.territories__sidebar-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 24px;
+	line-height: 1.2;
+	color: $color-white;
+	margin: 0 0 $space-3xs;
+}
+
+.territories__sidebar-subtitle {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 16px;
+	color: $color-secondary;
+	margin: 0 0 $space-md;
+}
+
+.territories__sidebar-list {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 $space-lg;
+
+	li {
+		font-family: $font-body;
+		font-weight: $weight-bold;
+		font-size: $text-body;
+		color: $color-white;
+		padding: $space-3xs 0;
+		border-bottom: 1px solid rgba($color-white, 0.08);
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+.territories__sidebar-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2xs;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-button;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $color-white;
+	background: $gradient-sunrise;
+	padding: $space-sm $space-lg;
+	border-radius: $radius-pill;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+	}
+}
+
+// ─── SVG MAP ───
+
+.territories__map-wrap {
+	width: 100%;
+
+	svg {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.state {
+		cursor: pointer;
+
+		path {
+			fill: $color-primary-dark;
+			transition: fill 0.25s ease;
+		}
+
+		rect {
+			fill: $color-primary-dark;
+			transition: fill 0.25s ease;
+		}
+
+		text {
+			pointer-events: none;
+		}
+
+		&:hover path,
+		&:hover rect {
+			fill: lighten($color-primary-dark, 12%);
+		}
+	}
+
+	.state.hot-territory {
+		path {
+			fill: $color-secondary;
+		}
+		rect {
+			fill: $color-secondary;
+		}
+
+		&:hover path,
+		&:hover rect {
+			fill: darken($color-secondary, 8%);
+		}
+	}
+
+	.state.limited-territory {
+		path {
+			fill: #aaa;
+		}
+		rect {
+			fill: #aaa;
+		}
+
+		&:hover path,
+		&:hover rect {
+			fill: #888;
+		}
+	}
+
+	polyline.cls-9 {
+		display: none;
+	}
+}
+
+// ─── MOBILE STATE LIST ───
+
+.territories__state-list {
+	display: none;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	@media (max-width: 768px) {
+		display: block;
+	}
+}
+
+.territories__state-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: $space-sm 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+	font-family: $font-body;
+	font-weight: $weight-medium;
+	font-size: $text-body;
+	color: $color-primary-dark;
+	cursor: pointer;
+	transition: background-color $transition-base;
+
+	&:first-child {
+		border-top: 1px solid rgba(0, 0, 0, 0.06);
+	}
+	&:hover {
+		background-color: rgba($color-secondary, 0.04);
+	}
+	&--hot {
+		font-weight: $weight-bold;
+	}
+}
+
+.territories__state-badge {
+	display: block;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	flex-shrink: 0;
+
+	&--hot {
+		background-color: $color-secondary;
+	}
+	&--available {
+		background-color: $color-primary-dark;
+	}
+	&--limited {
+		background-color: #aaa;
+	}
+}
+
+// --------------------------------------------
+// CUSTOM MODAL
+// --------------------------------------------
+
+.territories__modal {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: $space-md;
+
+	&[hidden] {
+		display: none;
+	}
+}
+
+.territories__modal-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.6);
+	animation: territoriesFadeIn 0.2s ease;
+}
+
+.territories__modal-dialog {
+	position: relative;
+	width: 100%;
+	max-width: 440px;
+	background: $color-white;
+	border-radius: $radius-2xl;
+	box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+	padding: $space-2xl $space-xl;
+	text-align: center;
+	animation: territoriesSlideUp 0.3s ease;
+}
+
+.territories__modal-close {
+	position: absolute;
+	top: $space-sm;
+	right: $space-sm;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	color: $color-neutral-mid;
+	cursor: pointer;
+	border-radius: 50%;
+	transition:
+		background-color $transition-base,
+		color $transition-base;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.05);
+		color: $color-primary-dark;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 2px;
+	}
+}
+
+.territories__modal-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+	background: rgba($color-secondary, 0.08);
+	color: $color-secondary;
+	margin-bottom: $space-md;
+}
+
+.territories__modal-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 24px;
+	line-height: 1.2;
+	color: $color-primary-dark;
+	margin: 0 0 $space-sm;
+}
+
+.territories__modal-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	line-height: 1.6;
+	color: $color-neutral-mid;
+	margin: 0 0 $space-lg;
+}
+
+.territories__modal-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2xs;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-button;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $color-white;
+	background: $gradient-sunrise;
+	padding: $space-sm $space-xl;
+	border-radius: $radius-pill;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 3px;
+	}
+}
+
+@keyframes territoriesFadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes territoriesSlideUp {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+// --------------------------------------------
+// CTA
+// --------------------------------------------
+
+.territories__closing {
+	background: $color-surface-warm;
+	padding: 80px 0;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+	&::before,
+	&::after {
+		content: none;
+		display: none;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 56px 0;
+	}
+}
+
+.territories__closing-inner {
+	max-width: 560px;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.territories__closing-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 38px;
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+	color: $color-primary-dark;
+	margin: 0 0 $space-sm;
+
+	.territories__accent {
+		background: $gradient-sunrise;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+.territories__closing-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	line-height: 1.6;
+	color: $color-neutral-mid;
+	margin: 0 0 $space-lg;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+.territories__closing-actions {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: $space-xs;
+	flex-wrap: wrap;
+}
+
+.territories__closing-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2xs;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-button;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 14px 28px;
+	border-radius: $radius-pill;
+	border: none;
+	cursor: pointer;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 3px;
+	}
+
+	&--primary {
+		color: $color-white;
+		background: $gradient-sunrise;
+		box-shadow: none;
+
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+		}
+	}
+
+	&--secondary {
+		color: $color-primary-dark;
+		background: transparent;
+		border: 2px solid rgba($color-primary-dark, 0.15);
+		box-shadow: none;
+
+		&:hover {
+			border-color: rgba($color-primary-dark, 0.3);
+			transform: translateY(-2px);
+		}
+	}
+}

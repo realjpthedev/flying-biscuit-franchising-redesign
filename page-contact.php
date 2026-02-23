@@ -6,6 +6,12 @@
  * v1.0
  */
 
+// Prevent direct file access
+if ( ! defined( 'ABSPATH' ) ) {
+  exit;
+}
+
+
 get_header();
 ?>
 

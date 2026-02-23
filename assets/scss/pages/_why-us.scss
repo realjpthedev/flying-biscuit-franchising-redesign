@@ -64,7 +64,7 @@
 	}
 
 	@media (max-width: $bp-mobile) {
-		padding: $space-2xl 0;
+		padding: $space-3xl 0 $space-2xl;
 	}
 }
 
@@ -78,7 +78,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -100,7 +99,6 @@
 	@media (max-width: $bp-tablet) {
 		font-size: 38px;
 	}
-
 	@media (max-width: $bp-mobile) {
 		font-size: 30px;
 	}
@@ -276,7 +274,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -391,7 +388,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -448,7 +444,6 @@
 		transform: translateY(-3px);
 	}
 
-	// Last card spans full width on tablet 2-col
 	&:last-child {
 		@media (max-width: $bp-tablet) and (min-width: $bp-mobile) {
 			grid-column: 1 / -1;
@@ -507,7 +502,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -620,7 +614,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}
@@ -716,7 +709,6 @@
 	@media (max-width: $bp-tablet) {
 		padding: 0 $grid-margin-tablet;
 	}
-
 	@media (max-width: $bp-mobile) {
 		padding: 0 $grid-margin-mobile;
 	}

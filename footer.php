@@ -3,7 +3,14 @@
      Footer
      v1.0
      ============================================ -->
+<?php
 
+// Prevent direct file access
+if ( ! defined( 'ABSPATH' ) ) {
+  exit;
+}
+
+?>
 <footer class="footer">
 
   <!-- Main footer -->
