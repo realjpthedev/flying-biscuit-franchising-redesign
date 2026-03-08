@@ -254,15 +254,14 @@ get_header();
   }
 
   .thank-you__book-avatar {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 72px;
-    height: 72px;
+    display: block;
+    width: 88px;
+    height: 88px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(106, 44, 145, 0.08), rgba(244, 123, 32, 0.08));
-    color: #6A2C91;
-    margin-bottom: 20px;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid rgba(244, 123, 32, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
 
   .thank-you__book-name {
@@ -414,20 +413,19 @@ get_header();
     <div class="thank-you__book-inner">
       <div class="thank-you__book-card">
 
-        <div class="thank-you__book-avatar">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
+        <img
+          src="<?php echo esc_url( get_theme_file_uri( '/assets/img/team/andrew-scherzer.jpg' ) ); ?>"
+          alt="Andrew Scherzer"
+          class="thank-you__book-avatar"
+        />
 
-        <h2 class="thank-you__book-name">Schedule a Discovery Call</h2>
+        <h2 class="thank-you__book-name">Meet Andrew Scherzer</h2>
         <p class="thank-you__book-role">Director of Franchise Development</p>
         <p class="thank-you__book-desc">
-          Skip the wait and book a one-on-one call with our franchise team. We'll walk you through the opportunity, answer your questions, and discuss available territories.
+          Skip the wait and book a one-on-one call with Andrew. He'll walk you through the opportunity, answer your questions, and discuss available territories.
         </p>
 
-        <a href="https://outlook.office.com/bookwithme/user/a93dee9c7c944eb7b750cc3a0c6f84d9@FlyingBiscuit.com?anonymous&ismsaljsauthenabled&ep=pcard" class="thank-you__book-btn" target="_blank" rel="noopener noreferrer">
+        <a href="https://outlook.office.com/bookwithme/user/a93dee9c7c944eb7b750cc3a0c6f84d9@FlyingBiscuit.com?anonymous&ismsaljsauthenabled&ep=pcard" class="thank-you__book-btn ga-book-time" target="_blank" rel="noopener noreferrer">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
             <line x1="16" y1="2" x2="16" y2="6"/>
