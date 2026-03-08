@@ -47,7 +47,7 @@
       </div>
 
       <div class="reasons__card">
-        <h3 class="reasons__card-title">From the Creators of Moe's</h3>
+        <h3 class="reasons__card-title">From the Creators of Moe's Southwest Grill</h3>
         <p class="reasons__card-desc">Join a team with a history of massive success</p>
       </div>
 
