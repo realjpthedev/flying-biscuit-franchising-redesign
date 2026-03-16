@@ -425,7 +425,7 @@ get_header();
           Skip the wait and book a one-on-one call with Andrew. He'll walk you through the opportunity, answer your questions, and discuss available territories.
         </p>
 
-        <a href="https://outlook.office.com/bookwithme/user/a93dee9c7c944eb7b750cc3a0c6f84d9@FlyingBiscuit.com?anonymous&ismsaljsauthenabled&ep=pcard" class="thank-you__book-btn ga-book-time" target="_blank" rel="noopener noreferrer">
+        <a href="https://outlook.office.com/bookwithme/user/02e6e0affd574980bf24f20a7f2fae31@BigGameBrands.com/meetingtype/9FR71zq9H0abyclRAORv_w2?anonymous&ep=mcard" class="thank-you__book-btn ga-book-time" target="_blank" rel="noopener noreferrer">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
             <line x1="16" y1="2" x2="16" y2="6"/>
