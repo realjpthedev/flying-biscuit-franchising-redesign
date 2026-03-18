@@ -28,3 +28,27 @@ function fb_franchising_theme_support() {
 }
 
 add_action( 'after_setup_theme', 'fb_franchising_theme_support');
+
+// custom wpforms redirect based on qualified leads
+add_action('wpforms_process_complete', function($fields, $entry, $form_data, $entry_id) {
+    $target_forms = [65, 310];
+    
+    if (!in_array($form_data['id'], $target_forms)) return;
+
+    $net_worth = $fields[15]['value'];
+    $liquid    = $fields[16]['value'];
+
+    $nw_qualified = ($net_worth === 'More than $800,000');
+    $lq_qualified = (
+        $liquid === '$200,000 - $500,000' || 
+        $liquid === 'More than $500,000'
+    );
+
+    if ($nw_qualified && $lq_qualified) {
+        wp_redirect('/thank-you-lead-form/?q=1');
+        exit;
+    } else {
+        wp_redirect('/thank-you-lead-form/');
+        exit;
+    }
+}, 10, 4);

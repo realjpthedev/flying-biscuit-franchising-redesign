@@ -32,11 +32,6 @@
       </div>
 
       <div class="reasons__card">
-        <h3 class="reasons__card-title">Same Store Sales Growth</h3>
-        <p class="reasons__card-desc">6 Years &amp; Counting</p>
-      </div>
-
-      <div class="reasons__card">
         <h3 class="reasons__card-title">Collective Buying Power</h3>
         <p class="reasons__card-desc">One of the best food purchasing programs in America</p>
       </div>
