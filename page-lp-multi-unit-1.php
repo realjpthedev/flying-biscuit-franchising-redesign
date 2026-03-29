@@ -1335,8 +1335,13 @@
           <div class="market-tag"><span class="state">Kentucky</span>Louisville · Lexington · Bowling Green · Owensboro · Covington</div>
           <div class="market-tag"><span class="state">Mississippi</span>Jackson · Gulfport · Southaven</div>
           <div class="market-tag"><span class="state">Arkansas</span>Little Rock · Fort Smith · Fayetteville · Springdale · Jonesboro · Rogers · Conway</div>
-          <div class="market-tag"><span class="state">Ohio</span>columbus · Cleveland · Cincinnati · Toledo · Akron · Dayton · Youngstown</div>
-          <div class="market-tag"><span class="state">Indiana</span>columbus · Cleveland · Cincinnati · Toledo · Akron · Dayton · Youngstown</div>
+          <div class="market-tag"><span class="state">Ohio</span>Columbus · Cleveland · Cincinnati · Toledo · Akron · Dayton · Youngstown</div>
+          <div class="market-tag"><span class="state">Indiana</span>Indianapolis · Fort Wayne · Evansville · South Bend</div>
+          <div class="market-tag"><span class="state">West Virginia</span>Charleston · Morgantown · Parkersburg</div>
+          <div class="market-tag"><span class="state">Maryland</span>Baltimore · Germantown · Silver Spring</div>
+          <div class="market-tag"><span class="state">District of Columbia</span>Washington, D.C.</div>
+          <div class="market-tag"><span class="state">Illinois</span>Chicago · Schaumburg · Naperville · Joliet · Rockford · Elgin · Peoria</div>
+          <div class="market-tag"><span class="state">Missouri</span>Kansas City · Springfield · Columbia · Independence · Lee's Summit</div>
         </div>
         <div class="territory-no-results" id="territoryNoResults">
           No markets match your search — but we may have opportunities in development. <a href="#contact">Reach out to Andrew</a> to discuss your target market.

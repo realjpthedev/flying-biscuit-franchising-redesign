@@ -34,7 +34,7 @@
         restaurant and live like you own your schedule.
       </p>
 
-      <a href="/get-started" class="hero__cta">
+      <a href="/contact" class="hero__cta">
         Get Started
         <span class="hero__cta-arrow" aria-hidden="true">→</span>
       </a>
