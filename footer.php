@@ -99,9 +99,7 @@ if ( ! defined( 'ABSPATH' ) ) {
       <div class="footer__legal">
         <a href="/privacy-policy/" class="footer__legal-link">Privacy Policy</a>
         <span class="footer__legal-sep" aria-hidden="true">·</span>
-        <a href="/terms-of-use/" class="footer__legal-link">Terms of Use</a>
-        <span class="footer__legal-sep" aria-hidden="true">·</span>
-        <a href="/sitemap/" class="footer__legal-link">Sitemap</a>
+        <a href="/sitemap.xml" class="footer__legal-link">Sitemap</a>
       </div>
     </div>
   </div>
