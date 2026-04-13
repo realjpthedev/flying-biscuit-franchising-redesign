@@ -1464,8 +1464,8 @@
     <div class="video-wall">
       <!-- Replace each data-video-id with the actual YouTube video ID -->
       <!-- Replace each image filename (franchisee-1.jpg, etc.) with your actual image filenames in the theme's images folder -->
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_1">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-1.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="URvlocRXXYE">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/tahir-rafiq.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -1474,8 +1474,8 @@
           <div class="teaser">"Three locations and opening our fourth. The support has been there every step."</div>
         </div>
       </div>
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_2">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-2.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="0d_Y2HFF5ww">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/mandy-rubenstein.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -1484,8 +1484,8 @@
           <div class="teaser">"No matter how large we grow, it still feels like your local breakfast restaurant."</div>
         </div>
       </div>
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_3">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-3.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="-3Pa9CUq7kc">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/joseph-hsiao.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -1494,8 +1494,8 @@
           <div class="teaser">"The royalties and marketing fees are very reasonable compared to other franchises."</div>
         </div>
       </div>
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_4">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-4.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="S-Mz1TClY5U">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/ariel-esteves.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -1504,8 +1504,8 @@
           <div class="teaser">"They give you the tools to be successful. The training is phenomenal."</div>
         </div>
       </div>
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_5">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-5.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="HvDTJNh0ukU">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/nick-panici.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -1514,8 +1514,8 @@
           <div class="teaser">"We get everything we need. There's not much more we could ask for."</div>
         </div>
       </div>
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_6">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-6.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="9MJqsLvSs3Q">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/larry-bell.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
