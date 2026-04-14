@@ -59,7 +59,7 @@ nav.scrolled {
 nav .nav-inner {
   max-width: 1200px; margin: 0 auto; padding: 0 40px;
   display: flex; align-items: center; justify-content: space-between;
-  height: 72px;
+  height: 88px;
 }
 nav .nav-logo {
   display: flex;
@@ -67,7 +67,7 @@ nav .nav-logo {
   text-decoration: none;
 }
 nav .nav-logo img {
-  height: 40px;
+  height: 56px;
   width: auto;
   display: block;
 }
@@ -1223,9 +1223,9 @@ footer p {
 <section class="hero" id="main-content">
   <div class="hero-content">
     <div class="hero-text">
-      <div class="hero-eyebrow">Franchise Development</div>
-      <h1>The Breakfast Franchise Built for <em>Empire Builders</em></h1>
-      <p class="hero-sub">40+ locations. ~$2M AUV. Prime territories available. From the creators of Moe's Southwest Grill — Flying Biscuit Café is entering its next phase of national growth, and we're looking for the right partners to own it.</p>
+      <div class="hero-eyebrow">Multi-Unit Market Development</div>
+      <h1>Own a <em>Market.</em> Not Just a Restaurant.</h1>
+      <p class="hero-sub">42 locations with 12 in development. ~$2M AUV during breakfast and lunch. The team that built Moe's Southwest Grill is doing it again — and the market map is filling fast. Growth-phase upside without early-stage risk.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn-primary">
           Request the FDD
@@ -1254,12 +1254,12 @@ footer p {
 <!-- Stats Bar -->
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat-item"><div class="stat-number">30+</div><div class="stat-label">Years of Brand History</div></div>
-    <div class="stat-item"><div class="stat-number">40+</div><div class="stat-label">Locations</div></div>
+    <div class="stat-item"><div class="stat-number">30+</div><div class="stat-label">Years of Proven Success</div></div>
+    <div class="stat-item"><div class="stat-number">42</div><div class="stat-label">Locations</div></div>
     <div class="stat-item"><div class="stat-number">~$2M</div><div class="stat-label">Avg. Unit Volume</div></div>
-    <div class="stat-item"><div class="stat-number">700+</div><div class="stat-label">Units Scaled at Moe's</div></div>
-    <div class="stat-item"><div class="stat-number">B&L</div><div class="stat-label">Breakfast &amp; Lunch Daypart</div></div>
-    <div class="stat-item"><div class="stat-number">Now</div><div class="stat-label">Prime Territories Open</div></div>
+    <div class="stat-item"><div class="stat-number">345</div><div class="stat-label">Locations Built at Moe's</div></div>
+    <div class="stat-item"><div class="stat-number">2 DPs</div><div class="stat-label">Breakfast &amp; Lunch Only</div></div>
+    <div class="stat-item"><div class="stat-number">Now</div><div class="stat-label">Select Prime Markets Open</div></div>
   </div>
 </div>
 
@@ -1286,22 +1286,22 @@ footer p {
     </div>
     <div class="why-now-grid">
       <div class="why-now-text reveal">
-        <p>If you've built a multi-unit portfolio before, you already know — the real wealth in franchising isn't made at unit 500. It's made when you get in during the growth phase, lock down a region, and build before the territory map fills up.</p>
-        <p>Flying Biscuit Café is in that phase right now. With 40+ units, three decades of brand equity, and an aggressive Southeast expansion strategy, <strong>the window is open for operators and investors who move decisively.</strong></p>
-        <p>This is not an unproven concept. It's not a startup dressed up in franchise clothing. It's a 30-year brand with the unit economics, the leadership team, and the macro tailwinds to scale — and you can still get the territory you want.</p>
+        <p>If you've built a multi-unit portfolio before, you already know — the real wealth in franchising isn't made at unit 500. It's made when you get in during the growth phase, lock down a market, and build before the map fills up.</p>
+        <p>Flying Biscuit Café is in that phase right now. With 42 locations, 12 in development, three decades of brand equity, and an aggressive Southeast expansion strategy, <strong>the window is open for operators and investors who move decisively.</strong></p>
+        <p>This is not a startup. It's not a trend. It's not someone's first attempt. It's a 30-year brand with ~$2M AUV, a leadership team that already built Moe's Southwest Grill into a 345-unit, 36-state system, and a breakfast market that's growing 5% year over year — and your market is still on the board.</p>
       </div>
       <div class="why-now-highlights reveal">
         <div class="highlight-card">
-          <h4>$14.4 Billion Market</h4>
-          <p>The breakfast restaurant and diner segment posted 5.2% growth in a single year — even against inflationary pressure. This is the macro thesis institutional capital is building around.</p>
+          <h4>Franchisees Come Back for Seconds</h4>
+          <p>11 of our 22 franchisees have already opened a second location — not because we pitched them, but because their first location made it obvious. Half the system has voted with their own capital.</p>
         </div>
         <div class="highlight-card">
           <h4>Growth Phase Window</h4>
-          <p>The 40-to-150 location phase is where generational franchise wealth is created. Once the territory map fills, the opportunity shifts from builder to buyer — at a premium.</p>
+          <p>The 42-to-150 location phase is where generational franchise wealth is created. Once the market map fills, the opportunity shifts from builder to buyer — at a premium.</p>
         </div>
         <div class="highlight-card">
           <h4>Proven Leadership</h4>
-          <p>The team behind this expansion built Moe's Southwest Grill from a single location to 700+ units. They've navigated this exact growth phase before.</p>
+          <p>The team behind this expansion built Moe's Southwest Grill from a single location into a 345-unit, 36-state system. They've navigated this exact growth phase before.</p>
         </div>
       </div>
     </div>
@@ -1335,7 +1335,12 @@ footer p {
       <div class="model-feature reveal">
         <div class="model-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
         <h4>National Vendor Agreements</h4>
-        <p>A centralized purchasing program leveraging 40+ locations of buying power. You're not negotiating with suppliers solo — you're buying through a system optimized over three decades.</p>
+        <p>A centralized purchasing program leveraging 42 locations of buying power. You're not negotiating with suppliers solo — you're buying through a system optimized over three decades.</p>
+      </div>
+      <div class="model-feature reveal">
+        <div class="model-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h4>Marketing to Drive Sales, Not Vanity</h4>
+        <p>National Marketing Fund dollars aim to increase guest retention, lift ticket averages, and create new fans. No ego campaigns, no awareness-for-the-sake-of-awareness — just programs that put traffic through your door.</p>
       </div>
     </div>
   </div>
@@ -1361,7 +1366,7 @@ footer p {
         <div class="diff-number">02</div>
         <div>
           <h4>A Leadership Team That's Already Built a National Brand</h4>
-          <p>This is not a first-time franchisor learning on your dime. Flying Biscuit's growth is led by the team behind Moe's Southwest Grill — a brand they scaled from a single unit to 700+ locations.</p>
+          <p>This is not a first-time franchisor learning on your dime. Flying Biscuit's growth is led by the team behind Moe's Southwest Grill — a brand they built from a single unit into a 345-location, 36-state system.</p>
         </div>
       </div>
       <div class="diff-item reveal">
@@ -1392,12 +1397,12 @@ footer p {
     <div class="legacy-grid">
       <div class="legacy-text reveal">
         <p>Flying Biscuit Café was born in Atlanta's Candler Park neighborhood in 1993 and has built a loyal, almost cult-like following across the Southeast. The brand carries the kind of organic consumer affection that marketing dollars can't manufacture.</p>
-        <p>But what makes this a franchise opportunity — not just a beloved restaurant — is the team behind the growth. Flying Biscuit's expansion is led by the same people who built Moe's Southwest Grill from a single location into a 700+ unit national brand. They've done this before. They know what the path from 40 to 150 looks like because they've already walked it.</p>
+        <p>But what makes this a franchise opportunity — not just a beloved restaurant — is the team behind the growth. 30 years refining the menu, the operations, and the unit economics. 5 corporate-owned locations, so we're not managing your business from a boardroom — we're in the trenches with you. When food costs spike or labor gets tight, we feel it the same morning you do.</p>
       </div>
       <div class="legacy-stats reveal">
         <div class="legacy-stat"><div class="number">1993</div><div class="label">Founded</div></div>
-        <div class="legacy-stat"><div class="number">40+</div><div class="label">Locations</div></div>
-        <div class="legacy-stat"><div class="number">700+</div><div class="label">Units at Moe's</div></div>
+        <div class="legacy-stat"><div class="number">42</div><div class="label">Locations</div></div>
+        <div class="legacy-stat"><div class="number">345</div><div class="label">Built at Moe's</div></div>
         <div class="legacy-stat"><div class="number">~$2M</div><div class="label">Average Unit Volume</div></div>
       </div>
     </div>
@@ -1410,7 +1415,7 @@ footer p {
     <div class="reveal">
       <div class="section-eyebrow">Available Markets</div>
       <div class="section-title">Priority Markets Are Open. <em>Not for Long.</em></div>
-      <p class="section-subtitle">Flying Biscuit Café is actively expanding across the Southeast and into select new regions. These are our highest-priority growth markets.</p>
+      <p class="section-subtitle">Flying Biscuit Café is actively expanding across the Southeast and into select adjacent markets. These are our highest-priority growth markets.</p>
     </div>
     <div class="territory-grid">
       <div class="reveal">
@@ -1437,7 +1442,7 @@ footer p {
       <div class="reveal">
         <div class="territory-note">This list reflects current availability and changes as agreements are signed. If your target market isn't listed, reach out — we may have opportunities in development.</div>
         <div style="margin-top: 32px;">
-          <a href="#contact" class="btn-primary">Check Territory Availability</a>
+          <a href="#contact" class="btn-primary">Check Market Availability</a>
         </div>
       </div>
     </div>
@@ -1489,7 +1494,7 @@ footer p {
     <div class="tiers">
       <div class="tier-card reveal">
         <h4>Multi-Unit Area Development</h4>
-        <p>Commit to 5–10+ units across a defined market with a negotiated build-out schedule, reduced per-unit fees at scale, and exclusive territory protection.</p>
+        <p>Commit to 5–10+ units across a defined market with a negotiated build-out schedule, reduced per-unit fees at scale, and exclusive market protection.</p>
       </div>
       <div class="tier-card reveal">
         <h4>Flexible Ownership Structures</h4>
@@ -1509,26 +1514,26 @@ footer p {
     <div class="reveal" style="text-align: center;">
       <div class="section-eyebrow">Leadership</div>
       <div class="section-title">The Team Behind <em>the Growth</em></div>
-      <p class="section-subtitle" style="margin: 0 auto;">A franchise leadership team with a proven track record of scaling restaurant brands from regional concepts to national platforms.</p>
+      <p class="section-subtitle" style="margin: 0 auto;">A franchise leadership team with a proven track record of scaling restaurant brands from a single location to national platforms.</p>
     </div>
     <div class="team-grid">
       <div class="team-card reveal">
         <div class="team-photo"><img src="<?php echo get_theme_file_uri('/assets/img/team/martin-sprock.jpg'); ?>" alt="Martin Sprock"></div>
         <h4>Martin Sprock</h4>
         <div class="role">Partner, Founder</div>
-        <p>Founded Moe's Southwest Grill and scaled it to 700+ locations nationwide. Now applying the same playbook to Flying Biscuit Café's national expansion.</p>
+        <p>Founded Moe's Southwest Grill and scaled it to 345 locations across 36 states. Now applying the same playbook to Flying Biscuit Café's Southeast expansion.</p>
       </div>
       <div class="team-card reveal">
         <div class="team-photo"><img src="<?php echo get_theme_file_uri('/assets/img/team/daryl-dollinger.jpg'); ?>" alt="Daryl Dollinger"></div>
         <h4>Daryl Dollinger</h4>
         <div class="role">Partner, President</div>
-        <p>Helped scale Moe's Southwest Grill alongside Martin into a 700+ unit system. Now leads Flying Biscuit's brand strategy and franchise growth with a hands-on approach partners experience directly.</p>
+        <p>Helped scale Moe's Southwest Grill alongside Martin into a 345-unit, 36-state system. Now leads Flying Biscuit's brand strategy and franchise growth with a hands-on approach partners experience directly.</p>
       </div>
       <div class="team-card reveal">
         <div class="team-photo"><img src="<?php echo get_theme_file_uri('/assets/img/team/andrew-scherzer-tight.jpg'); ?>" alt="Andrew Scherzer"></div>
         <h4>Andrew Scherzer</h4>
         <div class="role">Partner, Franchise Development</div>
-        <p>Your first point of contact. Andrew approaches franchise development as deal-making, not sales — speaking the language of unit economics, territory strategy, and portfolio-level thinking.</p>
+        <p>Your first point of contact. Andrew approaches franchise development as deal-making, not sales — speaking the language of unit economics, market strategy, and portfolio-level thinking.</p>
       </div>
       <div class="team-card reveal">
         <div class="team-photo"><img src="<?php echo get_theme_file_uri('/assets/img/team/sohail-kaiser.jpg'); ?>" alt="Sohail Khizer"></div>
@@ -1549,10 +1554,8 @@ footer p {
       <p class="section-subtitle" style="margin: 0 auto;">We could tell you the model works. They'll show you.</p>
     </div>
     <div class="video-wall">
-      <!-- Replace each data-video-id with the actual YouTube video ID -->
-      <!-- Replace each image filename (franchisee-1.jpg, etc.) with your actual image filenames in the theme's images folder -->
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_1">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-1.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="URvlocRXXYE">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/tahir-rafiq.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -1561,8 +1564,8 @@ footer p {
           <div class="teaser">"Three locations and opening our fourth. The support has been there every step."</div>
         </div>
       </div>
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_2">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-2.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="0d_Y2HFF5ww">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/mandy-rubenstein.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -1571,8 +1574,8 @@ footer p {
           <div class="teaser">"No matter how large we grow, it still feels like your local breakfast restaurant."</div>
         </div>
       </div>
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_3">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-3.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="-3Pa9CUq7kc">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/joseph-hsiao.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -1581,18 +1584,18 @@ footer p {
           <div class="teaser">"The royalties and marketing fees are very reasonable compared to other franchises."</div>
         </div>
       </div>
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_4">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-4.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="S-Mz1TClY5U">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/ariel-esteves.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
-          <h4>Ariel Estevez</h4>
+          <h4>Ariel Esteves</h4>
           <div class="meta">2-Unit Operator · Macon & Columbus, GA</div>
           <div class="teaser">"They give you the tools to be successful. The training is phenomenal."</div>
         </div>
       </div>
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_5">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-5.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="HvDTJNh0ukU">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/nick-panici.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -1601,8 +1604,8 @@ footer p {
           <div class="teaser">"We get everything we need. There's not much more we could ask for."</div>
         </div>
       </div>
-      <div class="video-card reveal" data-video-id="YOUR_YOUTUBE_ID_6">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('images/franchisee-6.jpg'); ?>');">
+      <div class="video-card reveal" data-video-id="9MJqsLvSs3Q">
+        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/larry-bell.webp'); ?>');">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -1638,7 +1641,7 @@ footer p {
       <div class="support-card reveal">
         <div class="support-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 6V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/><line x1="12" y1="10" x2="12" y2="14"/></svg></div>
         <h4>Pre-Opening Support</h4>
-        <p>Dedicated support from site selection through construction, permitting, and pre-opening marketing. 40+ openings have refined this playbook.</p>
+        <p>Dedicated support from site selection through construction, permitting, and pre-opening marketing. 42 openings have refined this playbook.</p>
       </div>
       <div class="support-card reveal">
         <div class="support-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg></div>
@@ -1663,7 +1666,7 @@ footer p {
       <div class="support-card reveal">
         <div class="support-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
         <h4>Supply Chain</h4>
-        <p>National vendor agreements and centralized purchasing leveraging 40+ locations. Optimized over three decades of operations.</p>
+        <p>National vendor agreements and centralized purchasing leveraging 42 locations. Optimized over three decades of operations.</p>
       </div>
     </div>
   </div>
@@ -1718,7 +1721,7 @@ footer p {
       <div class="step reveal">
         <div class="step-number">3</div>
         <h4>Financial Deep Dive</h4>
-        <p>Item 19 unit-level economics, segmented and transparent. Territory mapping against your target market.</p>
+        <p>Item 19 unit-level economics, segmented and transparent. Market mapping against your target area.</p>
       </div>
       <div class="step reveal">
         <div class="step-number">4</div>
