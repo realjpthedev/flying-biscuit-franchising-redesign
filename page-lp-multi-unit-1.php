@@ -31,6 +31,15 @@
 }
  
 html { scroll-behavior: smooth; }
+
+::selection {
+  background: var(--purple);
+  color: white;
+}
+::-moz-selection {
+  background: var(--purple);
+  color: white;
+}
  
 body {
   font-family: var(--font-body);
@@ -84,6 +93,23 @@ nav .nav-cta {
 }
 nav .nav-cta:hover { background: var(--purple-dark); transform: translateY(-1px); }
  
+/* ── Full-Width Breakout ── */
+/* These sections must span the full viewport regardless of theme wrapper constraints */
+.hero,
+.stats-bar,
+.press-bar,
+.photo-strip-section,
+.form-section,
+.section,
+footer {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
 /* ── Hero ── */
 .hero {
   min-height: 85vh;
@@ -448,6 +474,7 @@ nav .nav-cta:hover { background: var(--purple-dark); transform: translateY(-1px)
   gap: 80px;
   align-items: center;
   margin-top: 64px;
+  margin-bottom: 64px;
 }
 .legacy-text p {
   font-size: 1.1rem;
@@ -456,9 +483,47 @@ nav .nav-cta:hover { background: var(--purple-dark); transform: translateY(-1px)
   margin-bottom: 24px;
   font-weight: 300;
 }
+.legacy-origin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.legacy-origin-frame {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: white;
+  padding: 16px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 20px 60px rgba(106, 44, 145, 0.12),
+    0 30px 80px rgba(0, 0, 0, 0.06);
+  transform: rotate(-1.5deg);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.legacy-origin-frame:hover {
+  transform: rotate(0deg) translateY(-4px);
+}
+.legacy-origin-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+.legacy-origin-caption {
+  margin-top: 28px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  text-align: center;
+  font-style: italic;
+}
 .legacy-stats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 .legacy-stat {
@@ -1151,6 +1216,138 @@ nav .nav-cta:hover { background: var(--purple-dark); transform: translateY(-1px)
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* ── Brand Atmosphere Layer ── */
+/* Film grain / noise texture overlay on dark sections */
+.section-dark::after,
+.form-section::after,
+.hero::before {
+  /* hero::before already exists; leaving it alone */
+}
+.section-dark {
+  position: relative;
+  overflow: hidden;
+}
+.section-dark > .container,
+.section-dark > .container-narrow {
+  position: relative;
+  z-index: 2;
+}
+.section-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  opacity: 0.12;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+/* Branded background photo on section-bg-photo */
+.section-bg-photo {
+  background-image:
+    linear-gradient(135deg, rgba(26, 26, 26, 0.92) 0%, rgba(26, 26, 26, 0.88) 50%, rgba(26, 26, 26, 0.94) 100%),
+    url('<?php echo get_theme_file_uri('/assets/img/brand-strip/model-background.jpg'); ?>');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Corner watermark logo treatment */
+.section-bg-watermark {
+  position: absolute;
+  top: 48px;
+  right: -80px;
+  width: 420px;
+  height: 420px;
+  background-image: url('<?php echo get_theme_file_uri('/assets/img/logo-long.svg'); ?>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 0;
+  transform: rotate(-12deg);
+  filter: brightness(0) invert(1);
+}
+
+/* Territory section gets watermark on the left */
+.territory-section .section-bg-watermark {
+  top: auto;
+  bottom: 48px;
+  right: auto;
+  left: -80px;
+  transform: rotate(8deg);
+}
+
+/* ── Edge-to-Edge Photo Strip ── */
+.photo-strip-section {
+  background: var(--cream);
+  padding: 80px 0 0;
+  position: relative;
+}
+.photo-strip-intro {
+  text-align: center;
+  padding: 0 40px 48px;
+}
+.photo-strip-intro span {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  width: 100%;
+}
+.photo-strip-img {
+  aspect-ratio: 4/5;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--purple-dark);
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.photo-strip-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+  transition: background 0.4s ease;
+}
+.photo-strip-img:hover::after {
+  background: linear-gradient(180deg, rgba(106, 44, 145, 0.1) 0%, rgba(0, 0, 0, 0.15) 100%);
+}
+
+/* ── Competitive Diff with Image ── */
+.diff-item-with-image {
+  grid-template-columns: 48px 1fr 200px;
+  gap: 28px;
+  align-items: center;
+}
+.diff-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(106, 44, 145, 0.12);
+  border: 1px solid var(--light-gray);
+}
+.diff-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.diff-item-with-image:hover .diff-image img {
+  transform: scale(1.05);
+}
+
 /* ── Footer ── */
 footer {
   background: var(--charcoal);
@@ -1186,6 +1383,11 @@ footer p {
   .process-steps::before { display: none; }
   .hero-content { grid-template-columns: 1fr; gap: 48px; }
   .hero-video { max-width: 600px; }
+  .photo-strip { grid-template-columns: repeat(2, 1fr); }
+  .diff-item-with-image { grid-template-columns: 48px 1fr; }
+  .diff-item-with-image .diff-image { display: none; }
+  .section-bg-watermark { width: 280px; height: 280px; }
+  .legacy-stats { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   .container, .container-narrow { padding: 0 24px; }
@@ -1204,6 +1406,9 @@ footer p {
   .hero-ctas { flex-direction: column; }
   .legacy-stats { grid-template-columns: 1fr 1fr; }
   nav .nav-inner { padding: 0 24px; }
+  .photo-strip { grid-template-columns: 1fr 1fr; }
+  .photo-strip-intro { padding: 0 24px 32px; }
+  .photo-strip-section { padding: 60px 0 0; }
 }
 </style>
 </head>
@@ -1309,7 +1514,8 @@ footer p {
 </section>
  
 <!-- The Model Section -->
-<section class="section section-dark">
+<section class="section section-dark section-bg-photo section-model">
+  <div class="section-bg-watermark"></div>
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow">The Model</div>
@@ -1369,11 +1575,14 @@ footer p {
           <p>This is not a first-time franchisor learning on your dime. Flying Biscuit's growth is led by the team behind Moe's Southwest Grill — a brand they built from a single unit into a 345-location, 36-state system.</p>
         </div>
       </div>
-      <div class="diff-item reveal">
+      <div class="diff-item diff-item-with-image reveal">
         <div class="diff-number">03</div>
         <div>
           <h4>A True Breakfast-and-Lunch Model Without Daypart Creep</h4>
           <p>Some competitors have started expanding into dinner, adding full-bar operations, and extending hours — drifting toward the operational complexity you're trying to avoid. Flying Biscuit takes the opposite approach: a focused brunch cocktail program, a growing specialty espresso menu with premium drinks like the Pistachio Latte, and none of the late-night inventory management of a full liquor operation. Higher check averages, contained complexity.</p>
+        </div>
+        <div class="diff-image">
+          <img src="<?php echo get_theme_file_uri('/assets/img/food/pistachio-latte.jpg'); ?>" alt="Pistachio Latte">
         </div>
       </div>
       <div class="diff-item reveal">
@@ -1399,18 +1608,38 @@ footer p {
         <p>Flying Biscuit Café was born in Atlanta's Candler Park neighborhood in 1993 and has built a loyal, almost cult-like following across the Southeast. The brand carries the kind of organic consumer affection that marketing dollars can't manufacture.</p>
         <p>But what makes this a franchise opportunity — not just a beloved restaurant — is the team behind the growth. 30 years refining the menu, the operations, and the unit economics. 5 corporate-owned locations, so we're not managing your business from a boardroom — we're in the trenches with you. When food costs spike or labor gets tight, we feel it the same morning you do.</p>
       </div>
-      <div class="legacy-stats reveal">
-        <div class="legacy-stat"><div class="number">1993</div><div class="label">Founded</div></div>
-        <div class="legacy-stat"><div class="number">42</div><div class="label">Locations</div></div>
-        <div class="legacy-stat"><div class="number">345</div><div class="label">Built at Moe's</div></div>
-        <div class="legacy-stat"><div class="number">~$2M</div><div class="label">Average Unit Volume</div></div>
+      <div class="legacy-origin reveal">
+        <div class="legacy-origin-frame">
+          <img src="<?php echo get_theme_file_uri('/assets/img/flying-biscuit-candler-park-drawing.jpg'); ?>" alt="The original Flying Biscuit Café in Candler Park, Atlanta, 1993">
+        </div>
+        <div class="legacy-origin-caption">The original Flying Biscuit Café — Candler Park, Atlanta, 1993</div>
       </div>
     </div>
+    <div class="legacy-stats reveal">
+      <div class="legacy-stat"><div class="number">1993</div><div class="label">Founded</div></div>
+      <div class="legacy-stat"><div class="number">42</div><div class="label">Locations</div></div>
+      <div class="legacy-stat"><div class="number">345</div><div class="label">Built at Moe's</div></div>
+      <div class="legacy-stat"><div class="number">~$2M</div><div class="label">Average Unit Volume</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Edge-to-Edge Photo Strip -->
+<section class="photo-strip-section">
+  <div class="photo-strip-intro">
+    <span>Thirty years. Forty-two locations. One cult following.</span>
+  </div>
+  <div class="photo-strip">
+    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/restaurant-1.jpg'); ?>');"></div>
+    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/restaurant-2.jpg'); ?>');"></div>
+    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/restaurant-3.jpg'); ?>');"></div>
+    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/restaurant-4.jpg'); ?>');"></div>
   </div>
 </section>
  
 <!-- Territory Section -->
 <section class="section section-dark territory-section">
+  <div class="section-bg-watermark"></div>
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow">Available Markets</div>
