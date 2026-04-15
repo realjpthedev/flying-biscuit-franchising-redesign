@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
     <?php wp_head(); ?>
-
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -31,7 +31,7 @@
 }
  
 html { scroll-behavior: smooth; }
-
+ 
 ::selection {
   background: var(--purple);
   color: white;
@@ -109,7 +109,7 @@ footer {
   margin-left: -50vw;
   margin-right: -50vw;
 }
-
+ 
 /* ── Hero ── */
 .hero {
   min-height: 85vh;
@@ -185,7 +185,7 @@ footer {
   display: flex; gap: 16px; flex-wrap: wrap;
   opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards;
 }
-
+ 
 /* Hero Video Card */
 .hero-video {
   opacity: 0;
@@ -1079,7 +1079,7 @@ footer {
   white-space: nowrap;
 }
 .press-logo:hover { color: rgba(255,255,255,0.7); }
-
+ 
 @media (max-width: 768px) {
   .press-logos { gap: 32px; }
   .press-logo-img { height: 20px; }
@@ -1215,7 +1215,7 @@ footer {
   from { opacity: 0; transform: translateY(24px) scale(0.96); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
-
+ 
 /* ── Brand Atmosphere Layer ── */
 /* Film grain / noise texture overlay on dark sections */
 .section-dark::after,
@@ -1243,7 +1243,29 @@ footer {
   mix-blend-mode: screen;
   z-index: 1;
 }
-
+ 
+/* Paper grain texture on cream sections */
+.section-cream {
+  position: relative;
+  overflow: hidden;
+}
+.section-cream > .container,
+.section-cream > .container-narrow {
+  position: relative;
+  z-index: 2;
+}
+.section-cream::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.18 0 0 0 0 0.04 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  opacity: 0.18;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+ 
 /* Branded background photo on section-bg-photo */
 .section-bg-photo {
   background-image:
@@ -1252,7 +1274,7 @@ footer {
   background-size: cover;
   background-position: center;
 }
-
+ 
 /* Corner watermark logo treatment */
 .section-bg-watermark {
   position: absolute;
@@ -1269,7 +1291,7 @@ footer {
   z-index: 0;
   transform: rotate(-12deg);
 }
-
+ 
 /* Territory section gets watermark on the left */
 .territory-section .section-bg-watermark {
   top: auto;
@@ -1278,24 +1300,12 @@ footer {
   left: -180px;
   transform: rotate(8deg);
 }
-
+ 
 /* ── Edge-to-Edge Photo Strip ── */
 .photo-strip-section {
   background: var(--cream);
-  padding: 80px 0 0;
+  padding: 0;
   position: relative;
-}
-.photo-strip-intro {
-  text-align: center;
-  padding: 0 40px 48px;
-}
-.photo-strip-intro span {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--purple);
 }
 .photo-strip {
   display: grid;
@@ -1321,7 +1331,7 @@ footer {
 .photo-strip-img:hover::after {
   background: linear-gradient(180deg, rgba(106, 44, 145, 0.1) 0%, rgba(0, 0, 0, 0.15) 100%);
 }
-
+ 
 /* ── Competitive Diff with Image ── */
 .diff-item-with-image {
   grid-template-columns: 48px 1fr 200px;
@@ -1346,7 +1356,7 @@ footer {
 .diff-item-with-image:hover .diff-image img {
   transform: scale(1.05);
 }
-
+ 
 /* ── Menu Section: Asymmetric Mosaic ── */
 .menu-section .section-subtitle {
   text-align: center;
@@ -1437,7 +1447,7 @@ footer {
 .menu-tile-small h4 {
   font-size: 1.15rem;
 }
-
+ 
 /* ── See It Sizzle - Portrait Videos ── */
 .sizzle-row {
   margin-top: 80px;
@@ -1530,7 +1540,7 @@ footer {
 .sizzle-card.playing .sizzle-thumb::before {
   display: none;
 }
-
+ 
 /* ── The Business Case ── */
 .business-case {
   margin-top: 96px;
@@ -1600,7 +1610,7 @@ footer {
   color: var(--mid-gray);
   font-weight: 300;
 }
-
+ 
 /* ── Footer ── */
 footer {
   background: var(--charcoal);
@@ -1671,7 +1681,6 @@ footer p {
   .legacy-stats { grid-template-columns: 1fr 1fr; }
   nav .nav-inner { padding: 0 24px; }
   .photo-strip { grid-template-columns: 1fr 1fr; }
-  .photo-strip-intro { padding: 0 24px 32px; }
   .photo-strip-section { padding: 60px 0 0; }
   .menu-grid { grid-template-columns: 1fr; }
   .menu-mosaic {
@@ -1745,7 +1754,7 @@ footer p {
     <div class="stat-item"><div class="stat-number">Now</div><div class="stat-label">Select Prime Markets Open</div></div>
   </div>
 </div>
-
+ 
 <!-- Press / Recognition Bar -->
 <div class="press-bar">
   <div class="press-inner">
@@ -1873,7 +1882,7 @@ footer p {
     </div>
   </div>
 </section>
-
+ 
 <!-- The Menu Is the Moat -->
 <section class="section menu-section">
   <div class="container">
@@ -1882,7 +1891,7 @@ footer p {
       <div class="section-title">The Menu Is <em>the Moat</em></div>
       <p class="section-subtitle" style="margin: 0 auto;">30 years of menu development. A handful of signature items you can't get anywhere else. Built for repeat visits, optimized for kitchen execution.</p>
     </div>
-
+ 
     <!-- Asymmetric food mosaic -->
     <div class="menu-mosaic reveal">
       <div class="menu-tile menu-tile-feature" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/food/biscuits.jpg'); ?>');">
@@ -1913,7 +1922,7 @@ footer p {
         </div>
       </div>
     </div>
-
+ 
     <!-- See It Sizzle - Portrait Videos -->
     <div class="sizzle-row reveal">
       <div class="sizzle-row-intro">
@@ -1937,7 +1946,7 @@ footer p {
         </div>
       </div>
     </div>
-
+ 
     <!-- The Business Case -->
     <div class="business-case reveal">
       <div class="business-case-header">
@@ -2006,12 +2015,9 @@ footer p {
     </div>
   </div>
 </section>
-
+ 
 <!-- Edge-to-Edge Photo Strip -->
 <section class="photo-strip-section">
-  <div class="photo-strip-intro">
-    <span>Thirty years. Forty-two locations. One cult following.</span>
-  </div>
   <div class="photo-strip">
     <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/buford-interior.webp'); ?>');"></div>
     <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/kingwood-interior.webp'); ?>');"></div>
@@ -2229,7 +2235,7 @@ footer p {
     </div>
   </div>
 </section>
-
+ 
 <!-- Video Lightbox Modal -->
 <div class="video-modal" id="videoModal">
   <div class="video-modal-backdrop"></div>
@@ -2380,7 +2386,7 @@ document.querySelectorAll('a[href="#contact"]').forEach(link => {
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
   });
 });
-
+ 
 // Nav scroll effect
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -2406,16 +2412,16 @@ document.querySelectorAll('.model-features, .tiers, .support-grid, .video-wall, 
     child.style.transitionDelay = `${i * 0.1}s`;
   });
 });
-
+ 
 // Territory market search
 const marketSearch = document.getElementById('marketSearch');
 const marketTags = document.querySelectorAll('#territoryMarkets .market-tag');
 const noResults = document.getElementById('territoryNoResults');
-
+ 
 marketSearch.addEventListener('input', () => {
   const query = marketSearch.value.toLowerCase().trim();
   let matchCount = 0;
-
+ 
   marketTags.forEach(tag => {
     const text = tag.textContent.toLowerCase();
     if (!query || text.includes(query)) {
@@ -2427,21 +2433,21 @@ marketSearch.addEventListener('input', () => {
       tag.classList.remove('highlight');
     }
   });
-
+ 
   noResults.classList.toggle('visible', matchCount === 0 && query.length > 0);
 });
-
+ 
 // Video lightbox
 const videoModal = document.getElementById('videoModal');
 const videoFrame = document.getElementById('videoFrame');
 const modalBackdrop = videoModal.querySelector('.video-modal-backdrop');
 const modalClose = videoModal.querySelector('.video-modal-close');
-
+ 
 document.querySelectorAll('.video-card[data-video-id]').forEach(card => {
   card.addEventListener('click', () => {
     const videoId = card.getAttribute('data-video-id');
     if (!videoId || videoId.startsWith('YOUR_')) return;
-
+ 
     // Sizzle cards play inline inside their thumbnail container
     if (card.classList.contains('sizzle-card')) {
       const thumb = card.querySelector('.sizzle-thumb');
@@ -2450,20 +2456,20 @@ document.querySelectorAll('.video-card[data-video-id]').forEach(card => {
       card.classList.add('playing');
       return;
     }
-
+ 
     // All other video cards use the lightbox
     videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
     videoModal.classList.add('active');
     document.body.style.overflow = 'hidden';
   });
 });
-
+ 
 function closeVideoModal() {
   videoModal.classList.remove('active');
   videoFrame.src = '';
   document.body.style.overflow = '';
 }
-
+ 
 modalBackdrop.addEventListener('click', closeVideoModal);
 modalClose.addEventListener('click', closeVideoModal);
 document.addEventListener('keydown', (e) => {
