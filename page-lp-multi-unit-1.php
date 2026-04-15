@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
     <?php wp_head(); ?>
- 
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -31,7 +31,7 @@
 }
  
 html { scroll-behavior: smooth; }
- 
+
 ::selection {
   background: var(--purple);
   color: white;
@@ -68,7 +68,7 @@ nav.scrolled {
 nav .nav-inner {
   max-width: 1200px; margin: 0 auto; padding: 0 40px;
   display: flex; align-items: center; justify-content: space-between;
-  height: 88px;
+  height: 104px;
 }
 nav .nav-logo {
   display: flex;
@@ -76,7 +76,7 @@ nav .nav-logo {
   text-decoration: none;
 }
 nav .nav-logo img {
-  height: 56px;
+  height: 72px;
   width: auto;
   display: block;
 }
@@ -109,7 +109,7 @@ footer {
   margin-left: -50vw;
   margin-right: -50vw;
 }
- 
+
 /* ── Hero ── */
 .hero {
   min-height: 85vh;
@@ -185,7 +185,7 @@ footer {
   display: flex; gap: 16px; flex-wrap: wrap;
   opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards;
 }
- 
+
 /* Hero Video Card */
 .hero-video {
   opacity: 0;
@@ -693,7 +693,132 @@ footer {
 .territory-no-results a:hover {
   color: var(--orange);
 }
- 
+
+/* Priority Markets - Featured Cards */
+.priority-markets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+  margin-bottom: 96px;
+}
+.priority-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(238, 178, 17, 0.15);
+  border-radius: 14px;
+  padding: 36px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+.priority-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: linear-gradient(180deg, var(--orange), var(--gold));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.priority-card:hover {
+  border-color: rgba(238, 178, 17, 0.4);
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+.priority-card:hover::before {
+  transform: scaleY(1);
+}
+.priority-card-state {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: white;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.priority-card-tagline {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--gold);
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.priority-card-cities {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.priority-card-meta {
+  display: flex;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.priority-card-units {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+/* Markets Secondary - Available + Awarded */
+.markets-secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.markets-section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.markets-section-label-awarded {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Awarded Markets Tags */
+.awarded-markets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.awarded-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  cursor: default;
+  transition: all 0.3s ease;
+}
+.awarded-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
 /* ── Investment Section ── */
 .investment-grid {
   display: grid;
@@ -1079,7 +1204,7 @@ footer {
   white-space: nowrap;
 }
 .press-logo:hover { color: rgba(255,255,255,0.7); }
- 
+
 @media (max-width: 768px) {
   .press-logos { gap: 32px; }
   .press-logo-img { height: 20px; }
@@ -1215,7 +1340,7 @@ footer {
   from { opacity: 0; transform: translateY(24px) scale(0.96); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
- 
+
 /* ── Brand Atmosphere Layer ── */
 /* Film grain / noise texture overlay on dark sections */
 .section-dark::after,
@@ -1243,7 +1368,7 @@ footer {
   mix-blend-mode: screen;
   z-index: 1;
 }
- 
+
 /* Paper grain texture on cream sections */
 .section-cream {
   position: relative;
@@ -1265,7 +1390,7 @@ footer {
   mix-blend-mode: multiply;
   z-index: 1;
 }
- 
+
 /* Branded background photo on section-bg-photo */
 .section-bg-photo {
   background-image:
@@ -1274,7 +1399,7 @@ footer {
   background-size: cover;
   background-position: center;
 }
- 
+
 /* Corner watermark logo treatment */
 .section-bg-watermark {
   position: absolute;
@@ -1291,7 +1416,7 @@ footer {
   z-index: 0;
   transform: rotate(-12deg);
 }
- 
+
 /* Territory section gets watermark on the left */
 .territory-section .section-bg-watermark {
   top: auto;
@@ -1300,7 +1425,7 @@ footer {
   left: -180px;
   transform: rotate(8deg);
 }
- 
+
 /* ── Edge-to-Edge Photo Strip ── */
 .photo-strip-section {
   background: var(--cream);
@@ -1331,7 +1456,7 @@ footer {
 .photo-strip-img:hover::after {
   background: linear-gradient(180deg, rgba(106, 44, 145, 0.1) 0%, rgba(0, 0, 0, 0.15) 100%);
 }
- 
+
 /* ── Competitive Diff with Image ── */
 .diff-item-with-image {
   grid-template-columns: 48px 1fr 200px;
@@ -1356,7 +1481,7 @@ footer {
 .diff-item-with-image:hover .diff-image img {
   transform: scale(1.05);
 }
- 
+
 /* ── Menu Section: Asymmetric Mosaic ── */
 .menu-section .section-subtitle {
   text-align: center;
@@ -1447,7 +1572,7 @@ footer {
 .menu-tile-small h4 {
   font-size: 1.15rem;
 }
- 
+
 /* ── See It Sizzle - Portrait Videos ── */
 .sizzle-row {
   margin-top: 80px;
@@ -1540,7 +1665,7 @@ footer {
 .sizzle-card.playing .sizzle-thumb::before {
   display: none;
 }
- 
+
 /* ── The Business Case ── */
 .business-case {
   margin-top: 96px;
@@ -1610,7 +1735,7 @@ footer {
   color: var(--mid-gray);
   font-weight: 300;
 }
- 
+
 /* ── Footer ── */
 footer {
   background: var(--charcoal);
@@ -1639,7 +1764,9 @@ footer p {
 @media (max-width: 1024px) {
   .stats-inner { grid-template-columns: repeat(3, 1fr); }
   .stat-item:nth-child(3) { border-right: none; }
-  .why-now-grid, .legacy-grid, .territory-grid, .form-grid { grid-template-columns: 1fr; gap: 48px; }
+  .why-now-grid, .legacy-grid, .form-grid { grid-template-columns: 1fr; gap: 48px; }
+  .territory-grid, .markets-secondary { grid-template-columns: 1fr; gap: 64px; }
+  .priority-markets { grid-template-columns: 1fr; gap: 16px; margin-bottom: 64px; }
   .tiers, .support-grid, .video-wall { grid-template-columns: repeat(2, 1fr); }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .process-steps { grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -1666,7 +1793,7 @@ footer p {
 @media (max-width: 768px) {
   .container, .container-narrow { padding: 0 24px; }
   .section { padding: 80px 0; }
-  .hero-content { padding: 120px 24px 80px; }
+  .hero-content { padding: 160px 24px 80px; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); }
   .stat-item:nth-child(2n) { border-right: none; }
   .model-features { grid-template-columns: 1fr; }
@@ -1681,7 +1808,7 @@ footer p {
   .legacy-stats { grid-template-columns: 1fr 1fr; }
   nav .nav-inner { padding: 0 24px; }
   .photo-strip { grid-template-columns: 1fr 1fr; }
-  .photo-strip-section { padding: 60px 0 0; }
+  .photo-strip-section { padding: 0; }
   .menu-grid { grid-template-columns: 1fr; }
   .menu-mosaic {
     grid-template-columns: 1fr;
@@ -1694,7 +1821,7 @@ footer p {
   .menu-tile-feature h4 { font-size: 1.4rem; }
   .business-case-grid { grid-template-columns: 1fr; }
   .business-case { margin-top: 64px; padding-top: 48px; }
-  .sizzle-grid { grid-template-columns: 1fr; max-width: 320px; }
+  .sizzle-grid { grid-template-columns: 1fr; max-width: 320px; margin-left: auto; margin-right: auto; }
   .sizzle-row { margin-top: 56px; }
 }
 </style>
@@ -1717,7 +1844,7 @@ footer p {
     <div class="hero-text">
       <div class="hero-eyebrow">Multi-Unit Market Development</div>
       <h1>Own a <em>Market.</em> Not Just a Restaurant.</h1>
-      <p class="hero-sub">42 locations with 12 in development. ~$2M AUV during breakfast and lunch. The team that built Moe's Southwest Grill is doing it again — and the market map is filling fast. Growth-phase upside without early-stage risk.</p>
+      <p class="hero-sub">42 locations with 12 in development. ~$2M AUV. Closed by 3pm. The team that built Moe's Southwest Grill is doing it again — and the market map is filling fast. Growth-phase upside without early-stage risk.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn-primary">
           Request the FDD
@@ -1754,17 +1881,17 @@ footer p {
     <div class="stat-item"><div class="stat-number">Now</div><div class="stat-label">Select Prime Markets Open</div></div>
   </div>
 </div>
- 
+
 <!-- Press / Recognition Bar -->
 <div class="press-bar">
   <div class="press-inner">
     <div class="press-label">As Featured In</div>
     <div class="press-logos">
-      <img class="press-logo-img press-logo-tall" src="<?php echo get_theme_file_uri('assets/img/featured-logos/franchise-times-logo.png'); ?>" alt="Franchise Times">
-      <img class="press-logo-img press-logo-tall" src="<?php echo get_theme_file_uri('assets/img/featured-logos/entrepreneur-logo.png'); ?>" alt="Entrepreneur">
-      <img class="press-logo-img" src="<?php echo get_theme_file_uri('assets/img/featured-logos/qsr-logo-dark.svg'); ?>" alt="QSR Magazine">
-      <img class="press-logo-img" src="<?php echo get_theme_file_uri('assets/img/featured-logos/nrn-logo.svg'); ?>" alt="Nation's Restaurant News">
-      <img class="press-logo-img" src="<?php echo get_theme_file_uri('assets/img/featured-logos/fsr-logo.svg'); ?>" alt="FSR Magazine">
+      <img class="press-logo-img press-logo-tall" loading="lazy" src="<?php echo get_theme_file_uri('assets/img/featured-logos/franchise-times-logo.png'); ?>" alt="Franchise Times">
+      <img class="press-logo-img press-logo-tall" loading="lazy" src="<?php echo get_theme_file_uri('assets/img/featured-logos/entrepreneur-logo.png'); ?>" alt="Entrepreneur">
+      <img class="press-logo-img" loading="lazy" src="<?php echo get_theme_file_uri('assets/img/featured-logos/qsr-logo-dark.svg'); ?>" alt="QSR Magazine">
+      <img class="press-logo-img" loading="lazy" src="<?php echo get_theme_file_uri('assets/img/featured-logos/nrn-logo.svg'); ?>" alt="Nation's Restaurant News">
+      <img class="press-logo-img" loading="lazy" src="<?php echo get_theme_file_uri('assets/img/featured-logos/fsr-logo.svg'); ?>" alt="FSR Magazine">
     </div>
   </div>
 </div>
@@ -1779,7 +1906,7 @@ footer p {
     <div class="why-now-grid">
       <div class="why-now-text reveal">
         <p>If you've built a multi-unit portfolio before, you already know — the real wealth in franchising isn't made at unit 500. It's made when you get in during the growth phase, lock down a market, and build before the map fills up.</p>
-        <p>Flying Biscuit Café is in that phase right now. With 42 locations, 12 in development, three decades of brand equity, and an aggressive Southeast expansion strategy, <strong>the window is open for operators and investors who move decisively.</strong></p>
+        <p>Flying Biscuit Café is in that phase right now. With 42 locations, 12 in development, three decades of brand equity, and an aggressive expansion strategy across the Southeast and into the Midwest, <strong>the window is open for operators and investors who move decisively.</strong></p>
         <p>This is not a startup. It's not a trend. It's not someone's first attempt. It's a 30-year brand with ~$2M AUV, a leadership team that already built Moe's Southwest Grill into a 345-unit, 36-state system, and a breakfast market that's growing 5% year over year — and your market is still on the board.</p>
       </div>
       <div class="why-now-highlights reveal">
@@ -1869,7 +1996,7 @@ footer p {
           <p>Some competitors have started expanding into dinner, adding full-bar operations, and extending hours — drifting toward the operational complexity you're trying to avoid. Flying Biscuit takes the opposite approach: a focused brunch cocktail program, a growing specialty espresso menu with premium drinks like the Pistachio Latte, and none of the late-night inventory management of a full liquor operation. Higher check averages, contained complexity.</p>
         </div>
         <div class="diff-image">
-          <img src="<?php echo get_theme_file_uri('/assets/img/food/pistachio-latte.jpg'); ?>" alt="Pistachio Latte">
+          <img loading="lazy" src="<?php echo get_theme_file_uri('/assets/img/food/pistachio-latte.jpg'); ?>" alt="Pistachio Latte">
         </div>
       </div>
       <div class="diff-item reveal">
@@ -1882,7 +2009,7 @@ footer p {
     </div>
   </div>
 </section>
- 
+
 <!-- The Menu Is the Moat -->
 <section class="section menu-section">
   <div class="container">
@@ -1891,7 +2018,7 @@ footer p {
       <div class="section-title">The Menu Is <em>the Moat</em></div>
       <p class="section-subtitle" style="margin: 0 auto;">30 years of menu development. A handful of signature items you can't get anywhere else. Built for repeat visits, optimized for kitchen execution.</p>
     </div>
- 
+
     <!-- Asymmetric food mosaic -->
     <div class="menu-mosaic reveal">
       <div class="menu-tile menu-tile-feature" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/food/biscuits.jpg'); ?>');">
@@ -1922,7 +2049,7 @@ footer p {
         </div>
       </div>
     </div>
- 
+
     <!-- See It Sizzle - Portrait Videos -->
     <div class="sizzle-row reveal">
       <div class="sizzle-row-intro">
@@ -1946,7 +2073,7 @@ footer p {
         </div>
       </div>
     </div>
- 
+
     <!-- The Business Case -->
     <div class="business-case reveal">
       <div class="business-case-header">
@@ -2002,7 +2129,7 @@ footer p {
       </div>
       <div class="legacy-origin reveal">
         <div class="legacy-origin-frame">
-          <img src="<?php echo get_theme_file_uri('/assets/img/flying-biscuit-candler-park-drawing.jpg'); ?>" alt="The original Flying Biscuit Café in Candler Park, Atlanta, 1993">
+          <img loading="lazy" src="<?php echo get_theme_file_uri('/assets/img/flying-biscuit-candler-park-drawing.jpg'); ?>" alt="The original Flying Biscuit Café in Candler Park, Atlanta, 1993">
         </div>
         <div class="legacy-origin-caption">The original Flying Biscuit Café — Candler Park, Atlanta, 1993</div>
       </div>
@@ -2015,7 +2142,7 @@ footer p {
     </div>
   </div>
 </section>
- 
+
 <!-- Edge-to-Edge Photo Strip -->
 <section class="photo-strip-section">
   <div class="photo-strip">
@@ -2030,39 +2157,54 @@ footer p {
 <section class="section section-dark territory-section">
   <div class="section-bg-watermark"></div>
   <div class="container">
-    <div class="reveal">
+    <div class="reveal" style="text-align: center;">
       <div class="section-eyebrow">Available Markets</div>
-      <div class="section-title">Priority Markets Are Open. <em>Not for Long.</em></div>
-      <p class="section-subtitle">Flying Biscuit Café is actively expanding across the Southeast and into select adjacent markets. These are our highest-priority growth markets.</p>
+      <div class="section-title">Four Markets. <em>Open Right Now.</em></div>
+      <p class="section-subtitle" style="margin: 0 auto;">We're prioritizing four markets where the brand is positioned to win fastest. These are the territories we're actively awarding to multi-unit operators this year.</p>
     </div>
-    <div class="territory-grid">
-      <div class="reveal">
-        <div class="territory-search">
-          <svg class="territory-search-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/><path d="M12 12l4 4" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <input type="text" id="marketSearch" placeholder="Search by city, state, or metro..." autocomplete="off">
-        </div>
-        <div class="territory-markets" id="territoryMarkets">
-          <div class="market-tag"><span class="state">Florida</span>Tampa · Orlando · Jacksonville · Miami · St. Petersburg</div>
-          <div class="market-tag"><span class="state">Texas</span>Houston · Dallas · Fort Worth · Austin · San Antonio</div>
-          <div class="market-tag"><span class="state">North Carolina</span>Asheville · Wilmington · Charlotte · Greensboro · Winston-Salem</div>
-          <div class="market-tag"><span class="state">Tennessee</span>Nashville · Memphis</div>
-          <div class="market-tag"><span class="state">Virginia</span>Virginia Beach · Chesapeake · Arlington · Norfolk</div>
-          <div class="market-tag"><span class="state">South Carolina</span>Myrtle Beach · Rock Hill</div>
-          <div class="market-tag"><span class="state">Alabama</span>Montgomery · Tuscaloosa</div>
-          <div class="market-tag"><span class="state">Louisiana</span>New Orleans · Baton Rouge · Shreveport · Metairie · Lafayette · Lake Charles</div>
-          <div class="market-tag"><span class="state">Georgia</span>Additional ATL Metro · Savannah · Augusta</div>
-          <div class="market-tag"><span class="state">Kentucky</span>Louisville · Lexington · Bowling Green · Owensboro · Covington</div>
-        </div>
-        <div class="territory-no-results" id="territoryNoResults">
-          No markets match your search — but we may have opportunities in development. <a href="#contact">Reach out to Andrew</a> to discuss your target market.
+
+    <!-- Priority Markets - Featured Cards -->
+    <div class="priority-markets reveal">
+      <div class="priority-card">
+        <div class="priority-card-state">Texas</div>
+        <div class="priority-card-tagline">The largest open opportunity in the system. Major metros, high disposable income, and breakfast culture already proven by the brands that came before us.</div>
+        <div class="priority-card-cities">Houston · Dallas · Fort Worth · Austin · San Antonio</div>
+        <div class="priority-card-meta">
+          <span class="priority-card-units">Multi-Unit Development Available</span>
         </div>
       </div>
-      <div class="reveal">
-        <div class="territory-note">This list reflects current availability and changes as agreements are signed. If your target market isn't listed, reach out — we may have opportunities in development.</div>
-        <div style="margin-top: 32px;">
-          <a href="#contact" class="btn-primary">Check Market Availability</a>
+      <div class="priority-card">
+        <div class="priority-card-state">Florida</div>
+        <div class="priority-card-tagline">Our brand DNA travels well here. Year-round patio weather, dense brunch culture, and a guest base that already drives across town for breakfast.</div>
+        <div class="priority-card-cities">Tampa · Orlando · Jacksonville · Miami · St. Petersburg</div>
+        <div class="priority-card-meta">
+          <span class="priority-card-units">Multi-Unit Development Available</span>
         </div>
       </div>
+      <div class="priority-card">
+        <div class="priority-card-state">Ohio</div>
+        <div class="priority-card-tagline">A major Midwest entry point with proven brunch demand in metros like Columbus and Cincinnati. Strong daypart culture, lower real estate costs than coastal markets, and dense suburban trade areas built for multi-unit development.</div>
+        <div class="priority-card-cities">Columbus · Cleveland · Cincinnati · Toledo · Akron · Dayton</div>
+        <div class="priority-card-meta">
+          <span class="priority-card-units">Multi-Unit Development Available</span>
+        </div>
+      </div>
+      <div class="priority-card">
+        <div class="priority-card-state">Kentucky</div>
+        <div class="priority-card-tagline">True white space adjacent to our existing Southeast footprint. Louisville and Lexington offer a clean first-mover opportunity in a region where premium breakfast remains underserved.</div>
+        <div class="priority-card-cities">Louisville · Lexington · Bowling Green · Owensboro · Covington</div>
+        <div class="priority-card-meta">
+          <span class="priority-card-units">Multi-Unit Development Available</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Block -->
+    <div class="reveal" style="text-align: center; margin-top: 64px;">
+      <p style="font-size: 0.95rem; line-height: 1.65; color: rgba(255,255,255,0.55); font-weight: 300; max-width: 560px; margin: 0 auto 28px;">
+        Targeting a market outside these four? We may have additional opportunities in development. Reach out to discuss your target.
+      </p>
+      <a href="#contact" class="btn-primary">Check Market Availability</a>
     </div>
   </div>
 </section>
@@ -2136,25 +2278,25 @@ footer p {
     </div>
     <div class="team-grid">
       <div class="team-card reveal">
-        <div class="team-photo"><img src="<?php echo get_theme_file_uri('/assets/img/team/martin-sprock.jpg'); ?>" alt="Martin Sprock"></div>
+        <div class="team-photo"><img loading="lazy" src="<?php echo get_theme_file_uri('/assets/img/team/martin-sprock.jpg'); ?>" alt="Martin Sprock"></div>
         <h4>Martin Sprock</h4>
         <div class="role">Partner, Founder</div>
-        <p>Founded Moe's Southwest Grill and scaled it to 345 locations across 36 states. Now applying the same playbook to Flying Biscuit Café's Southeast expansion.</p>
+        <p>Founded Moe's Southwest Grill and scaled it to 345 locations across 36 states. Now applying the same playbook to Flying Biscuit Café's next phase of growth.</p>
       </div>
       <div class="team-card reveal">
-        <div class="team-photo"><img src="<?php echo get_theme_file_uri('/assets/img/team/daryl-dollinger.jpg'); ?>" alt="Daryl Dollinger"></div>
+        <div class="team-photo"><img loading="lazy" src="<?php echo get_theme_file_uri('/assets/img/team/daryl-dollinger.jpg'); ?>" alt="Daryl Dollinger"></div>
         <h4>Daryl Dollinger</h4>
         <div class="role">Partner, President</div>
         <p>Helped scale Moe's Southwest Grill alongside Martin into a 345-unit, 36-state system. Now leads Flying Biscuit's brand strategy and franchise growth with a hands-on approach partners experience directly.</p>
       </div>
       <div class="team-card reveal">
-        <div class="team-photo"><img src="<?php echo get_theme_file_uri('/assets/img/team/andrew-scherzer-tight.jpg'); ?>" alt="Andrew Scherzer"></div>
+        <div class="team-photo"><img loading="lazy" src="<?php echo get_theme_file_uri('/assets/img/team/andrew-scherzer-tight.jpg'); ?>" alt="Andrew Scherzer"></div>
         <h4>Andrew Scherzer</h4>
         <div class="role">Partner, Franchise Development</div>
         <p>Your first point of contact. Andrew approaches franchise development as deal-making, not sales — speaking the language of unit economics, market strategy, and portfolio-level thinking.</p>
       </div>
       <div class="team-card reveal">
-        <div class="team-photo"><img src="<?php echo get_theme_file_uri('/assets/img/team/sohail-kaiser.jpg'); ?>" alt="Sohail Khizer"></div>
+        <div class="team-photo"><img loading="lazy" src="<?php echo get_theme_file_uri('/assets/img/team/sohail-kaiser.jpg'); ?>" alt="Sohail Khizer"></div>
         <h4>Sohail Khizer</h4>
         <div class="role">Partner, Operations</div>
         <p>Oversees the operational infrastructure that supports franchisees from pre-opening through stabilization. Built to scale whether you're opening your first location or your tenth.</p>
@@ -2235,7 +2377,7 @@ footer p {
     </div>
   </div>
 </section>
- 
+
 <!-- Video Lightbox Modal -->
 <div class="video-modal" id="videoModal">
   <div class="video-modal-backdrop"></div>
@@ -2386,7 +2528,7 @@ document.querySelectorAll('a[href="#contact"]').forEach(link => {
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
   });
 });
- 
+
 // Nav scroll effect
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -2412,42 +2554,18 @@ document.querySelectorAll('.model-features, .tiers, .support-grid, .video-wall, 
     child.style.transitionDelay = `${i * 0.1}s`;
   });
 });
- 
-// Territory market search
-const marketSearch = document.getElementById('marketSearch');
-const marketTags = document.querySelectorAll('#territoryMarkets .market-tag');
-const noResults = document.getElementById('territoryNoResults');
- 
-marketSearch.addEventListener('input', () => {
-  const query = marketSearch.value.toLowerCase().trim();
-  let matchCount = 0;
- 
-  marketTags.forEach(tag => {
-    const text = tag.textContent.toLowerCase();
-    if (!query || text.includes(query)) {
-      tag.classList.remove('hidden');
-      tag.classList.toggle('highlight', query.length > 0);
-      matchCount++;
-    } else {
-      tag.classList.add('hidden');
-      tag.classList.remove('highlight');
-    }
-  });
- 
-  noResults.classList.toggle('visible', matchCount === 0 && query.length > 0);
-});
- 
+
 // Video lightbox
 const videoModal = document.getElementById('videoModal');
 const videoFrame = document.getElementById('videoFrame');
 const modalBackdrop = videoModal.querySelector('.video-modal-backdrop');
 const modalClose = videoModal.querySelector('.video-modal-close');
- 
+
 document.querySelectorAll('.video-card[data-video-id]').forEach(card => {
   card.addEventListener('click', () => {
     const videoId = card.getAttribute('data-video-id');
     if (!videoId || videoId.startsWith('YOUR_')) return;
- 
+
     // Sizzle cards play inline inside their thumbnail container
     if (card.classList.contains('sizzle-card')) {
       const thumb = card.querySelector('.sizzle-thumb');
@@ -2456,20 +2574,20 @@ document.querySelectorAll('.video-card[data-video-id]').forEach(card => {
       card.classList.add('playing');
       return;
     }
- 
+
     // All other video cards use the lightbox
     videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
     videoModal.classList.add('active');
     document.body.style.overflow = 'hidden';
   });
 });
- 
+
 function closeVideoModal() {
   videoModal.classList.remove('active');
   videoFrame.src = '';
   document.body.style.overflow = '';
 }
- 
+
 modalBackdrop.addEventListener('click', closeVideoModal);
 modalClose.addEventListener('click', closeVideoModal);
 document.addEventListener('keydown', (e) => {
