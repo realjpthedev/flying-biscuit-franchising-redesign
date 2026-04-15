@@ -1256,27 +1256,26 @@ footer {
 /* Corner watermark logo treatment */
 .section-bg-watermark {
   position: absolute;
-  top: 48px;
-  right: -80px;
-  width: 420px;
-  height: 420px;
-  background-image: url('<?php echo get_theme_file_uri('/assets/img/logo-long.svg'); ?>');
+  top: -120px;
+  right: -180px;
+  width: 700px;
+  height: 700px;
+  background-image: url('<?php echo get_theme_file_uri('/assets/img/fb-logo-cherub-white.svg'); ?>');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: 0.025;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 0;
   transform: rotate(-12deg);
-  filter: brightness(0) invert(1);
 }
 
 /* Territory section gets watermark on the left */
 .territory-section .section-bg-watermark {
   top: auto;
-  bottom: 48px;
+  bottom: -120px;
   right: auto;
-  left: -80px;
+  left: -180px;
   transform: rotate(8deg);
 }
 
@@ -1348,6 +1347,260 @@ footer {
   transform: scale(1.05);
 }
 
+/* ── Menu Section: Asymmetric Mosaic ── */
+.menu-section .section-subtitle {
+  text-align: center;
+}
+.menu-mosaic {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 200px 200px 200px;
+  gap: 16px;
+  margin-top: 64px;
+}
+.menu-tile {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--purple-dark);
+  cursor: default;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+.menu-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(106, 44, 145, 0.18);
+}
+.menu-tile-feature {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+.menu-tile-tall {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.menu-tile-wide {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+.menu-tile-small {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+.menu-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.85) 100%);
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+.menu-tile:hover::before {
+  background: linear-gradient(180deg, rgba(106, 44, 145, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+}
+.menu-tile-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px;
+  z-index: 2;
+  color: white;
+}
+.menu-tile-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.menu-tile h4 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+.menu-tile-feature h4 {
+  font-size: 1.75rem;
+}
+.menu-tile p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+  max-width: 420px;
+}
+.menu-tile-small h4 {
+  font-size: 1.15rem;
+}
+
+/* ── See It Sizzle - Portrait Videos ── */
+.sizzle-row {
+  margin-top: 80px;
+}
+.sizzle-row-intro {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.sizzle-row-intro span {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+.sizzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.sizzle-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--charcoal);
+  border: 1px solid var(--light-gray);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.sizzle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(106, 44, 145, 0.18);
+  border-color: var(--purple-light);
+}
+.sizzle-thumb {
+  aspect-ratio: 9/16;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sizzle-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 100%);
+  transition: background 0.3s ease;
+}
+.sizzle-card:hover .sizzle-thumb::before {
+  background: linear-gradient(180deg, rgba(106, 44, 145, 0.15) 0%, rgba(0,0,0,0.4) 100%);
+}
+.sizzle-card .play-btn {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.sizzle-card:hover .play-btn {
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: scale(1.1);
+}
+.sizzle-card .play-btn svg {
+  margin-left: 3px;
+}
+.sizzle-thumb iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: 3;
+}
+.sizzle-card.playing {
+  cursor: default;
+}
+.sizzle-card.playing:hover {
+  transform: none;
+}
+.sizzle-card.playing .sizzle-thumb::before {
+  display: none;
+}
+
+/* ── The Business Case ── */
+.business-case {
+  margin-top: 96px;
+  padding-top: 64px;
+  border-top: 1px solid var(--light-gray);
+}
+.business-case-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+.business-case-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+.business-case-title em {
+  font-style: italic;
+  color: var(--orange);
+}
+.business-case-sub {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--mid-gray);
+  font-weight: 300;
+}
+.business-case-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.business-card {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 32px 28px;
+  border: 1px solid var(--light-gray);
+  transition: all 0.4s ease;
+}
+.business-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(244, 123, 32, 0.1);
+}
+.business-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(244, 123, 32, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.business-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.business-card p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--mid-gray);
+  font-weight: 300;
+}
+
 /* ── Footer ── */
 footer {
   background: var(--charcoal);
@@ -1386,8 +1639,19 @@ footer p {
   .photo-strip { grid-template-columns: repeat(2, 1fr); }
   .diff-item-with-image { grid-template-columns: 48px 1fr; }
   .diff-item-with-image .diff-image { display: none; }
-  .section-bg-watermark { width: 280px; height: 280px; }
+  .section-bg-watermark { width: 480px; height: 480px; top: -80px; right: -120px; }
+  .territory-section .section-bg-watermark { bottom: -80px; left: -120px; }
   .legacy-stats { grid-template-columns: repeat(2, 1fr); }
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
+  .menu-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 240px 240px 240px;
+  }
+  .menu-tile-feature { grid-row: 1 / 3; }
+  .menu-tile-tall { grid-row: 1 / 2; }
+  .menu-tile-wide { grid-row: 2 / 3; }
+  .menu-tile-small { grid-column: 1 / 3; grid-row: 3 / 4; }
+  .business-case-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   .container, .container-narrow { padding: 0 24px; }
@@ -1409,6 +1673,20 @@ footer p {
   .photo-strip { grid-template-columns: 1fr 1fr; }
   .photo-strip-intro { padding: 0 24px 32px; }
   .photo-strip-section { padding: 60px 0 0; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .menu-mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 220px);
+  }
+  .menu-tile-feature, .menu-tile-tall, .menu-tile-wide, .menu-tile-small {
+    grid-row: auto;
+    grid-column: auto;
+  }
+  .menu-tile-feature h4 { font-size: 1.4rem; }
+  .business-case-grid { grid-template-columns: 1fr; }
+  .business-case { margin-top: 64px; padding-top: 48px; }
+  .sizzle-grid { grid-template-columns: 1fr; max-width: 320px; }
+  .sizzle-row { margin-top: 56px; }
 }
 </style>
 </head>
@@ -1595,6 +1873,111 @@ footer p {
     </div>
   </div>
 </section>
+
+<!-- The Menu Is the Moat -->
+<section class="section menu-section">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <div class="section-eyebrow">The Product</div>
+      <div class="section-title">The Menu Is <em>the Moat</em></div>
+      <p class="section-subtitle" style="margin: 0 auto;">30 years of menu development. A handful of signature items you can't get anywhere else. Built for repeat visits, optimized for kitchen execution.</p>
+    </div>
+
+    <!-- Asymmetric food mosaic -->
+    <div class="menu-mosaic reveal">
+      <div class="menu-tile menu-tile-feature" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/food/biscuits.jpg'); ?>');">
+        <div class="menu-tile-overlay">
+          <div class="menu-tile-eyebrow">Est. 1993</div>
+          <h4>The Famous Flying Biscuit</h4>
+          <p>The dish that named the brand. 30 years of consistency — the anchor item people drive across town for.</p>
+        </div>
+      </div>
+      <div class="menu-tile menu-tile-tall" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/food/shrimp-n-grits-our-menu.jpg'); ?>');">
+        <div class="menu-tile-overlay">
+          <div class="menu-tile-eyebrow">Award Winning</div>
+          <h4>Shrimp & Grits</h4>
+          <p>The signature plate that defines the brand and proves breakfast can be a destination.</p>
+        </div>
+      </div>
+      <div class="menu-tile menu-tile-wide" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/food/stuffed-french-toast-square.jpg'); ?>');">
+        <div class="menu-tile-overlay">
+          <div class="menu-tile-eyebrow">Visual Showpiece</div>
+          <h4>Stuffed French Toast</h4>
+          <p>The plate that lives on social. Built to be photographed, built to be ordered again.</p>
+        </div>
+      </div>
+      <div class="menu-tile menu-tile-small" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/food/mimosa-tower.jpg'); ?>');">
+        <div class="menu-tile-overlay">
+          <div class="menu-tile-eyebrow">Check Average</div>
+          <h4>Mimosa Towers</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- See It Sizzle - Portrait Videos -->
+    <div class="sizzle-row reveal">
+      <div class="sizzle-row-intro">
+        <span>See It Sizzle</span>
+      </div>
+      <div class="sizzle-grid">
+        <div class="video-card sizzle-card" data-video-id="k3YD-mX62Os">
+          <div class="sizzle-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/beignet-doughnuts-thumbnail.jpg'); ?>');">
+            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
+          </div>
+        </div>
+        <div class="video-card sizzle-card" data-video-id="JD2KWZShMzg">
+          <div class="sizzle-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/chicken-waffles-3-ways-thumbnail.jpg'); ?>');">
+            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
+          </div>
+        </div>
+        <div class="video-card sizzle-card" data-video-id="qAATQV9jBWY">
+          <div class="sizzle-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/stuffed-french-toast-thumbnail.jpg'); ?>');">
+            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Business Case -->
+    <div class="business-case reveal">
+      <div class="business-case-header">
+        <div class="section-eyebrow">The Business Case</div>
+        <h3 class="business-case-title">A Menu Built <em>for Profitability</em></h3>
+        <p class="business-case-sub">Great food is just the start. Our menu is engineered to drive margins, simplify operations, and keep your team focused.</p>
+      </div>
+      <div class="business-case-grid">
+        <div class="business-card">
+          <div class="business-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h4>Lower Food Costs</h4>
+          <p>Breakfast and brunch ingredients — eggs, flour, butter, produce — cost a fraction of dinner proteins. Our menu is designed around high-margin, low-waste items.</p>
+        </div>
+        <div class="business-card">
+          <div class="business-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Simpler Operations</h4>
+          <p>A focused menu means streamlined prep, faster ticket times, and less complexity in the kitchen. Your team can master it quickly and execute it consistently.</p>
+        </div>
+        <div class="business-card">
+          <div class="business-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h4>National Buying Power</h4>
+          <p>Our collective purchasing program — one of the best in America — means lower ingredient costs and vendor relationships already negotiated for you.</p>
+        </div>
+        <div class="business-card">
+          <div class="business-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h4>Check-Average Boosters</h4>
+          <p>Mimosa towers, Bloody Marys, and craft coffee aren't just crowd favorites — they're high-margin add-ons that drive revenue per guest.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
  
 <!-- Brand Legacy -->
 <section class="section section-cream">
@@ -1630,10 +2013,10 @@ footer p {
     <span>Thirty years. Forty-two locations. One cult following.</span>
   </div>
   <div class="photo-strip">
-    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/restaurant-1.jpg'); ?>');"></div>
-    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/restaurant-2.jpg'); ?>');"></div>
-    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/restaurant-3.jpg'); ?>');"></div>
-    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/restaurant-4.jpg'); ?>');"></div>
+    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/buford-interior.webp'); ?>');"></div>
+    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/kingwood-interior.webp'); ?>');"></div>
+    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/macon-interior.webp'); ?>');"></div>
+    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/terminus-inside.webp'); ?>');"></div>
   </div>
 </section>
  
@@ -2017,7 +2400,7 @@ const observer = new IntersectionObserver((entries) => {
 revealElements.forEach(el => observer.observe(el));
  
 // Stagger animations for grid children
-document.querySelectorAll('.model-features, .tiers, .support-grid, .video-wall, .investment-grid').forEach(grid => {
+document.querySelectorAll('.model-features, .tiers, .support-grid, .video-wall, .investment-grid, .menu-grid').forEach(grid => {
   const children = grid.querySelectorAll('.reveal');
   children.forEach((child, i) => {
     child.style.transitionDelay = `${i * 0.1}s`;
@@ -2057,11 +2440,21 @@ const modalClose = videoModal.querySelector('.video-modal-close');
 document.querySelectorAll('.video-card[data-video-id]').forEach(card => {
   card.addEventListener('click', () => {
     const videoId = card.getAttribute('data-video-id');
-    if (videoId && !videoId.startsWith('YOUR_')) {
-      videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-      videoModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+    if (!videoId || videoId.startsWith('YOUR_')) return;
+
+    // Sizzle cards play inline inside their thumbnail container
+    if (card.classList.contains('sizzle-card')) {
+      const thumb = card.querySelector('.sizzle-thumb');
+      if (!thumb || thumb.querySelector('iframe')) return;
+      thumb.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      card.classList.add('playing');
+      return;
     }
+
+    // All other video cards use the lightbox
+    videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    videoModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
   });
 });
 
