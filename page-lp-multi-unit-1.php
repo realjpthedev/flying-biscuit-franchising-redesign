@@ -1689,17 +1689,17 @@ footer p {
     <div class="investment-grid reveal">
       <div class="invest-card">
         <div class="label">Total Investment Per Unit</div>
-        <div class="value">$XXX,XXX – $X,XXX,XXX*</div>
+        <div class="value">$766,750 – $1,171,350*</div>
         <div class="note">Complete investment details in our FDD</div>
       </div>
       <div class="invest-card">
         <div class="label">Franchise Fee</div>
-        <div class="value">$XX,XXX</div>
+        <div class="value">$45,000</div>
         <div class="note">Reduced fees for multi-unit commitments</div>
       </div>
       <div class="invest-card">
         <div class="label">Liquid Capital Requirement</div>
-        <div class="value">$XXX,XXX+</div>
+        <div class="value">$200,000+</div>
         <div class="note">Minimum liquid assets</div>
       </div>
       <div class="invest-card">
