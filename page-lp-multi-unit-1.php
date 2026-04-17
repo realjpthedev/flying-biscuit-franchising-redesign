@@ -8,7 +8,11 @@
     <?php wp_head(); ?>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;600;700&display=swap" rel="stylesheet">
+
+<!-- Preload critical above-the-fold image -->
+<link rel="preload" as="image" href="<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/meet-our-franchisees.webp'); ?>" fetchpriority="high">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
  
@@ -276,7 +280,7 @@ footer {
   padding: 16px 36px;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   border: 1px solid rgba(255,255,255,0.25);
   transition: all 0.3s ease;
@@ -324,7 +328,7 @@ footer {
 .stat-label {
   font-size: 0.75rem;
   color: rgba(255,255,255,0.6);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1.4;
@@ -514,7 +518,7 @@ footer {
 .legacy-origin-caption {
   margin-top: 28px;
   font-size: 0.78rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--mid-gray);
@@ -543,7 +547,7 @@ footer {
 .legacy-stat .label {
   font-size: 0.8rem;
   color: rgba(255,255,255,0.65);
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -603,7 +607,7 @@ footer {
   border-radius: 8px;
   padding: 16px 20px;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   color: rgba(255,255,255,0.85);
   transition: all 0.3s ease;
   cursor: default;
@@ -652,7 +656,7 @@ footer {
   color: white;
   font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 400;
+  
   outline: none;
   transition: all 0.3s ease;
 }
@@ -687,7 +691,7 @@ footer {
 .territory-no-results a {
   color: var(--gold);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.2s ease;
 }
 .territory-no-results a:hover {
@@ -741,7 +745,7 @@ footer {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--gold);
-  font-weight: 400;
+  
   margin-bottom: 20px;
   font-style: italic;
 }
@@ -803,7 +807,7 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 6px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.4);
   text-decoration: line-through;
   text-decoration-color: rgba(255, 255, 255, 0.25);
@@ -1257,6 +1261,25 @@ footer {
   margin-top: 32px;
   padding: 20px 24px;
   border-left: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.form-reassurance-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid rgba(238, 178, 17, 0.3);
+}
+.form-reassurance-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.form-reassurance-text {
   font-size: 0.9rem;
   color: rgba(255,255,255,0.5);
   font-weight: 300;
@@ -1834,7 +1857,7 @@ footer p {
 <nav id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo"><img src="<?php echo get_theme_file_uri('/assets/img/logo-long.svg'); ?>" alt="Flying Biscuit Café"></a>
-    <a href="#contact" class="nav-cta">Request the FDD</a>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
   </div>
 </nav>
  
@@ -1847,10 +1870,10 @@ footer p {
       <p class="hero-sub">42 locations with 12 in development. ~$2M AUV. Closed by 3pm. The team that built Moe's Southwest Grill is doing it again — and the market map is filling fast. Growth-phase upside without early-stage risk.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn-primary">
-          Request the FDD
+          Start the Conversation
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="#contact" class="btn-secondary">Schedule a Call with Andrew</a>
+        <a href="#process" class="btn-secondary">View the Process</a>
       </div>
     </div>
     <div class="hero-video">
@@ -2021,28 +2044,28 @@ footer p {
 
     <!-- Asymmetric food mosaic -->
     <div class="menu-mosaic reveal">
-      <div class="menu-tile menu-tile-feature" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/food/biscuits.jpg'); ?>');">
+      <div class="menu-tile menu-tile-feature" data-bg="<?php echo get_theme_file_uri('/assets/img/food/biscuits.jpg'); ?>">
         <div class="menu-tile-overlay">
           <div class="menu-tile-eyebrow">Est. 1993</div>
           <h4>The Famous Flying Biscuit</h4>
           <p>The dish that named the brand. 30 years of consistency — the anchor item people drive across town for.</p>
         </div>
       </div>
-      <div class="menu-tile menu-tile-tall" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/food/shrimp-n-grits-our-menu.jpg'); ?>');">
+      <div class="menu-tile menu-tile-tall" data-bg="<?php echo get_theme_file_uri('/assets/img/food/shrimp-n-grits-our-menu.jpg'); ?>">
         <div class="menu-tile-overlay">
           <div class="menu-tile-eyebrow">Award Winning</div>
           <h4>Shrimp & Grits</h4>
           <p>The signature plate that defines the brand and proves breakfast can be a destination.</p>
         </div>
       </div>
-      <div class="menu-tile menu-tile-wide" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/food/stuffed-french-toast-square.jpg'); ?>');">
+      <div class="menu-tile menu-tile-wide" data-bg="<?php echo get_theme_file_uri('/assets/img/food/stuffed-french-toast-square.jpg'); ?>">
         <div class="menu-tile-overlay">
           <div class="menu-tile-eyebrow">Visual Showpiece</div>
           <h4>Stuffed French Toast</h4>
           <p>The plate that lives on social. Built to be photographed, built to be ordered again.</p>
         </div>
       </div>
-      <div class="menu-tile menu-tile-small" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/food/mimosa-tower.jpg'); ?>');">
+      <div class="menu-tile menu-tile-small" data-bg="<?php echo get_theme_file_uri('/assets/img/food/mimosa-tower.jpg'); ?>">
         <div class="menu-tile-overlay">
           <div class="menu-tile-eyebrow">Check Average</div>
           <h4>Mimosa Towers</h4>
@@ -2057,17 +2080,17 @@ footer p {
       </div>
       <div class="sizzle-grid">
         <div class="video-card sizzle-card" data-video-id="k3YD-mX62Os">
-          <div class="sizzle-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/beignet-doughnuts-thumbnail.jpg'); ?>');">
+          <div class="sizzle-thumb" data-bg="<?php echo get_theme_file_uri('/assets/img/thumbnails/beignet-doughnuts-thumbnail.jpg'); ?>">
             <div class="play-btn"><svg width="20" height="20" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
           </div>
         </div>
         <div class="video-card sizzle-card" data-video-id="JD2KWZShMzg">
-          <div class="sizzle-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/chicken-waffles-3-ways-thumbnail.jpg'); ?>');">
+          <div class="sizzle-thumb" data-bg="<?php echo get_theme_file_uri('/assets/img/thumbnails/chicken-waffles-3-ways-thumbnail.jpg'); ?>">
             <div class="play-btn"><svg width="20" height="20" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
           </div>
         </div>
         <div class="video-card sizzle-card" data-video-id="qAATQV9jBWY">
-          <div class="sizzle-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/stuffed-french-toast-thumbnail.jpg'); ?>');">
+          <div class="sizzle-thumb" data-bg="<?php echo get_theme_file_uri('/assets/img/thumbnails/stuffed-french-toast-thumbnail.jpg'); ?>">
             <div class="play-btn"><svg width="20" height="20" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
           </div>
         </div>
@@ -2146,10 +2169,10 @@ footer p {
 <!-- Edge-to-Edge Photo Strip -->
 <section class="photo-strip-section">
   <div class="photo-strip">
-    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/buford-interior.webp'); ?>');"></div>
-    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/kingwood-interior.webp'); ?>');"></div>
-    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/macon-interior.webp'); ?>');"></div>
-    <div class="photo-strip-img" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/brand-strip/terminus-inside.webp'); ?>');"></div>
+    <div class="photo-strip-img" data-bg="<?php echo get_theme_file_uri('/assets/img/brand-strip/buford-interior.webp'); ?>"></div>
+    <div class="photo-strip-img" data-bg="<?php echo get_theme_file_uri('/assets/img/brand-strip/kingwood-interior.webp'); ?>"></div>
+    <div class="photo-strip-img" data-bg="<?php echo get_theme_file_uri('/assets/img/brand-strip/macon-interior.webp'); ?>"></div>
+    <div class="photo-strip-img" data-bg="<?php echo get_theme_file_uri('/assets/img/brand-strip/terminus-inside.webp'); ?>"></div>
   </div>
 </section>
  
@@ -2225,7 +2248,7 @@ footer p {
       </div>
       <div class="invest-card">
         <div class="label">Franchise Fee</div>
-        <div class="value">$45,000</div>
+        <div class="value">$50,000</div>
         <div class="note">Reduced fees for multi-unit commitments</div>
       </div>
       <div class="invest-card">
@@ -2315,7 +2338,7 @@ footer p {
     </div>
     <div class="video-wall">
       <div class="video-card reveal" data-video-id="URvlocRXXYE">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/tahir-rafiq.webp'); ?>');">
+        <div class="video-thumb" data-bg="<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/tahir-rafiq.webp'); ?>">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -2325,7 +2348,7 @@ footer p {
         </div>
       </div>
       <div class="video-card reveal" data-video-id="0d_Y2HFF5ww">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/mandy-rubenstein.webp'); ?>');">
+        <div class="video-thumb" data-bg="<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/mandy-rubenstein.webp'); ?>">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -2335,7 +2358,7 @@ footer p {
         </div>
       </div>
       <div class="video-card reveal" data-video-id="-3Pa9CUq7kc">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/joseph-hsiao.webp'); ?>');">
+        <div class="video-thumb" data-bg="<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/joseph-hsiao.webp'); ?>">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -2345,7 +2368,7 @@ footer p {
         </div>
       </div>
       <div class="video-card reveal" data-video-id="S-Mz1TClY5U">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/ariel-esteves.webp'); ?>');">
+        <div class="video-thumb" data-bg="<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/ariel-esteves.webp'); ?>">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -2355,7 +2378,7 @@ footer p {
         </div>
       </div>
       <div class="video-card reveal" data-video-id="HvDTJNh0ukU">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/nick-panici.webp'); ?>');">
+        <div class="video-thumb" data-bg="<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/nick-panici.webp'); ?>">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -2365,7 +2388,7 @@ footer p {
         </div>
       </div>
       <div class="video-card reveal" data-video-id="9MJqsLvSs3Q">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/larry-bell.webp'); ?>');">
+        <div class="video-thumb" data-bg="<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/larry-bell.webp'); ?>">
           <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg></div>
         </div>
         <div class="video-info">
@@ -2461,7 +2484,7 @@ footer p {
 </section>
  
 <!-- Process -->
-<section class="section section-cream">
+<section class="section section-cream" id="process">
   <div class="container">
     <div class="reveal" style="text-align: center;">
       <div class="section-eyebrow">The Process</div>
@@ -2470,27 +2493,27 @@ footer p {
     <div class="process-steps">
       <div class="step reveal">
         <div class="step-number">1</div>
-        <h4>Request the FDD</h4>
-        <p>We send it promptly. No runaround, no six-week drip campaign.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-number">2</div>
-        <h4>Call with Andrew</h4>
+        <h4>Initial Call with Andrew</h4>
         <p>Andrew Scherzer walks you through the opportunity and assesses mutual fit. A real conversation, not a script.</p>
       </div>
       <div class="step reveal">
+        <div class="step-number">2</div>
+        <h4>Complete Application</h4>
+        <p>We review your financials, target markets, and background. This is how we ensure the partnership is right for both sides.</p>
+      </div>
+      <div class="step reveal">
         <div class="step-number">3</div>
-        <h4>Financial Deep Dive</h4>
-        <p>Item 19 unit-level economics, segmented and transparent. Market mapping against your target area.</p>
+        <h4>FDD Review via Zoom</h4>
+        <p>Daryl joins Andrew to walk through the Franchise Disclosure Document, answer your questions, and get to know you personally.</p>
       </div>
       <div class="step reveal">
         <div class="step-number">4</div>
         <h4>Discovery Day</h4>
-        <p>Meet the president and executive team. Visit a high-performing unit. Review POS data. Talk to operators.</p>
+        <p>Meet the executive team. Visit a high-performing unit. Review POS data. Talk to operators. See the brand in person.</p>
       </div>
       <div class="step reveal">
         <div class="step-number">5</div>
-        <h4>Agreement</h4>
+        <h4>Signed Agreement</h4>
         <p>We move quickly for partners who are ready. Clear timelines, mutual accountability.</p>
       </div>
     </div>
@@ -2505,7 +2528,12 @@ footer p {
       <h2>Territories Are Filling. <em>Let's Start the Conversation.</em></h2>
       <p>Tell us about your background and target market. Andrew Scherzer, Partner of Franchise Development, will personally review your inquiry and follow up to discuss next steps.</p>
       <p>The best franchise investments are made before the map is full. If you're ready to evaluate the opportunity, we're ready to have a serious conversation.</p>
-      <div class="form-reassurance">Every inquiry is reviewed by our franchise development team. Qualified candidates will hear directly from Andrew Scherzer.</div>
+      <div class="form-reassurance">
+        <div class="form-reassurance-photo">
+          <img loading="lazy" src="<?php echo get_theme_file_uri('/assets/img/team/andrew-scherzer-tight.jpg'); ?>" alt="Andrew Scherzer">
+        </div>
+        <div class="form-reassurance-text">Andrew Scherzer personally reviews every inquiry. Qualified candidates hear from him directly.</div>
+      </div>
     </div>
     <div class="reveal form-right-wrapper">
       <?php echo do_shortcode('[wpforms id="310"]'); ?>
@@ -2521,11 +2549,37 @@ footer p {
 </footer>
  
 <script>
+// Lazy load background images via IntersectionObserver
+const lazyBgEls = document.querySelectorAll('[data-bg]');
+if ('IntersectionObserver' in window && lazyBgEls.length) {
+  const bgObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const bg = el.getAttribute('data-bg');
+        if (bg) {
+          el.style.backgroundImage = `url('${bg}')`;
+          el.removeAttribute('data-bg');
+        }
+        obs.unobserve(el);
+      }
+    });
+  }, { rootMargin: '300px 0px' });
+  lazyBgEls.forEach(el => bgObserver.observe(el));
+} else {
+  // Fallback: load all immediately
+  lazyBgEls.forEach(el => {
+    const bg = el.getAttribute('data-bg');
+    if (bg) el.style.backgroundImage = `url('${bg}')`;
+  });
+}
+
 // Smooth scroll without hash in URL
-document.querySelectorAll('a[href="#contact"]').forEach(link => {
+document.querySelectorAll('a[href="#contact"], a[href="#process"]').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
