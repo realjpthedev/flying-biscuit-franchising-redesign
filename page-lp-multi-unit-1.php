@@ -172,6 +172,7 @@ footer {
   letter-spacing: -0.03em;
   margin-bottom: 28px;
   opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
+  color: #a03edc;
 }
 .hero h1 em {
   font-style: italic;
@@ -487,6 +488,7 @@ footer {
   margin-bottom: 24px;
   font-weight: 300;
 }
+.legacy-text p strong { font-weight: 600; color: var(--charcoal); }
 .legacy-origin {
   display: flex;
   flex-direction: column;
@@ -2148,7 +2150,7 @@ footer p {
     <div class="legacy-grid">
       <div class="legacy-text reveal">
         <p>Flying Biscuit Café was born in Atlanta's Candler Park neighborhood in 1993 and has built a loyal, almost cult-like following across the Southeast. The brand carries the kind of organic consumer affection that marketing dollars can't manufacture.</p>
-        <p>But what makes this a franchise opportunity — not just a beloved restaurant — is the team behind the growth. 30 years refining the menu, the operations, and the unit economics. 5 corporate-owned locations, so we're not managing your business from a boardroom — we're in the trenches with you. When food costs spike or labor gets tight, we feel it the same morning you do.</p>
+        <p>But what makes this a franchise opportunity — not just a beloved restaurant — is the team behind the growth. 30 years refining the menu, the operations, and the unit economics. <strong>8 corporate-owned locations, so we're not managing your business from a boardroom — we're in the trenches with you.</strong> When food costs spike or labor gets tight, we feel it the same morning you do.</p>
       </div>
       <div class="legacy-origin reveal">
         <div class="legacy-origin-frame">
