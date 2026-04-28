@@ -25,9 +25,10 @@ $nav_links = [
 
 // About Us dropdown links
 $about_links = [
-  ['slug' => 'why-us',   'label' => 'Why Us',   'url' => '/why-us/'],
-  ['slug' => 'our-menu', 'label' => 'Our Menu',  'url' => '/our-menu/'],
-  ['slug' => 'faq',      'label' => 'FAQ',       'url' => '/faq/'],
+  ['slug' => 'why-us',               'label' => 'Why Us',                'url' => '/why-us/'],
+  ['slug' => 'our-menu',             'label' => 'Our Menu',              'url' => '/our-menu/'],
+  ['slug' => 'meet-our-franchisees', 'label' => 'Meet Our Franchisees',  'url' => '/meet-our-franchisees/'],
+  ['slug' => 'faq',                  'label' => 'FAQ',                   'url' => '/faq/'],
 ];
 
 /**
@@ -233,7 +234,7 @@ foreach ( $about_links as $link ) {
       </nav>
 
       <div class="navbar__drawer-footer">
-        <a href="/contact" class="navbar__drawer-cta">Get Started</a>
+        <a href="/contact/" class="navbar__drawer-cta">Get Started</a>
       </div>
     </div>
 

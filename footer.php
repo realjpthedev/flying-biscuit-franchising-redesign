@@ -1,8 +1,11 @@
+
+
 <!-- ============================================
      The Flying Biscuit Café — Franchising
      Footer
      v1.0
      ============================================ -->
+
 <?php
 
 // Prevent direct file access
@@ -56,6 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <h4 class="footer__col-title">Company</h4>
         <ul class="footer__nav">
           <li><a href="/why-us/" class="footer__nav-link">Why Us</a></li>
+          <li><a href="/meet-our-franchisees/" class="footer__nav-link">Meet Our Franchisees</a></li>
           <li><a href="/blog/" class="footer__nav-link">Blog</a></li>
           <li><a href="/faq/" class="footer__nav-link">FAQ</a></li>
           <li><a href="/contact/" class="footer__nav-link">Contact</a></li>
@@ -99,7 +103,9 @@ if ( ! defined( 'ABSPATH' ) ) {
       <div class="footer__legal">
         <a href="/privacy-policy/" class="footer__legal-link">Privacy Policy</a>
         <span class="footer__legal-sep" aria-hidden="true">·</span>
-        <a href="/sitemap.xml" class="footer__legal-link">Sitemap</a>
+        <a href="/terms-of-use/" class="footer__legal-link">Terms of Use</a>
+        <span class="footer__legal-sep" aria-hidden="true">·</span>
+        <a href="/sitemap/" class="footer__legal-link">Sitemap</a>
       </div>
     </div>
   </div>

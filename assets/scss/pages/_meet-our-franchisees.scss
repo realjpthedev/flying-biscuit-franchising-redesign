@@ -1,0 +1,667 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Meet Our Franchisees Page
+// v1.0
+// ============================================
+
+.franchisees__accent {
+	background: $gradient-sunrise;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.franchisees__section-eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+
+	&--dark {
+		color: $color-secondary;
+	}
+}
+
+.franchisees__section-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 36px;
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+	color: $color-primary-dark;
+	margin: 0 0 $space-xs;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+// --------------------------------------------
+// HERO
+// --------------------------------------------
+
+.franchisees__hero {
+	background-color: $color-primary-dark;
+	padding: $space-3xl 0 $space-2xl;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -30%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+		height: 160%;
+		background: radial-gradient(
+			ellipse at center,
+			rgba($color-secondary, 0.06) 0%,
+			transparent 70%
+		);
+		pointer-events: none;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-3xl 0 $space-xl;
+	}
+}
+
+.franchisees__hero-inner {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.franchisees__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+}
+
+.franchisees__hero-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 48px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-white;
+	margin: 0 0 $space-sm;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 38px;
+	}
+	@media (max-width: $bp-mobile) {
+		font-size: 30px;
+	}
+}
+
+.franchisees__hero-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	color: rgba($color-white, 0.5);
+	margin: 0 auto;
+	max-width: 540px;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// --------------------------------------------
+// VIDEO TESTIMONIALS
+// --------------------------------------------
+
+.franchisees__stories {
+	background-color: $color-white;
+	padding: $space-3xl 0;
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.franchisees__stories-inner {
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.franchisees__stories-header {
+	text-align: center;
+	margin-bottom: $space-2xl;
+}
+
+.franchisees__stories-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: $space-xl;
+
+	@media (max-width: $bp-tablet) {
+		gap: $space-lg;
+	}
+
+	@media (max-width: $bp-mobile) {
+		grid-template-columns: 1fr;
+		gap: $space-lg;
+	}
+}
+
+// ─── STORY CARD ───
+
+.franchisees__story {
+	display: flex;
+	flex-direction: column;
+}
+
+// ─── VIDEO PLAYER ───
+
+.franchisees__video {
+	position: relative;
+	aspect-ratio: 16 / 9;
+	border-radius: $radius-xl;
+	overflow: hidden;
+	background-color: #000;
+	cursor: pointer;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+
+		.franchisees__video-poster {
+			transform: scale(1.05);
+		}
+
+		.franchisees__video-play-icon {
+			transform: scale(1.1);
+			background: $gradient-sunrise;
+			color: $color-white;
+		}
+	}
+
+	&.is-playing {
+		cursor: default;
+		transform: none;
+		box-shadow: none;
+
+		.franchisees__video-poster-wrap,
+		.franchisees__video-play {
+			display: none;
+		}
+	}
+}
+
+.franchisees__video-poster-wrap {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.franchisees__video-poster {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.franchisees__video-embed {
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+
+	iframe {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+}
+
+.franchisees__video-play {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 50%;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+		pointer-events: none;
+	}
+
+	&:focus-visible {
+		outline: 3px solid $color-secondary;
+		outline-offset: -3px;
+		border-radius: $radius-xl;
+	}
+}
+
+.franchisees__video-play-icon {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background: rgba($color-white, 0.92);
+	color: $color-primary-dark;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+	transition:
+		transform $transition-base,
+		background $transition-base,
+		color $transition-base;
+
+	@media (max-width: $bp-mobile) {
+		width: 52px;
+		height: 52px;
+
+		svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+}
+
+// ─── QUOTE + META ───
+
+.franchisees__story-body {
+	padding: $space-md 0 0;
+}
+
+.franchisees__quote {
+	margin: 0 0 $space-sm;
+	padding: 0;
+	border: none;
+
+	p {
+		font-family: $font-display;
+		font-weight: $weight-bold;
+		font-size: 17px;
+		line-height: 1.55;
+		color: $color-primary-dark;
+		font-style: italic;
+		margin: 0;
+
+		@media (max-width: $bp-mobile) {
+			font-size: 15px;
+		}
+	}
+}
+
+.franchisees__story-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.franchisees__story-name {
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-body;
+	color: $color-primary-dark;
+}
+
+.franchisees__story-location {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	color: $color-neutral-mid;
+}
+
+// --------------------------------------------
+// STATS BAR
+// --------------------------------------------
+
+.franchisees__stats {
+	background-color: $color-primary-dark;
+	padding: $space-xl 0;
+}
+
+.franchisees__stats-inner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: $space-xl;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		gap: $space-lg;
+		padding: 0 $grid-margin-tablet;
+	}
+
+	@media (max-width: $bp-mobile) {
+		flex-wrap: wrap;
+		gap: $space-lg $space-xl;
+		padding: 0 $grid-margin-mobile;
+
+		.franchisees__stat-sep {
+			display: none;
+		}
+	}
+}
+
+.franchisees__stat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 2px;
+
+	@media (max-width: $bp-mobile) {
+		flex: 0 0 calc(50% - 24px);
+	}
+}
+
+.franchisees__stat-value {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 32px;
+	color: $color-white;
+	background: $gradient-sunrise;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 26px;
+	}
+}
+
+.franchisees__stat-label {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	color: rgba($color-white, 0.5);
+}
+
+.franchisees__stat-sep {
+	width: 1px;
+	height: 40px;
+	background-color: rgba($color-white, 0.12);
+}
+
+// --------------------------------------------
+// PULL QUOTE HIGHLIGHT
+// --------------------------------------------
+
+.franchisees__highlight {
+	background-color: $color-primary-dark;
+	padding: $space-3xl 0;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -30%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+		height: 160%;
+		background: radial-gradient(
+			ellipse at center,
+			rgba($color-secondary, 0.06) 0%,
+			transparent 70%
+		);
+		pointer-events: none;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.franchisees__highlight-inner {
+	max-width: 680px;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.franchisees__highlight-quote {
+	margin: 0 0 $space-lg;
+	padding: 0;
+	border: none;
+
+	p {
+		font-family: $font-display;
+		font-weight: $weight-bold;
+		font-size: 32px;
+		line-height: 1.4;
+		color: $color-white;
+		font-style: italic;
+		margin: 0;
+
+		@media (max-width: $bp-mobile) {
+			font-size: 22px;
+		}
+	}
+}
+
+.franchisees__highlight-attr {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: $space-sm;
+}
+
+.franchisees__highlight-avatar {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid rgba($color-secondary, 0.35);
+}
+
+.franchisees__highlight-info {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	gap: 1px;
+}
+
+.franchisees__highlight-name {
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-body;
+	color: $color-white;
+}
+
+.franchisees__highlight-role {
+	font-family: $font-body;
+	font-weight: $weight-medium;
+	font-size: $text-body-sm;
+	color: $color-secondary;
+}
+
+// --------------------------------------------
+// CTA + FORM
+// --------------------------------------------
+
+.franchisees__cta {
+	background-color: $color-surface-warm;
+	padding: $space-3xl 0;
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.franchisees__cta-inner {
+	display: grid;
+	grid-template-columns: 1fr 1.2fr;
+	gap: $space-2xl;
+	align-items: start;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		grid-template-columns: 1fr;
+		gap: $space-xl;
+		padding: 0 $grid-margin-tablet;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+		gap: $space-lg;
+	}
+}
+
+.franchisees__cta-content {
+	padding-top: $space-md;
+
+	@media (max-width: $bp-tablet) {
+		text-align: center;
+	}
+}
+
+.franchisees__cta-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 38px;
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+	color: $color-primary-dark;
+	margin: 0 0 $space-sm;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+.franchisees__cta-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	line-height: 1.7;
+	color: $color-neutral-mid;
+	margin: 0;
+	max-width: 440px;
+
+	@media (max-width: $bp-tablet) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// ─── FORM CARD ───
+
+.franchisees__form-card {
+	background-color: $color-white;
+	border-radius: $radius-2xl;
+	padding: $space-xl;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+	border: 1px solid rgba(0, 0, 0, 0.04);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: $space-lg;
+		right: $space-lg;
+		height: 4px;
+		background: $gradient-sunrise;
+		border-radius: 0 0 $radius-sm $radius-sm;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-lg $space-md;
+		border-radius: $radius-xl;
+	}
+}
+
+.franchisees__form-title {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 24px;
+	line-height: 1.2;
+	color: $color-primary-dark;
+	text-align: center;
+	margin: 0 0 $space-3xs;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 20px;
+	}
+}
+
+.franchisees__form-subtitle {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	color: $color-neutral-mid;
+	text-align: center;
+	margin: 0 0 $space-lg;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body-sm;
+	}
+}
+
+.franchisees__form-embed {
+	.wpforms-container,
+	.wpforms-form {
+		max-width: 100% !important;
+	}
+}
