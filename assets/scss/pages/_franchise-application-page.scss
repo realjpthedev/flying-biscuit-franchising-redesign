@@ -1,0 +1,327 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Franchise Application Page
+// v1.0
+// ============================================
+
+.application__accent {
+	background: $gradient-sunrise;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+// --------------------------------------------
+// HERO
+// --------------------------------------------
+
+.application__hero {
+	background-color: $color-primary-dark;
+	padding: $space-3xl 0 $space-2xl;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -30%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+		height: 160%;
+		background: radial-gradient(
+			ellipse at center,
+			rgba($color-secondary, 0.06) 0%,
+			transparent 70%
+		);
+		pointer-events: none;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-3xl 0 $space-xl;
+	}
+}
+
+.application__hero-inner {
+	max-width: 680px;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.application__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+}
+
+.application__hero-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 48px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-white;
+	margin: 0 0 $space-sm;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 38px;
+	}
+	@media (max-width: $bp-mobile) {
+		font-size: 30px;
+	}
+}
+
+.application__hero-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	color: rgba($color-white, 0.5);
+	margin: 0 auto;
+	max-width: 500px;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// --------------------------------------------
+// BODY — FORM + SIDEBAR
+// --------------------------------------------
+
+.application__body {
+	background-color: $color-surface-warm;
+	padding: $space-3xl 0;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-2xl 0;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: $space-xl 0;
+	}
+}
+
+.application__body-inner {
+	display: grid;
+	grid-template-columns: 1.4fr 1fr;
+	gap: $space-2xl;
+	align-items: start;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		grid-template-columns: 1fr;
+		gap: $space-xl;
+		padding: 0 $grid-margin-tablet;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+		gap: $space-lg;
+	}
+}
+
+// ─── FORM CARD ───
+
+.application__form-card {
+	background-color: $color-white;
+	border-radius: $radius-2xl;
+	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+	position: relative;
+	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.04);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: $gradient-sunrise;
+	}
+
+	@media (max-width: $bp-mobile) {
+		border-radius: $radius-xl;
+	}
+}
+
+.application__form-embed {
+	.wpforms-container,
+	.wpforms-form {
+		max-width: 100% !important;
+	}
+}
+
+// ─── SIDEBAR ───
+
+.application__sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: $space-md;
+}
+
+.application__sidebar-card {
+	background-color: $color-white;
+	border-radius: $radius-xl;
+	padding: $space-lg;
+	border: 1px solid rgba(0, 0, 0, 0.04);
+
+	&--dark {
+		background-color: $color-primary-dark;
+		border-color: transparent;
+	}
+}
+
+.application__sidebar-title {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 20px;
+	line-height: 1.25;
+	color: $color-primary-dark;
+	margin: 0 0 $space-md;
+
+	&--light {
+		color: $color-white;
+	}
+}
+
+// ─── STEPS LIST ───
+
+.application__sidebar-steps {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: $space-md;
+}
+
+.application__sidebar-step {
+	display: flex;
+	gap: $space-sm;
+}
+
+.application__sidebar-step-num {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: $gradient-sunrise;
+	color: $color-white;
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 14px;
+}
+
+.application__sidebar-step-body {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	padding-top: 4px;
+}
+
+.application__sidebar-step-title {
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-body;
+	color: $color-primary-dark;
+}
+
+.application__sidebar-step-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	line-height: 1.55;
+	color: $color-neutral-mid;
+}
+
+// ─── CONTACT CARD ───
+
+.application__sidebar-text {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	color: rgba($color-white, 0.5);
+	margin: 0 0 $space-md;
+	line-height: 1.6;
+}
+
+.application__sidebar-contact {
+	display: flex;
+	flex-direction: column;
+	gap: $space-xs;
+	margin-bottom: $space-lg;
+}
+
+.application__sidebar-link {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2xs;
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body;
+	color: $color-white;
+	text-decoration: none;
+	transition: color $transition-base;
+
+	svg {
+		color: $color-secondary;
+	}
+
+	&:hover {
+		color: $color-secondary;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+}
+
+.application__sidebar-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-button;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $color-white;
+	background: $gradient-sunrise;
+	padding: $space-sm $space-lg;
+	border-radius: $radius-pill;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 3px;
+	}
+}
