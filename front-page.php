@@ -15,7 +15,7 @@ get_template_part('/templates/hero');
 get_template_part('/templates/reasons'); 
 get_template_part('/templates/menu'); 
 get_template_part('/templates/meet-the-family'); 
-get_template_part('/templates/testimonials'); 
+get_template_part('/templates/meet-our-franchisees'); 
 get_template_part('/templates/reviews'); 
 get_template_part('/templates/available-territories'); 
 get_template_part('/templates/steps-to-ownership'); 

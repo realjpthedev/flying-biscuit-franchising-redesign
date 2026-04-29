@@ -1,0 +1,178 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Franchisee Videos Section (Homepage)
+// v1.0
+// ============================================
+
+.franchisee-videos {
+	background-color: $color-primary-dark;
+	padding: $space-3xl 0;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -20%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		height: 160%;
+		background: radial-gradient(
+			ellipse at center,
+			rgba($color-secondary, 0.08) 0%,
+			transparent 60%
+		);
+		pointer-events: none;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.franchisee-videos__inner {
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.franchisee-videos__header {
+	text-align: center;
+	margin-bottom: $space-2xl;
+}
+
+.franchisee-videos__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+}
+
+.franchisee-videos__title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 36px;
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+	color: $color-white;
+	margin: 0 0 $space-xs;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+.franchisee-videos__accent {
+	background: $gradient-sunrise;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.franchisee-videos__subtitle {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	line-height: 1.6;
+	color: rgba($color-white, 0.5);
+	margin: 0 auto;
+	max-width: 540px;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+.franchisee-videos__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: $space-xl;
+
+	@media (max-width: $bp-tablet) {
+		gap: $space-lg;
+	}
+
+	@media (max-width: $bp-mobile) {
+		grid-template-columns: 1fr;
+		gap: $space-lg;
+	}
+
+	// Override franchisees__ card colors for dark background
+	.franchisees__story-meta {
+		align-items: flex-start;
+	}
+
+	.franchisees__quote p {
+		color: rgba($color-white, 0.8);
+	}
+
+	.franchisees__story-name {
+		color: $color-white;
+	}
+
+	.franchisees__story-location {
+		display: inline-block;
+		font-weight: $weight-semibold;
+		font-size: 12px;
+		letter-spacing: 0.02em;
+		color: $color-white;
+		background: $color-secondary;
+		padding: 4px 12px;
+		border-radius: $radius-pill;
+		margin-top: $space-3xs;
+	}
+}
+
+// ─── CTA ───
+
+.franchisee-videos__footer {
+	text-align: center;
+	margin-top: $space-2xl;
+}
+
+.franchisee-videos__cta {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2xs;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-button;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $color-white;
+	background: $gradient-sunrise;
+	padding: $space-sm $space-lg;
+	border-radius: $radius-pill;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 3px;
+	}
+}
+
+.franchisee-videos__cta-arrow {
+	font-size: 18px;
+	line-height: 1;
+}
