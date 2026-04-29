@@ -14,6 +14,7 @@ const utmTracker = (() => {
 		utm_campaign: "fb_utm_campaign",
 		utm_content: "fb_utm_content",
 		utm_term: "fb_utm_term",
+		video: "fb_video",
 	};
 
 	// Parse the current page's query string
