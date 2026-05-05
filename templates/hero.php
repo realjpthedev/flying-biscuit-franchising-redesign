@@ -19,7 +19,7 @@
 
   <div class="hero__inner">
 
-    <!-- Content -->
+    <!-- Left: Content + Video -->
     <div class="hero__content">
       <p class="hero__eyebrow">Now Awarding Franchise Territories</p>
 
@@ -34,10 +34,43 @@
         restaurant and live like you own your schedule.
       </p>
 
-      <a href="/contact" class="hero__cta">
-        Get Started
-        <span class="hero__cta-arrow" aria-hidden="true">→</span>
-      </a>
+      <!-- Video (inline within content column) -->
+      <div
+        class="hero__video-wrapper"
+        id="heroVideoWrapper"
+        data-youtube-id="-Rn9OIflfB0"
+      >
+        <div class="hero__video-border" aria-hidden="true"></div>
+
+        <img
+          src="<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/mandy-rubenstein.webp'); ?>"
+          alt=""
+          class="hero__video-poster"
+          id="heroVideoPoster"
+          loading="eager"
+        />
+
+        <div class="hero__video-embed" id="heroVideoEmbed"></div>
+
+        <button
+          class="hero__play-btn"
+          id="heroPlayBtn"
+          type="button"
+          aria-label="Play franchise opportunity video"
+        >
+          <span class="hero__play-icon"></span>
+          <span class="hero__play-label">Watch Our Story</span>
+        </button>
+
+        <button
+          class="hero__video-close"
+          id="heroVideoClose"
+          type="button"
+          aria-label="Stop video"
+        >
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
 
       <div class="hero__stats">
         <div class="hero__stat">
@@ -55,47 +88,24 @@
       </div>
     </div>
 
-    <!-- Video -->
-    <div
-      class="hero__video-wrapper"
-      id="heroVideoWrapper"
-      data-youtube-id="HrIkyyMyIu8"
-    >
-
-      <div class="hero__video-border" aria-hidden="true"></div>
-
-      <!-- Poster image shown before play -->
-      <img
-        src="<?php echo get_theme_file_uri('/assets/img/thumbnails/hero-video-thumbnail.jpg'); ?>"
-        alt=""
-        class="hero__video-poster"
-        id="heroVideoPoster"
-        loading="eager"
-      />
-
-      <!-- YouTube iframe injected here on play -->
-      <div class="hero__video-embed" id="heroVideoEmbed"></div>
-
-      <!-- Play Button -->
-      <button
-        class="hero__play-btn"
-        id="heroPlayBtn"
-        type="button"
-        aria-label="Play franchise opportunity video"
-      >
-        <span class="hero__play-icon"></span>
-        <span class="hero__play-label">Watch Our Story</span>
-      </button>
-
-      <!-- Close Button (visible during playback) -->
-      <button
-        class="hero__video-close"
-        id="heroVideoClose"
-        type="button"
-        aria-label="Stop video"
-      >
-        <span aria-hidden="true">✕</span>
-      </button>
+    <!-- Right: Lead Form -->
+    <div class="hero__form">
+      <div class="hero__form-card" id="heroFormCard">
+        <div class="hero__form-intro">
+          <img
+            src="<?php echo esc_url( get_theme_file_uri( '/assets/img/team/andrew-scherzer.jpg' ) ); ?>"
+            alt="Andrew Scherzer"
+            class="hero__form-avatar"
+            loading="eager"
+          />
+          <h2 class="hero__form-title">Talk with Andrew</h2>
+          <p class="hero__form-role">Partner, Director of Franchise Development</p>
+        </div>
+        <p class="hero__form-subtitle">Tell us a little about yourself and Andrew will be in touch.</p>
+        <div class="hero__form-embed">
+          <?php echo do_shortcode( '[wpforms id="310"]' ); ?>
+        </div>
+      </div>
     </div>
 
   </div>

@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_template_part('/templates/hero'); 
 get_template_part('/templates/reasons'); 
 get_template_part('/templates/menu'); 
-get_template_part('/templates/meet-the-family'); 
+// get_template_part('/templates/meet-the-family'); 
 get_template_part('/templates/meet-our-franchisees'); 
 get_template_part('/templates/reviews'); 
 get_template_part('/templates/available-territories'); 
@@ -22,7 +22,7 @@ get_template_part('/templates/investment');
 get_template_part('/templates/steps-to-ownership'); 
 get_template_part('/templates/faq'); 
 get_template_part('/templates/support'); 
-get_template_part('/templates/contact'); 
+get_template_part('/templates/sticky-cta')
 
 ?>
 

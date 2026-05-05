@@ -18,3 +18,4 @@ import FaqPage from "../assets/js/faqPage";
 import Territories from "../assets/js/territories";
 import utmTracker from "../assets/js/utm";
 import FranchiseeVideos from "../assets/js/franchiseeVideos";
+import StickyCta from "../assets/js/stickyCta";

@@ -1,0 +1,73 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Sticky "Talk with Andrew" CTA
+// v1.0
+// ============================================
+
+.sticky-cta {
+	position: fixed;
+	bottom: $space-lg;
+	right: $space-lg;
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	gap: $space-xs;
+	background: $gradient-sunrise;
+	color: $color-white;
+	text-decoration: none;
+	padding: 8px 20px 8px 8px;
+	border-radius: $radius-pill;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(20px);
+	transition:
+		opacity 0.3s ease,
+		visibility 0.3s ease,
+		transform 0.3s ease,
+		box-shadow 0.25s ease;
+	pointer-events: none;
+
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+
+	&:hover {
+		box-shadow: 0 12px 40px rgba($color-secondary, 0.45);
+		transform: translateY(-2px);
+	}
+
+	&.is-visible:hover {
+		transform: translateY(-2px);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-white;
+		outline-offset: 3px;
+	}
+
+	@media (max-width: $bp-mobile) {
+		bottom: $space-md;
+		right: $space-md;
+	}
+}
+
+.sticky-cta__avatar {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid rgba($color-white, 0.4);
+	flex-shrink: 0;
+}
+
+.sticky-cta__text {
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: 14px;
+	letter-spacing: 0.02em;
+	white-space: nowrap;
+}

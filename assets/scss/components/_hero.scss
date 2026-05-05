@@ -16,12 +16,12 @@
 
 .hero__inner {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1.3fr 1fr;
 	align-items: center;
 	max-width: $grid-max-width;
 	margin: 0 auto;
 	padding: $space-4xl $grid-margin-desktop;
-	gap: $space-3xl;
+	gap: $space-2xl;
 	min-height: 600px;
 
 	@media (max-width: $bp-tablet) {
@@ -272,21 +272,16 @@
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	max-width: 340px;
-	aspect-ratio: 9 / 16;
-	margin-left: auto;
-	border-radius: $radius-2xl;
+	aspect-ratio: 16 / 9;
+	border-radius: $radius-xl;
 	overflow: hidden;
 	background-color: rgba($color-white, 0.05);
-	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+	margin-top: $space-md;
 
 	@media (max-width: $bp-tablet) {
-		max-width: 300px;
 		margin: 0 auto;
-	}
-
-	@media (max-width: $bp-mobile) {
-		max-width: 260px;
+		max-width: 100%;
 	}
 }
 
@@ -309,17 +304,12 @@
 	inset: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0;
-	transition: opacity $transition-smooth;
+	z-index: 2;
 
 	iframe {
 		width: 100%;
 		height: 100%;
 		border: none;
-	}
-
-	.hero__video-wrapper.is-playing & {
-		opacity: 1;
 	}
 }
 
@@ -456,9 +446,106 @@
 .hero__video-border {
 	position: absolute;
 	inset: -4px;
-	border-radius: calc(#{$radius-2xl} + 4px);
+	border-radius: calc(#{$radius-xl} + 4px);
 	border: 2px solid rgba($color-tertiary, 0.2);
 	pointer-events: none;
+}
+
+// --------------------------------------------
+// LEAD FORM (RIGHT COLUMN)
+// --------------------------------------------
+
+.hero__form {
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		max-width: 480px;
+		margin: 0 auto;
+		width: 100%;
+	}
+}
+
+.hero__form-card {
+	background-color: $color-white;
+	border-radius: $radius-2xl;
+	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: $gradient-sunrise;
+	}
+
+	@media (max-width: $bp-mobile) {
+		border-radius: $radius-xl;
+	}
+}
+
+.hero__form-intro {
+	text-align: center;
+	padding: $space-lg $space-lg 0;
+}
+
+.hero__form-avatar {
+	display: block;
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin: 0 auto $space-sm;
+	border: 3px solid rgba($color-secondary, 0.2);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.hero__form-title {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 24px;
+	line-height: 1.2;
+	color: $color-primary-dark;
+	text-align: center;
+	margin: 0 0 $space-3xs;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 20px;
+	}
+}
+
+.hero__form-role {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body-sm;
+	color: $color-secondary;
+	text-align: center;
+	margin: 0;
+}
+
+.hero__form-subtitle {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	color: $color-neutral-mid;
+	text-align: center;
+	margin: 0;
+	padding: $space-xs $space-lg 0;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body-sm;
+	}
+}
+
+.hero__form-embed {
+	.wpforms-container,
+	.wpforms-form {
+		max-width: 100% !important;
+	}
 }
 
 // --------------------------------------------

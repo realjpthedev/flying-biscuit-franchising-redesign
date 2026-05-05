@@ -4,17 +4,19 @@
 // v1.0
 // ============================================
 
-const Hero = (function () {
+var Hero = (function () {
 	"use strict";
 
-	let wrapper, embedContainer, poster, playBtn, closeBtn;
-	let youtubeId;
-	let iframe;
+	var wrapper, embedContainer, playBtn, closeBtn;
+	var youtubeId;
+	var iframe;
 
 	/**
-	 * Build and inject the YouTube iframe
+	 * Start video playback — inject iframe
 	 */
-	function createIframe() {
+	function play() {
+		if (wrapper.classList.contains("is-playing")) return;
+
 		iframe = document.createElement("iframe");
 		iframe.src =
 			"https://www.youtube.com/embed/" +
@@ -24,23 +26,6 @@ const Hero = (function () {
 		iframe.setAttribute("allowfullscreen", "");
 		iframe.setAttribute("title", "Flying Biscuit franchise opportunity video");
 		embedContainer.appendChild(iframe);
-	}
-
-	/**
-	 * Remove the YouTube iframe from the DOM
-	 */
-	function removeIframe() {
-		if (iframe) {
-			iframe.remove();
-			iframe = null;
-		}
-	}
-
-	/**
-	 * Start video playback — inject iframe
-	 */
-	function play() {
-		createIframe();
 		wrapper.classList.add("is-playing");
 	}
 
@@ -50,13 +35,18 @@ const Hero = (function () {
 	function stop() {
 		wrapper.classList.remove("is-playing");
 
-		// Small delay so the fade-out transition plays before removing the iframe
-		setTimeout(removeIframe, 300);
+		setTimeout(function () {
+			if (iframe) {
+				iframe.remove();
+				iframe = null;
+			}
+		}, 300);
+
 		playBtn.focus();
 	}
 
 	/**
-	 * Handle keyboard on the wrapper (Escape to stop)
+	 * Handle keyboard (Escape to stop)
 	 */
 	function handleKeydown(e) {
 		if (e.key === "Escape" && wrapper.classList.contains("is-playing")) {
@@ -66,71 +56,54 @@ const Hero = (function () {
 	}
 
 	/**
-	 * Bind all event listeners
+	 * Initialize the hero component
 	 */
-	function bindEvents() {
-		playBtn.addEventListener("click", play);
-		closeBtn.addEventListener("click", stop);
+	function init() {
+		wrapper = document.getElementById("heroVideoWrapper");
+		if (!wrapper) return;
+
+		embedContainer = document.getElementById("heroVideoEmbed");
+		playBtn = document.getElementById("heroPlayBtn");
+		closeBtn = document.getElementById("heroVideoClose");
+		youtubeId = wrapper.getAttribute("data-youtube-id");
+
+		if (!embedContainer || !playBtn || !closeBtn || !youtubeId) return;
+
+		// Click on the wrapper to play (same pattern as franchisee videos)
+		wrapper.addEventListener("click", function (e) {
+			// Ignore clicks on the close button
+			if (e.target.closest(".hero__video-close")) return;
+			e.preventDefault();
+			play();
+		});
+
+		closeBtn.addEventListener("click", function (e) {
+			e.stopPropagation();
+			stop();
+		});
+
 		wrapper.addEventListener("keydown", handleKeydown);
 	}
 
 	/**
-	 * Cache DOM references
-	 */
-	function cacheDOM() {
-		wrapper = document.getElementById("heroVideoWrapper");
-		embedContainer = document.getElementById("heroVideoEmbed");
-		poster = document.getElementById("heroVideoPoster");
-		playBtn = document.getElementById("heroPlayBtn");
-		closeBtn = document.getElementById("heroVideoClose");
-
-		if (wrapper) {
-			youtubeId = wrapper.getAttribute("data-youtube-id");
-		}
-	}
-
-	/**
-	 * Initialize the hero component
-	 */
-	function init() {
-		cacheDOM();
-
-		if (!wrapper || !embedContainer || !playBtn || !closeBtn || !youtubeId) {
-			console.warn("Hero: Required DOM elements or YouTube ID not found.");
-			return;
-		}
-
-		bindEvents();
-	}
-
-	/**
-	 * Tear down event listeners
+	 * Tear down
 	 */
 	function destroy() {
 		if (!wrapper) return;
 
-		playBtn.removeEventListener("click", play);
-		closeBtn.removeEventListener("click", stop);
-		wrapper.removeEventListener("keydown", handleKeydown);
-
-		removeIframe();
+		if (iframe) {
+			iframe.remove();
+			iframe = null;
+		}
 		wrapper.classList.remove("is-playing");
 	}
 
-	// Auto-initialize when DOM is ready if hero markup is present
-	function autoInit() {
-		if (document.getElementById("heroVideoWrapper")) {
-			init();
-		}
-	}
-
 	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", autoInit);
+		document.addEventListener("DOMContentLoaded", init);
 	} else {
-		autoInit();
+		init();
 	}
 
-	// Public API
 	return {
 		init: init,
 		destroy: destroy,
