@@ -1,0 +1,216 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Investment Overview Section (Homepage)
+// v1.0
+// ============================================
+
+.investment {
+	background-color: $color-surface-warm;
+	padding: $space-3xl 0;
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-2xl 0;
+	}
+}
+
+.investment__inner {
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+// ─── HEADER ───
+
+.investment__header {
+	text-align: center;
+	margin-bottom: $space-2xl;
+}
+
+.investment__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+}
+
+.investment__title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 36px;
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+	color: $color-primary-dark;
+	margin: 0 0 $space-xs;
+
+	@media (max-width: $bp-mobile) {
+		font-size: 28px;
+	}
+}
+
+.investment__accent {
+	background: $gradient-sunrise;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.investment__subtitle {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	line-height: 1.6;
+	color: $color-neutral-mid;
+	margin: 0 auto;
+	max-width: 480px;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// ─── STAT CARDS ───
+
+.investment__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: $space-lg;
+
+	@media (max-width: $bp-tablet) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: $space-md;
+	}
+
+	@media (max-width: $bp-mobile) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.investment__card {
+	background-color: $color-white;
+	border-radius: $radius-xl;
+	padding: $space-lg;
+	text-align: center;
+	border: 1px solid rgba(0, 0, 0, 0.04);
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+	}
+
+	&--featured {
+		border-color: rgba($color-secondary, 0.2);
+		position: relative;
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: $space-md;
+			right: $space-md;
+			height: 3px;
+			background: $gradient-sunrise;
+			border-radius: 0 0 $radius-sm $radius-sm;
+		}
+	}
+}
+
+.investment__card-value {
+	display: block;
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 32px;
+	line-height: 1.1;
+	color: $color-primary-dark;
+	margin-bottom: $space-3xs;
+
+	.investment__card--featured & {
+		background: $gradient-sunrise;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	@media (max-width: $bp-tablet) {
+		font-size: 26px;
+	}
+}
+
+.investment__card-label {
+	display: block;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-body;
+	color: $color-primary-dark;
+	margin-bottom: $space-2xs;
+}
+
+.investment__card-note {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	line-height: 1.5;
+	color: $color-neutral-mid;
+	margin: 0;
+}
+
+// ─── CTA ───
+
+.investment__footer {
+	text-align: center;
+	margin-top: $space-xl;
+}
+
+.investment__cta {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2xs;
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-button;
+	letter-spacing: $tracking-button;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $color-white;
+	background: $gradient-sunrise;
+	padding: $space-sm $space-lg;
+	border-radius: $radius-pill;
+	transition:
+		transform $transition-base,
+		box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-primary;
+		outline-offset: 3px;
+	}
+}
+
+.investment__cta-arrow {
+	font-size: 18px;
+	line-height: 1;
+}
+
+// ─── DISCLAIMER ───
+
+.investment__disclaimer {
+	margin-top: $space-lg;
+	text-align: center;
+}

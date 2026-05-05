@@ -18,6 +18,7 @@ get_template_part('/templates/meet-the-family');
 get_template_part('/templates/meet-our-franchisees'); 
 get_template_part('/templates/reviews'); 
 get_template_part('/templates/available-territories'); 
+get_template_part('/templates/investment'); 
 get_template_part('/templates/steps-to-ownership'); 
 get_template_part('/templates/faq'); 
 get_template_part('/templates/support'); 
