@@ -18,19 +18,19 @@
     <div class="investment__grid">
 
       <div class="investment__card">
-        <span class="investment__card-value">$45K</span>
+        <span class="investment__card-value">$50K</span>
         <span class="investment__card-label">Franchise Fee</span>
         <p class="investment__card-note">Single-unit initial franchise fee</p>
       </div>
 
       <div class="investment__card investment__card--featured">
-        <span class="investment__card-value">$2M*</span>
+        <span class="investment__card-value">$2M+*</span>
         <span class="investment__card-label">Average Unit Volume</span>
-        <p class="investment__card-note">Based on 2024 FDD Item 19 data</p>
+        <p class="investment__card-note">Based on 2025 FDD Item 19 data</p>
       </div>
 
       <div class="investment__card">
-        <span class="investment__card-value">$766K–$1.17M</span>
+        <span class="investment__card-value">$468K–$1.17M</span>
         <span class="investment__card-label">Total Investment</span>
         <p class="investment__card-note">Including build-out, equipment, and working capital</p>
       </div>

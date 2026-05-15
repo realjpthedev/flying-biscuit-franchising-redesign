@@ -1969,6 +1969,41 @@ footer p {
   .sizzle-grid { grid-template-columns: 1fr; max-width: 320px; margin-left: auto; margin-right: auto; }
   .sizzle-row { margin-top: 56px; }
 }
+
+/* Disclaimer */
+.disclaimer { margin-top: 0px; text-align: center; }
+.disclaimer__toggle {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-body); font-size: 0.8rem; font-weight: 600;
+  color: rgba(255,255,255,0.4); display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 0; transition: color 0.2s ease;
+}
+.disclaimer__toggle:hover { color: rgba(255,255,255,0.6); }
+.disclaimer__toggle-arrow {
+  display: inline-block; width: 0; height: 0;
+  border-left: 4px solid transparent; border-right: 4px solid transparent;
+  border-top: 5px solid currentColor; transition: transform 0.2s ease;
+}
+.disclaimer__toggle[aria-expanded="true"] .disclaimer__toggle-arrow { transform: rotate(180deg); }
+.disclaimer__body { display: none; }
+.disclaimer__content { text-align: left; max-width: 900px; margin: 12px auto 0; padding: 20px 24px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; }
+.disclaimer__content p { font-size: 0.78rem; line-height: 1.6; color: rgba(255,255,255,0.35); margin: 0 0 10px; font-weight: 300; }
+.disclaimer__content p:last-child { margin-bottom: 0; }
+.disclaimer__content strong { color: rgba(255,255,255,0.5); }
+
+/* Dark background disclaimers */
+.section-dark .disclaimer__toggle-text { color: rgba(255,255,255,0.4) !important; }
+.section-dark .disclaimer__toggle-arrow { border-top-color: rgba(255,255,255,0.4) !important; }
+.section-dark .disclaimer__content p { color: rgba(255,255,255,0.35) !important; }
+.section-dark .disclaimer__content strong { color: rgba(255,255,255,0.5) !important; }
+
+/* Light background disclaimers */
+.section-cream .disclaimer__toggle-text { color: var(--mid-gray) !important; }
+.section-cream .disclaimer__content p { color: var(--mid-gray) !important; }
+.section-cream .disclaimer__content strong { color: var(--dark-gray) !important; }
+
+.section:not(.section-dark):not(.section-cream):not(.section-purple) .disclaimer__toggle-text { color: var(--mid-gray) !important; }
+.section:not(.section-dark):not(.section-cream):not(.section-purple) .disclaimer__content p { color: var(--mid-gray) !important; }
 </style>
 </head>
 <body <?php body_class(); ?>>
@@ -1989,7 +2024,7 @@ footer p {
     <div class="hero-left">
       <div class="hero-eyebrow">Multi-Unit Market Development</div>
       <h1>Own a <em>Market.</em> Not Just a Restaurant.</h1>
-      <p class="hero-sub">42 locations with 12 in development. ~$2M AUV. Closed by 3pm. The team that built Moe's Southwest Grill is doing it again — and the market map is filling fast. Growth-phase upside without early-stage risk.</p>
+      <p class="hero-sub">42 locations with 12 in development. $2M+* AUV. Closed by 3pm. The team that built Moe's Southwest Grill is doing it again — and the market map is filling fast. Growth-phase upside without early-stage risk.</p>
       <div class="hero-video">
         <div class="video-card hero-video-card" data-video-id="-Rn9OIflfB0">
           <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/meet-our-franchisees.webp'); ?>');">
@@ -2024,11 +2059,15 @@ footer p {
   <div class="stats-inner">
     <div class="stat-item"><div class="stat-number">30+</div><div class="stat-label">Years of Proven Success</div></div>
     <div class="stat-item"><div class="stat-number">42</div><div class="stat-label">Locations</div></div>
-    <div class="stat-item"><div class="stat-number">~$2M</div><div class="stat-label">Avg. Unit Volume</div></div>
+    <div class="stat-item"><div class="stat-number">$2M+*</div><div class="stat-label">Avg. Unit Volume</div></div>
     <div class="stat-item"><div class="stat-number">345</div><div class="stat-label">Locations Built at Moe's</div></div>
     <div class="stat-item"><div class="stat-number">2 DPs</div><div class="stat-label">Breakfast &amp; Lunch Only</div></div>
     <div class="stat-item"><div class="stat-number">Now</div><div class="stat-label">Select Prime Markets Open</div></div>
   </div>
+</div>
+
+<div class="section-dark" style="background: var(--purple); padding: 0 40px 24px; text-align: center;">
+  <?php $disclaimer_id = 'stats-disclaimer'; include( get_theme_file_path( '/templates/disclaimer.php' ) ); ?>
 </div>
 
 <!-- Press / Recognition Bar -->
@@ -2088,7 +2127,7 @@ footer p {
     <div class="model-features">
       <div class="model-feature reveal">
         <div class="model-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h4>~$2M Average Unit Volume</h4>
+        <h4>$2M+ Average Unit Volume</h4>
         <p>Consistent, underwritable performance across the system. The kind of top-line revenue that makes multi-unit economics work at scale.</p>
       </div>
       <div class="model-feature reveal">
@@ -2287,8 +2326,9 @@ footer p {
       <div class="legacy-stat"><div class="number">1993</div><div class="label">Founded</div></div>
       <div class="legacy-stat"><div class="number">42</div><div class="label">Locations</div></div>
       <div class="legacy-stat"><div class="number">345</div><div class="label">Built at Moe's</div></div>
-      <div class="legacy-stat"><div class="number">~$2M</div><div class="label">Average Unit Volume</div></div>
+      <div class="legacy-stat"><div class="number">$2M+*</div><div class="label">Average Unit Volume</div></div>
     </div>
+      <?php $disclaimer_id = 'legacy-disclaimer'; include( get_theme_file_path( '/templates/disclaimer.php' ) ); ?>
   </div>
 </section>
 
@@ -2369,7 +2409,7 @@ footer p {
     <div class="investment-grid reveal">
       <div class="invest-card">
         <div class="label">Total Investment Per Unit</div>
-        <div class="value">$766,750 – $1,171,350*</div>
+        <div class="value">$467,900 – $1,171,350*</div>
         <div class="note">Complete investment details in our FDD</div>
       </div>
       <div class="invest-card">
@@ -2389,6 +2429,7 @@ footer p {
       </div>
     </div>
     <p class="invest-footnote reveal">*These figures are for planning purposes. Complete investment details, including all assumptions and ranges, are provided in our Franchise Disclosure Document. For multi-unit area development commitments, we structure deals with scaled franchise fees and development timelines tailored to your market and build-out capacity.</p>
+    <?php $disclaimer_id = 'invest-disclaimer'; include( get_theme_file_path( '/templates/disclaimer.php' ) ); ?>
   </div>
 </section>
  
@@ -2789,6 +2830,18 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && videoModal.classList.contains('active')) {
     closeVideoModal();
   }
+});
+</script>
+
+<script>
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.disclaimer__toggle');
+  if (!btn) return;
+  var body = document.getElementById(btn.getAttribute('aria-controls'));
+  if (!body) return;
+  var isOpen = body.style.display === 'block';
+  body.style.display = isOpen ? 'none' : 'block';
+  btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
 });
 </script>
  

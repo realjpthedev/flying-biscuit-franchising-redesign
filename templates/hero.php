@@ -24,7 +24,7 @@
       <p class="hero__eyebrow">Now Awarding Franchise Territories</p>
 
       <h1 class="hero__headline">
-        <span class="hero__headline-accent">$2 Million</span> Average Sales.
+        <span class="hero__headline-accent">$2+ Million</span> Average Sales.
         Home By 3pm.
       </h1>
 

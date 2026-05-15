@@ -2427,7 +2427,7 @@ get_header();
             <div class="own-steps__card">
               <h3 class="own-steps__title">Ownership — You’re Officially a Flying Biscuit Owner</h3>
               <p class="own-steps__body">
-                Once you sign your ,<strong>Franchise Agreement</strong> and invest in the $45K franchise fee, our onboarding team kicks in. From site selection to grand opening — we help you open doors, hire your team, and serve your first biscuit.
+                Once you sign your ,<strong>Franchise Agreement</strong> and invest in the $50K franchise fee, our onboarding team kicks in. From site selection to grand opening — we help you open doors, hire your team, and serve your first biscuit.
               </p>
             </div>
           </li>

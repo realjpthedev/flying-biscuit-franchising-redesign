@@ -174,7 +174,7 @@ get_header();
         </div>
 
         <div class="ownership__stat ownership__stat--featured">
-          <span class="ownership__stat-value">$766K – $1.17M</span>
+          <span class="ownership__stat-value">$468K – $1.17M</span>
           <span class="ownership__stat-label">Total Investment</span>
           <p class="ownership__stat-note">Includes franchise fee, build-out, equipment, working capital, and everything to open your doors</p>
         </div>
@@ -189,7 +189,7 @@ get_header();
 
       <div class="ownership__investment-highlight">
         <div class="ownership__highlight-stat">
-          <span class="ownership__highlight-value">$2M *</span>
+          <span class="ownership__highlight-value">$2M+ *</span>
           <span class="ownership__highlight-label">Average Unit Volume</span>
         </div>
         <div class="ownership__highlight-sep" aria-hidden="true"></div>
@@ -271,7 +271,7 @@ get_header();
           </h3>
           <div class="ownership__faq-answer" id="own-a4" role="region" aria-labelledby="own-q4">
             <div class="ownership__faq-answer-inner">
-              <p>We're actively expanding across the Southeast — including Georgia, Florida, South Carolina, North Carolina, Texas, Louisiana, Mississippi, Alabama, Virginia, Kentucky, Tennessee, Ohio and West Virginia. Reach out and we'll discuss what's available in your market.</p>
+              <p>We're actively expanding across the Southeast — including Ohio, Indiana, Georgia, Florida, South Carolina, North Carolina, Texas, Louisiana, Mississippi, Alabama, Virginia, Kentucky, Tennessee, Ohio and West Virginia. Reach out and we'll discuss what's available in your market.</p>
             </div>
           </div>
         </div>

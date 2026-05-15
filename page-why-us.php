@@ -86,7 +86,7 @@ get_header();
           <div class="why-us__diff-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
           </div>
-          <h3 class="why-us__diff-title">$2M Average Unit Volume *</h3>
+          <h3 class="why-us__diff-title">$2M+ Average Unit Volume *</h3>
           <p class="why-us__diff-desc">Our system-wide average sales speak for themselves — strong unit-level economics backed by a menu that keeps costs manageable and guests coming back.</p>
         </div>
 
@@ -248,7 +248,7 @@ get_header();
       <div class="why-us__numbers-grid">
 
         <div class="why-us__number">
-          <span class="why-us__number-value">$2M*</span>
+          <span class="why-us__number-value">$2M+*</span>
           <span class="why-us__number-label">Avg. Unit Volume</span>
         </div>
 

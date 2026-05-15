@@ -293,7 +293,7 @@ get_header();
       <span class="franchisees__stat-sep" aria-hidden="true"></span>
 
       <div class="franchisees__stat">
-        <span class="franchisees__stat-value">$2M</span>
+        <span class="franchisees__stat-value">$2M+*</span>
         <span class="franchisees__stat-label">Average Unit Volume</span>
       </div>
 
@@ -304,6 +304,11 @@ get_header();
         <span class="franchisees__stat-label">From the Founders of Moe's Southwest Grill</span>
       </div>
 
+    </div>
+
+    <!-- FDD Disclaimer -->
+    <div class="franchisees__stats-disclaimer">
+      <?php $disclaimer_id = 'franchisees-disclaimer'; include( get_theme_file_path( '/templates/disclaimer.php' ) ); ?>
     </div>
   </section>
 

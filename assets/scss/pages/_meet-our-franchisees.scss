@@ -335,6 +335,7 @@
 .franchisees__story-meta {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 	gap: 2px;
 }
 
@@ -346,10 +347,16 @@
 }
 
 .franchisees__story-location {
+	display: inline-block;
 	font-family: $font-body;
-	font-weight: $weight-regular;
-	font-size: $text-body-sm;
-	color: $color-neutral-mid;
+	font-weight: $weight-semibold;
+	font-size: 12px;
+	letter-spacing: 0.02em;
+	color: $color-secondary;
+	background: rgba($color-secondary, 0.1);
+	padding: 4px 12px;
+	border-radius: $radius-pill;
+	margin-top: $space-3xs;
 }
 
 // --------------------------------------------
@@ -424,6 +431,35 @@
 	width: 1px;
 	height: 40px;
 	background-color: rgba($color-white, 0.12);
+}
+
+.franchisees__stats-disclaimer {
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: $space-md $grid-margin-desktop 0;
+	text-align: center;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-md $grid-margin-tablet 0;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: $space-md $grid-margin-mobile 0;
+	}
+
+	.disclaimer__toggle-text {
+		color: rgba($color-white, 0.4);
+	}
+	.disclaimer__toggle-arrow {
+		border-top-color: rgba($color-white, 0.4);
+	}
+
+	.disclaimer__content p {
+		color: rgba($color-white, 0.45);
+	}
+
+	.disclaimer__content strong {
+		color: rgba($color-white, 0.6);
+	}
 }
 
 // --------------------------------------------

@@ -2010,8 +2010,8 @@ get_header();
 
         <div class="proof-cards" role="list">
           <div class="card" role="listitem">
-            <div class="kpi">$2 Million</small></div>
-            <div class="quote">System-Wide Average Sales (*2024 FDD)</strong></div>
+            <div class="kpi">$2+ Million *</small></div>
+            <div class="quote">System-Wide Average Sales (*2025 FDD)</strong></div>
           </div>
           <div class="card" role="listitem">
             <div class="kpi">Home By 3pm</small></div>
@@ -2022,6 +2022,7 @@ get_header();
             <div style="color:#544372" class="text-center">30+ years of creating raving fans across America.</div>
           </div> -->
         </div>
+        <?php $disclaimer_id = 'hero-disclaimer'; include( get_theme_file_path( '/templates/disclaimer.php' ) ); ?>
       </div>
 
       <!-- Vertical Video Reel -->
@@ -2104,11 +2105,11 @@ get_header();
     <!-- AUV Comparison (Animated) -->
   <section class="auv-chart" aria-labelledby="auvChartTitle">
     <div class="auv-chart__container">
-      <h2 id="auvChartTitle" class="auv-chart__heading">Average Unit Volume (AUV *2024)</h2>
+      <h2 id="auvChartTitle" class="auv-chart__heading">Average Unit Volume (AUV *2025)</h2>
       <p class="auv-chart__sub">Flying Biscuit vs. comparable breakfast brands</p>
       <div class="auv-chart__wrap">
         <div class="auv-chart__y" aria-hidden="true">
-          <span>$2.0M</span>
+          <span>$2M+*</span>
           <span>$1.5M</span>
           <span>$1.0M</span>
           <span>$0.5M</span>
@@ -2136,6 +2137,7 @@ get_header();
         </div>
       </div>
       <p class="auv-chart__sub" style="margin-top:10px;font-size:.9rem;">Illustrative comparison. Always refer to each brand's latest FDD for definitions and details.</p>
+      <?php $disclaimer_id = 'auv-disclaimer'; include( get_theme_file_path( '/templates/disclaimer.php' ) ); ?>
     </div>
   </section>
 
@@ -3159,7 +3161,7 @@ get_header();
             <div class="own-steps__card">
               <h3 class="own-steps__title">Ownership — You’re Officially a Flying Biscuit Owner</h3>
               <p class="own-steps__body">
-                Once you sign your ,<strong>Franchise Agreement</strong> and invest in the $45K franchise fee, our onboarding team kicks in. From site selection to grand opening — we help you open doors, hire your team, and serve your first biscuit.
+                Once you sign your ,<strong>Franchise Agreement</strong> and invest in the $50K franchise fee, our onboarding team kicks in. From site selection to grand opening — we help you open doors, hire your team, and serve your first biscuit.
               </p>
             </div>
           </li>
@@ -3200,8 +3202,8 @@ get_header();
         <h3 class="form-section__proof-title">Why Franchisees Love Flying Biscuit</h3>
         <div class="form-section__proof-cards">
           <div class="form-section__card">
-            <div class="form-section__value">$2M</div>
-            <div class="form-section__label">Average Unit Volume (*2024 FDD)</div>
+            <div class="form-section__value">$2M+*</div>
+            <div class="form-section__label">Average Unit Volume (*2025 FDD)</div>
           </div>
           <div class="form-section__card">
             <div class="form-section__value">30+</div>
@@ -3212,6 +3214,7 @@ get_header();
             <div class="form-section__label">Guest Rating from 20,000+ Reviews</div>
           </div>
         </div>
+        <?php $disclaimer_id = 'form-disclaimer'; include( get_theme_file_path( '/templates/disclaimer.php' ) ); ?>
 
         <!-- Short Video Clip -->
         <div class="form-section__video" id="proofVideo" data-video-id="pwApTviidHw">
@@ -3239,7 +3242,7 @@ get_header();
 
       <details class="faq__item" open>
         <summary class="faq__summary">How Much Does It Cost to Open a The Flying Biscuit Café Franchise? <svg class="faq__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5" fill="none" stroke="#6A2C91" stroke-width="2" stroke-linecap="round"/></svg></summary>
-        <div class="faq__content">There are many factors that determine your initial investment—location, size, and proximity to affluent areas, to name a few. You can expect a range of <strong>$766,750 to $1,171,350</strong>. This includes the franchise fee, working capital, and what you’ll need to open your doors (see FDD for details).</div>
+        <div class="faq__content">There are many factors that determine your initial investment—location, size, and proximity to affluent areas, to name a few. You can expect a range of <strong>$467,900 to $1,171,350</strong>. This includes the franchise fee, working capital, and what you’ll need to open your doors (see FDD for details).</div>
       </details>
 
       <details class="faq__item">

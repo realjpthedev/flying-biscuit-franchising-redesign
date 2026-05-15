@@ -46,7 +46,7 @@ get_header();
           </h3>
           <div class="faq-page__answer" id="faqp-a1" role="region" aria-labelledby="faqp-q1">
             <div class="faq-page__answer-inner">
-              <p>There are many factors that determine your initial investment — location, size, and proximity to affluent areas, to name a few. You can expect your initial investment to range from $766,750 to $1,171,350. This includes the franchise fee, working capital, and everything you'll need to get your doors open.</p>
+              <p>There are many factors that determine your initial investment — location, size, and proximity to affluent areas, to name a few. You can expect your initial investment to range from $467,900 to $1,171,350. This includes the franchise fee, working capital, and everything you'll need to get your doors open.</p>
             </div>
           </div>
         </div>
@@ -126,7 +126,7 @@ get_header();
           </h3>
           <div class="faq-page__answer" id="faqp-a5" role="region" aria-labelledby="faqp-q5">
             <div class="faq-page__answer-inner">
-              <p>We are looking to expand in the Southeast — GA, FL, SC, NC, TX, LA, MS, AL, VA, KY, TN, WV, MD, and DE.</p>
+              <p>We are looking to expand in the Southeast — OH, IN, GA, FL, SC, NC, TX, LA, MS, AL, VA, KY, TN, WV, MD, and DE.</p>
             </div>
           </div>
         </div>
