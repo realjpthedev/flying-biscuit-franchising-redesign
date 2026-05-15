@@ -116,7 +116,6 @@ footer {
 
 /* ── Hero ── */
 .hero {
-  min-height: 85vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -144,14 +143,14 @@ footer {
 .hero-content {
   position: relative; z-index: 2;
   max-width: 1200px; margin: 0 auto;
-  padding: 140px 40px 100px;
+  padding: 140px 40px 80px;
   width: 100%;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 64px;
-  align-items: center;
+  gap: 48px;
+  align-items: start;
 }
-.hero-text {
+.hero-left {
   min-width: 0;
 }
 .hero-eyebrow {
@@ -183,16 +182,13 @@ footer {
   line-height: 1.7;
   color: rgba(255,255,255,0.72);
   font-weight: 300;
-  margin-bottom: 40px;
+  margin-bottom: 0;
   opacity: 0; animation: fadeUp 0.8s ease 0.6s forwards;
-}
-.hero-ctas {
-  display: flex; gap: 16px; flex-wrap: wrap;
-  opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards;
 }
 
 /* Hero Video Card */
 .hero-video {
+  margin-top: 32px;
   opacity: 0;
   animation: fadeUp 1s ease 0.5s forwards;
 }
@@ -259,6 +255,59 @@ footer {
   font-weight: 600;
   color: white;
   letter-spacing: 0.04em;
+}
+
+/* Hero Form Card */
+.hero-form {
+  opacity: 0;
+  animation: fadeUp 1s ease 0.6s forwards;
+}
+.hero-form-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+  border: 3px solid var(--orange);
+}
+.hero-form-header {
+  text-align: center;
+  padding: 32px 28px 16px;
+}
+.hero-form-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 16px;
+  border: 3px solid var(--purple);
+}
+.hero-form-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-form-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+.hero-form-role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+.hero-form-intro {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--mid-gray);
+  font-weight: 300;
+}
+.hero-form-card .wpforms-container {
+  padding: 0 28px 28px;
 }
 .btn-primary {
   display: inline-flex; align-items: center; gap: 8px;
@@ -1761,6 +1810,77 @@ footer {
   font-weight: 300;
 }
 
+/* ── Sticky CTA ── */
+.mu-sticky-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mu-sticky-cta.is-shown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.mu-sticky-cta-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--purple);
+  color: white;
+  padding: 12px 24px 12px 12px;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 8px 32px rgba(106, 44, 145, 0.4), 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mu-sticky-cta-inner:hover {
+  background: var(--purple-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(106, 44, 145, 0.5), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.mu-sticky-cta-photo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(238, 178, 17, 0.5);
+  flex-shrink: 0;
+}
+.mu-sticky-cta-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.mu-sticky-cta-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.mu-sticky-cta-arrow {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .mu-sticky-cta {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+  }
+  .mu-sticky-cta-inner {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 /* ── Footer ── */
 footer {
   background: var(--charcoal);
@@ -1797,7 +1917,8 @@ footer p {
   .process-steps { grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .process-steps::before { display: none; }
   .hero-content { grid-template-columns: 1fr; gap: 48px; }
-  .hero-video { max-width: 600px; }
+  .hero-left { max-width: 100%; }
+  .hero-form { max-width: 480px; }
   .photo-strip { grid-template-columns: repeat(2, 1fr); }
   .diff-item-with-image { grid-template-columns: 48px 1fr; }
   .diff-item-with-image .diff-image { display: none; }
@@ -1829,7 +1950,6 @@ footer p {
   .territory-markets { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; gap: 20px; }
   .form-grid { grid-template-columns: 1fr; padding: 0 24px; }
-  .hero-ctas { flex-direction: column; }
   .legacy-stats { grid-template-columns: 1fr 1fr; }
   nav .nav-inner { padding: 0 24px; }
   .photo-strip { grid-template-columns: 1fr 1fr; }
@@ -1866,30 +1986,34 @@ footer p {
 <!-- Hero -->
 <section class="hero" id="main-content">
   <div class="hero-content">
-    <div class="hero-text">
+    <div class="hero-left">
       <div class="hero-eyebrow">Multi-Unit Market Development</div>
       <h1>Own a <em>Market.</em> Not Just a Restaurant.</h1>
       <p class="hero-sub">42 locations with 12 in development. ~$2M AUV. Closed by 3pm. The team that built Moe's Southwest Grill is doing it again — and the market map is filling fast. Growth-phase upside without early-stage risk.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn-primary">
-          Start the Conversation
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#process" class="btn-secondary">View the Process</a>
-      </div>
-    </div>
-    <div class="hero-video">
-      <!-- Replace data-video-id with the YouTube ID of your compilation video -->
-      <!-- Replace the thumbnail path with your actual hero thumbnail image -->
-      <div class="video-card hero-video-card" data-video-id="-Rn9OIflfB0">
-        <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/meet-our-franchisees.webp'); ?>');">
-          <div class="play-btn">
-            <svg width="22" height="22" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg>
+      <div class="hero-video">
+        <div class="video-card hero-video-card" data-video-id="-Rn9OIflfB0">
+          <div class="video-thumb" style="background-image: url('<?php echo get_theme_file_uri('/assets/img/thumbnails/franchisees/meet-our-franchisees.webp'); ?>');">
+            <div class="play-btn">
+              <svg width="22" height="22" viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="hero-video-caption">
+            <span class="hero-video-label">Hear from our franchisees</span>
           </div>
         </div>
-        <div class="hero-video-caption">
-          <span class="hero-video-label">Hear from our franchisees</span>
+      </div>
+    </div>
+    <div class="hero-form" id="contact">
+      <div class="hero-form-card">
+        <div class="hero-form-header">
+          <div class="hero-form-photo">
+            <img src="<?php echo get_theme_file_uri('/assets/img/team/andrew-scherzer-tight.jpg'); ?>" alt="Andrew Scherzer">
+          </div>
+          <h3>Talk with Andrew</h3>
+          <div class="hero-form-role">Partner, Director of Franchise Development</div>
+          <p class="hero-form-intro">Tell us a little about yourself and Andrew will be in touch.</p>
         </div>
+        <?php echo do_shortcode('[wpforms id="310"]'); ?>
       </div>
     </div>
   </div>
@@ -1937,7 +2061,7 @@ footer p {
       <div class="why-now-highlights reveal">
         <div class="highlight-card">
           <h4>Franchisees Come Back for Seconds</h4>
-          <p>11 of our 22 franchisees have already opened a second location — not because we pitched them, but because their first location made it obvious. Half the system has voted with their own capital.</p>
+          <p>Our strongest signal: franchisees who come back for a second, third, and fourth location. They don't expand because we pitched them — they expand because their first location made it obvious.</p>
         </div>
         <div class="highlight-card">
           <h4>Growth Phase Window</h4>
@@ -2317,7 +2441,7 @@ footer p {
       <div class="team-card reveal">
         <div class="team-photo"><img loading="lazy" src="<?php echo get_theme_file_uri('/assets/img/team/andrew-scherzer-tight.jpg'); ?>" alt="Andrew Scherzer"></div>
         <h4>Andrew Scherzer</h4>
-        <div class="role">Partner, Franchise Development</div>
+        <div class="role">Partner, Director of Franchise Development</div>
         <p>Your first point of contact. Andrew approaches franchise development as deal-making, not sales — speaking the language of unit economics, market strategy, and portfolio-level thinking.</p>
       </div>
       <div class="team-card reveal">
@@ -2522,27 +2646,32 @@ footer p {
   </div>
 </section>
  
-<!-- Lead Form -->
-<section class="form-section" id="contact">
-  <div class="form-grid">
-    <div class="form-left reveal">
-      <div class="section-eyebrow" style="color: var(--gold);">Let's Talk</div>
-      <h2>Territories Are Filling. <em>Let's Start the Conversation.</em></h2>
-      <p>Tell us about your background and target market. Andrew Scherzer, Partner of Franchise Development, will personally review your inquiry and follow up to discuss next steps.</p>
-      <p>The best franchise investments are made before the map is full. If you're ready to evaluate the opportunity, we're ready to have a serious conversation.</p>
-      <div class="form-reassurance">
-        <div class="form-reassurance-photo">
-          <img loading="lazy" src="<?php echo get_theme_file_uri('/assets/img/team/andrew-scherzer-tight.jpg'); ?>" alt="Andrew Scherzer">
-        </div>
-        <div class="form-reassurance-text">Andrew Scherzer personally reviews every inquiry. Qualified candidates hear from him directly.</div>
-      </div>
-    </div>
-    <div class="reveal form-right-wrapper">
-      <?php echo do_shortcode('[wpforms id="310"]'); ?>
+<!-- Bottom CTA -->
+<section class="section section-dark" style="padding: 80px 0;">
+  <div class="container">
+    <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto;">
+      <div class="section-eyebrow">Ready?</div>
+      <div class="section-title" style="color: white;">Markets Are Filling. <em>Let's&nbsp;Talk.</em></div>
+      <p style="font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.6); font-weight: 300; margin-bottom: 32px;">Tell us about your background and target market. Andrew will be in touch.</p>
+      <a href="#contact" class="btn-primary">
+        Start the Conversation
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
  
+<!-- Sticky CTA -->
+<div class="mu-sticky-cta" id="muStickyCta">
+  <a href="#contact" class="mu-sticky-cta-inner">
+    <div class="mu-sticky-cta-photo">
+      <img src="<?php echo get_theme_file_uri('/assets/img/team/andrew-scherzer-tight.jpg'); ?>" alt="Andrew Scherzer">
+    </div>
+    <span class="mu-sticky-cta-text">Talk with Andrew</span>
+    <svg class="mu-sticky-cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
 <!-- Footer -->
 <footer>
   <div class="container">
@@ -2587,8 +2716,18 @@ document.querySelectorAll('a[href="#contact"], a[href="#process"]').forEach(link
 
 // Nav scroll effect
 const nav = document.getElementById('nav');
+const muStickyCta = document.getElementById('muStickyCta');
+const heroForm = document.getElementById('contact');
+
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 50);
+
+  // Show sticky CTA when hero form scrolls mostly out of view
+  if (heroForm) {
+    const formRect = heroForm.getBoundingClientRect();
+    const formHidden = formRect.top < -200;
+    muStickyCta.classList.toggle('is-shown', formHidden);
+  }
 });
  
 // Scroll reveal

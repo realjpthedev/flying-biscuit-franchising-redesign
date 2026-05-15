@@ -48,6 +48,7 @@
           class="hero__video-poster"
           id="heroVideoPoster"
           loading="eager"
+          fetchpriority="high"
         />
 
         <div class="hero__video-embed" id="heroVideoEmbed"></div>
@@ -59,7 +60,7 @@
           aria-label="Play franchise opportunity video"
         >
           <span class="hero__play-icon"></span>
-          <span class="hero__play-label">Watch Our Story</span>
+          <span class="hero__play-label">Hear From Our Owners</span>
         </button>
 
         <button
