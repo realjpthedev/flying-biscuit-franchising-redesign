@@ -26,7 +26,7 @@
               <a href="/our-menu">People Crave Our Menu</a>
             </h3>
             <p>For 30 years, we've crafted Southern scratch-made classics and bold menu items—from biscuits and eggs to burgers, Bloody Marys, and mimosas.</p>
-            <p>Our one-of-a-kind menu has earned over 100,000 five-star reviews and keeps guests coming back.</p>
+            <p>Our one-of-a-kind menu has earned over 100,000 positive reviews and keeps guests coming back.</p>
           </div>
           <div class="menu-section__slide-image">
             <img src="<?php echo esc_attr(get_theme_file_uri('/assets/img/food/shrimp-n-grits-our-menu.jpg')); ?>" alt="Shrimp and grits served on a red plate" loading="lazy" />
