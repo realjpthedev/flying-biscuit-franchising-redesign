@@ -23,10 +23,10 @@
         <div class="menu-section__slide is-active" data-slide="0">
           <div class="menu-section__slide-content">
             <h3 class="menu-section__slide-title">
-              <a href="/our-menu">People Crave Our Menu</a>
+              <a href="/menu">People Crave Our Menu</a>
             </h3>
             <p>For 30 years, we've crafted Southern scratch-made classics and bold menu items—from biscuits and eggs to burgers, Bloody Marys, and mimosas.</p>
-            <p>Our one-of-a-kind menu has earned over 100,000 positive reviews and keeps guests coming back.</p>
+            <p>Our one-of-a-kind menu has earned over 100,000 five-star reviews and keeps guests coming back.</p>
           </div>
           <div class="menu-section__slide-image">
             <img src="<?php echo esc_attr(get_theme_file_uri('/assets/img/food/shrimp-n-grits-our-menu.jpg')); ?>" alt="Shrimp and grits served on a red plate" loading="lazy" />
@@ -36,7 +36,7 @@
         <div class="menu-section__slide" data-slide="1">
           <div class="menu-section__slide-content">
             <h3 class="menu-section__slide-title">
-              <a href="/our-menu">A Menu Designed For Profit</a>
+              <a href="/menu">A Menu Designed For Profit</a>
             </h3>
             <p>Our menu streamlines prep, minimizes waste, and delivers strong margins with predictable costs. Backed by national vendor agreements and decades of data-driven tweaks, it's a proven recipe for year-round profitability.</p>
           </div>
@@ -48,7 +48,7 @@
         <div class="menu-section__slide" data-slide="2">
           <div class="menu-section__slide-content">
             <h3 class="menu-section__slide-title">
-              <a href="/our-menu">Easy to Execute, Amazing Flavors </a>
+              <a href="/menu">Easy to Execute, Amazing Flavors </a>
             </h3>
             <p>
               Blending authentic Southern taste with straightforward, step-by-step recipes, our menu delivers big flavor without kitchen complexity. Standardized prep guides and pre-portioned ingredients mean your team can serve consistent, crave-worthy dishes from day one.
@@ -89,5 +89,14 @@
       </div>
 
     </div>
+
+    <!-- CTA -->
+    <div class="menu-section__footer">
+      <a href="/our-menu/" class="menu-section__cta">
+        Explore Our Full Menu
+        <span class="menu-section__cta-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+
   </div>
 </section>
