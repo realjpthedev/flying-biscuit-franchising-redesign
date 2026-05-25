@@ -11,7 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
 
-
 get_header();
 ?>
 
@@ -83,12 +82,19 @@ get_header();
 
       <!-- Right — Form card -->
       <div class="contact-page__form-card">
-        <div class="contact-page__form-header">
-          <h2 class="contact-page__form-title">Send Us a Message</h2>
-          <p class="contact-page__form-subtitle">Fill out the form below and our franchise team will be in touch.</p>
+        <div class="contact-page__form-intro">
+          <img
+            src="<?php echo esc_url( get_theme_file_uri( '/assets/img/team/andrew-scherzer.jpg' ) ); ?>"
+            alt="Andrew Scherzer"
+            class="contact-page__form-avatar"
+            loading="eager"
+          />
+          <h2 class="contact-page__form-title">Talk with Andrew</h2>
+          <p class="contact-page__form-role">Partner, Director of Franchise Development</p>
+          <p class="contact-page__form-subtitle">Tell us a little about yourself and Andrew will be in touch.</p>
         </div>
         <div class="contact-page__form-embed">
-          <?php echo do_shortcode('[wpforms id="65" title="false"]'); ?>
+          <?php echo do_shortcode('[wpforms id="310"]'); ?>
         </div>
       </div>
 

@@ -328,9 +328,20 @@
 	}
 }
 
-.contact-page__form-header {
+.contact-page__form-intro {
 	text-align: center;
 	margin-bottom: $space-lg;
+}
+
+.contact-page__form-avatar {
+	display: block;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin: 0 auto $space-sm;
+	border: 3px solid rgba($color-secondary, 0.2);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .contact-page__form-title {
@@ -346,6 +357,14 @@
 	}
 }
 
+.contact-page__form-role {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body-sm;
+	color: $color-secondary;
+	margin: 0 0 $space-xs;
+}
+
 .contact-page__form-subtitle {
 	font-family: $font-body;
 	font-weight: $weight-regular;
@@ -355,51 +374,5 @@
 
 	@media (max-width: $bp-mobile) {
 		font-size: $text-body-sm;
-	}
-}
-
-// --------------------------------------------
-// WPFORMS — SUBMIT BUTTON ONLY
-// --------------------------------------------
-
-.contact-page__form-embed {
-	.wpforms-container,
-	.wpforms-form {
-		max-width: 100% !important;
-	}
-
-	#wpforms-submit-65 {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		font-family: $font-body;
-		font-weight: $weight-bold;
-		font-size: $text-button;
-		letter-spacing: $tracking-button;
-		text-transform: uppercase;
-		color: $color-white;
-		background: $gradient-sunrise;
-		border: none;
-		border-radius: $radius-pill;
-		padding: $space-sm $space-lg;
-		cursor: pointer;
-		transition:
-			transform $transition-base,
-			box-shadow $transition-base;
-
-		&:hover {
-			transform: translateY(-2px);
-			box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
-		}
-
-		&:active {
-			transform: translateY(0);
-		}
-
-		&:focus-visible {
-			outline: 2px solid $color-tertiary;
-			outline-offset: 3px;
-		}
 	}
 }
