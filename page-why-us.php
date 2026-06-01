@@ -141,7 +141,7 @@ get_header();
         <div class="why-us__support-card">
           <span class="why-us__support-card-num">02</span>
           <h3 class="why-us__support-card-title">Comprehensive Training</h3>
-          <p class="why-us__support-card-desc">4 weeks of hands-on training at our Atlanta headquarters for you and a key team member — covering operations, kitchen, front-of-house, and management systems.</p>
+          <p class="why-us__support-card-desc">3 weeks of hands-on training at our Atlanta headquarters for you and a key team member — covering operations, kitchen, front-of-house, and management systems.</p>
         </div>
 
         <div class="why-us__support-card">
@@ -273,7 +273,7 @@ get_header();
         </div>
 
         <div class="why-us__number">
-          <span class="why-us__number-value">4 Wk</span>
+          <span class="why-us__number-value">3 Wk</span>
           <span class="why-us__number-label">Training Program</span>
         </div>
 

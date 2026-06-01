@@ -66,7 +66,7 @@
 
       <!-- Accent stat below video -->
       <div class="support__stat">
-        <span class="support__stat-number">4-Week</span>
+        <span class="support__stat-number">3-Week</span>
         <span class="support__stat-label">Comprehensive Training Program</span>
       </div>
     </div>
