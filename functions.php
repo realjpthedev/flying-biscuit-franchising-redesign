@@ -31,13 +31,12 @@ add_action( 'after_setup_theme', 'fb_franchising_theme_support');
 
 // custom wpforms redirect based on qualified leads
 add_filter('wpforms_process_redirect_url', function($url, $form_id, $fields) {
-    $target_forms = [65, 310];
-    
-    if (!in_array($form_id, $target_forms)) return $url;
+    if ((int) $form_id !== 655) return $url;
 
-    $net_worth = $fields[15]['value'];
+    // Liquid capital question (field ID #33)
+    $liquid_capital = isset($fields[33]['value']) ? $fields[33]['value'] : '';
 
-    if ($net_worth === 'More than $800,000') {
+    if ($liquid_capital === 'Yes') {
         return home_url('/thank-you-lead-form/?q=1');
     }
 

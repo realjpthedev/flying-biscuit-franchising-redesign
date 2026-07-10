@@ -350,7 +350,7 @@ get_header();
           <h3 class="franchisees__form-title">Request Information</h3>
           <p class="franchisees__form-subtitle">Takes less than 2 minutes.</p>
           <div class="franchisees__form-embed">
-            <?php echo do_shortcode( '[wpforms id="310"]' ); ?>
+            <?php echo do_shortcode( '[wpforms id="655"]' ); ?>
           </div>
         </div>
       </div>
