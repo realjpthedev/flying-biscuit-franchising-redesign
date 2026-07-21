@@ -160,7 +160,7 @@ nav .nav-cta:hover { background: var(--purple-dark); transform: translateY(-1px)
 .hero-video-caption { display: flex; justify-content: center; align-items: center; padding: 16px 22px; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.06); }
 .hero-video-label { font-size: 0.85rem; font-weight: 600; color: white; letter-spacing: 0.04em; }
 .hero-form { opacity: 0; animation: fadeUp 1s ease 0.6s forwards; }
-.hero-form-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4); border: 3px solid var(--orange); }
+.hero-form-card { padding: 1rem; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4); border: 3px solid var(--orange); }
 .hero-form-header { text-align: center; padding: 32px 28px 16px; }
 .hero-form-photo { width: 72px; height: 72px; border-radius: 50%; overflow: hidden; margin: 0 auto 16px; border: 3px solid var(--purple); }
 .hero-form-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }

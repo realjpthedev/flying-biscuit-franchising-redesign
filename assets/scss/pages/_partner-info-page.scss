@@ -1,0 +1,372 @@
+// ============================================
+// The Flying Biscuit Café — Franchising
+// Franchise Partner Information Page
+// v1.0
+// ============================================
+
+.partner-info__accent {
+	background: $gradient-sunrise;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+// --------------------------------------------
+// HERO
+// --------------------------------------------
+
+.partner-info__hero {
+	background-color: $color-primary-dark;
+	padding: $space-3xl 0 $space-2xl;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -30%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+		height: 160%;
+		background: radial-gradient(
+			ellipse at center,
+			rgba($color-secondary, 0.06) 0%,
+			transparent 70%
+		);
+		pointer-events: none;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-3xl 0 $space-xl;
+	}
+}
+
+.partner-info__hero-inner {
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+	position: relative;
+	z-index: 1;
+
+	@media (max-width: $bp-tablet) {
+		padding: 0 $grid-margin-tablet;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+	}
+}
+
+.partner-info__eyebrow {
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-caption;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: $color-tertiary;
+	margin-bottom: $space-xs;
+}
+
+.partner-info__hero-title {
+	font-family: $font-display;
+	font-weight: $weight-extrabold;
+	font-size: 48px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: $color-white;
+	margin: 0 0 $space-sm;
+
+	@media (max-width: $bp-tablet) {
+		font-size: 38px;
+	}
+	@media (max-width: $bp-mobile) {
+		font-size: 30px;
+	}
+}
+
+.partner-info__hero-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-lg;
+	color: rgba($color-white, 0.5);
+	margin: 0 auto;
+	max-width: 560px;
+
+	@media (max-width: $bp-mobile) {
+		font-size: $text-body;
+	}
+}
+
+// --------------------------------------------
+// BODY
+// --------------------------------------------
+
+.partner-info__body {
+	background-color: $color-surface-warm;
+	padding: $space-3xl 0;
+
+	@media (max-width: $bp-tablet) {
+		padding: $space-2xl 0;
+	}
+	@media (max-width: $bp-mobile) {
+		padding: $space-xl 0;
+	}
+}
+
+.partner-info__body-inner {
+	display: grid;
+	grid-template-columns: 1.6fr 1fr;
+	gap: $space-2xl;
+	align-items: start;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+	padding: 0 $grid-margin-desktop;
+
+	@media (max-width: $bp-tablet) {
+		grid-template-columns: 1fr;
+		padding: 0 $grid-margin-tablet;
+		gap: $space-xl;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: 0 $grid-margin-mobile;
+		gap: $space-lg;
+	}
+}
+
+// --------------------------------------------
+// FORM CARD
+// --------------------------------------------
+
+.partner-info__form-card {
+	background-color: $color-white;
+	border-radius: $radius-2xl;
+	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: $space-lg;
+		right: $space-lg;
+		height: 4px;
+		background: $gradient-sunrise;
+		border-radius: 0 0 $radius-sm $radius-sm;
+	}
+
+	@media (max-width: $bp-mobile) {
+		border-radius: $radius-xl;
+	}
+}
+
+.partner-info__form-sections {
+	padding: $space-xl $space-xl 0;
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-lg $space-md 0;
+	}
+}
+
+.partner-info__section-intro {
+	margin-bottom: $space-lg;
+}
+
+.partner-info__section-title {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 22px;
+	line-height: 1.2;
+	color: $color-primary-dark;
+	margin: 0 0 $space-xs;
+}
+
+.partner-info__section-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body;
+	line-height: 1.6;
+	color: $color-neutral-mid;
+	margin: 0;
+}
+
+// ─── Checklist ───
+
+.partner-info__checklist {
+	background-color: $color-surface-warm;
+	border-radius: $radius-lg;
+	padding: $space-lg;
+	margin-bottom: $space-lg;
+}
+
+.partner-info__checklist-title {
+	font-family: $font-body;
+	font-weight: $weight-bold;
+	font-size: $text-body;
+	color: $color-primary-dark;
+	margin: 0 0 $space-sm;
+}
+
+.partner-info__checklist-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: $space-xs;
+}
+
+.partner-info__checklist-item {
+	display: flex;
+	align-items: flex-start;
+	gap: $space-xs;
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	line-height: 1.5;
+	color: $color-neutral-mid;
+}
+
+.partner-info__checklist-icon {
+	flex-shrink: 0;
+	color: $color-secondary;
+	margin-top: 2px;
+}
+
+// ─── Form Embed ───
+
+.partner-info__form-embed {
+	// padding: $space-lg $space-xl $space-xl;
+
+	// @media (max-width: $bp-mobile) {
+	// 	padding: $space-md;
+	// }
+
+	.wpforms-container,
+	.wpforms-form {
+		max-width: 100% !important;
+	}
+}
+
+// --------------------------------------------
+// SIDEBAR
+// --------------------------------------------
+
+.partner-info__sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: $space-md;
+
+	@media (max-width: $bp-tablet) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.partner-info__sidebar-card {
+	background-color: $color-white;
+	border-radius: $radius-xl;
+	padding: $space-lg;
+
+	&--dark {
+		background-color: $color-primary-dark;
+	}
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-md;
+	}
+}
+
+.partner-info__sidebar-title {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 18px;
+	color: $color-primary-dark;
+	margin: 0 0 $space-sm;
+
+	&--light {
+		color: $color-white;
+	}
+}
+
+.partner-info__sidebar-text {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	line-height: 1.6;
+	color: $color-neutral-mid;
+	margin: 0 0 $space-xs;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&--light {
+		color: rgba($color-white, 0.5);
+	}
+}
+
+.partner-info__sidebar-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		font-family: $font-body;
+		font-weight: $weight-regular;
+		font-size: $text-body-sm;
+		line-height: 1.5;
+		color: $color-neutral-mid;
+		padding: $space-2xs 0;
+		padding-left: $space-md;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 12px;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background-color: $color-secondary;
+		}
+	}
+}
+
+// ─── Sidebar Contact ───
+
+.partner-info__sidebar-contact {
+	display: flex;
+	flex-direction: column;
+	gap: $space-xs;
+	margin-top: $space-sm;
+}
+
+.partner-info__sidebar-link {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-xs;
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body-sm;
+	color: $color-tertiary;
+	text-decoration: none;
+	transition: color $transition-base;
+
+	&:hover {
+		color: $color-white;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $color-tertiary;
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+}

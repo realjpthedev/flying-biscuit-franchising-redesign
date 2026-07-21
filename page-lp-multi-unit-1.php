@@ -268,6 +268,7 @@ footer {
   overflow: hidden;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
   border: 3px solid var(--orange);
+  padding: 1rem;
 }
 .hero-form-header {
   text-align: center;
