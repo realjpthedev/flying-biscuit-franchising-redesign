@@ -4,6 +4,10 @@
 // v1.0
 // ============================================
 
+.territories {
+	padding: 0;
+}
+
 .territories__accent {
 	background: $gradient-sunrise;
 	-webkit-background-clip: text;
@@ -128,7 +132,9 @@
 
 // ─── LEGEND ───
 
-.territories__key {
+// ─── COLOR KEY ───
+
+.territories__color-key {
 	display: flex;
 	justify-content: center;
 	gap: $space-lg;
@@ -137,126 +143,245 @@
 	margin: 0 0 $space-xl;
 
 	@media (max-width: $bp-mobile) {
-		gap: $space-md;
+		flex-wrap: wrap;
+		gap: $space-sm $space-lg;
 		margin-bottom: $space-lg;
 	}
 }
 
-.territories__key-item {
+.territories__color-key-item {
 	display: flex;
 	align-items: center;
 	gap: $space-2xs;
+	font-family: $font-body;
+	font-weight: $weight-semibold;
+	font-size: $text-body-sm;
+	color: $color-primary-dark;
 }
 
-.territories__key-swatch {
+.territories__color-key-dot {
 	display: block;
-	width: 20px;
-	height: 20px;
-	border-radius: $radius-sm;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	flex-shrink: 0;
 
 	&--hot {
 		background-color: $color-secondary;
 	}
-	&--available {
-		background-color: $color-primary-dark;
+	&--current {
+		background-color: $color-primary;
 	}
-	&--limited {
-		background-color: #aaa;
+	&--future {
+		background-color: #d0cdd6;
 	}
-}
-
-.territories__key-label {
-	font-family: $font-body;
-	font-weight: $weight-semibold;
-	font-size: $text-body;
-	color: $color-primary-dark;
 }
 
 // ─── DESKTOP LAYOUT ───
 
 .territories__map-layout {
 	display: grid;
-	grid-template-columns: 280px 1fr;
+	grid-template-columns: 1fr 320px;
 	gap: $space-xl;
 	align-items: start;
 
 	@media (max-width: $bp-tablet) {
-		grid-template-columns: 240px 1fr;
+		grid-template-columns: 1fr 280px;
 		gap: $space-lg;
 	}
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+// ─── LEGEND PANEL ───
+
+.territories__legend {
+	display: flex;
+	flex-direction: column;
+	gap: $space-md;
 
 	@media (max-width: 768px) {
 		display: none;
 	}
 }
 
-// ─── SIDEBAR CARD ───
+.territories__legend-tier {
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: $radius-lg;
+	padding: $space-md;
 
-.territories__sidebar-card {
-	background-color: $color-primary-dark;
-	padding: $space-lg;
-	border-radius: $radius-xl;
-	color: $color-white;
+	&--hot {
+		border-color: rgba($color-secondary, 0.25);
+		background-color: rgba($color-secondary, 0.03);
+	}
+
+	&--current {
+		border-color: rgba($color-primary, 0.2);
+		background-color: rgba($color-primary, 0.03);
+	}
+
+	&--future {
+		background-color: rgba(0, 0, 0, 0.02);
+	}
 }
 
-.territories__sidebar-title {
-	font-family: $font-display;
-	font-weight: $weight-extrabold;
-	font-size: 24px;
-	line-height: 1.2;
-	color: $color-white;
-	margin: 0 0 $space-3xs;
+.territories__legend-header {
+	display: flex;
+	align-items: center;
+	gap: $space-xs;
+	margin-bottom: $space-xs;
 }
 
-.territories__sidebar-subtitle {
+.territories__legend-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+
+	&--hot {
+		color: $color-secondary;
+	}
+	&--current {
+		color: $color-primary;
+	}
+	&--future {
+		color: #999;
+	}
+}
+
+.territories__legend-title {
 	font-family: $font-display;
 	font-weight: $weight-bold;
 	font-size: 16px;
-	color: $color-secondary;
-	margin: 0 0 $space-md;
+	color: $color-primary-dark;
+	margin: 0;
 }
 
-.territories__sidebar-list {
+.territories__legend-desc {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	line-height: 1.5;
+	color: $color-neutral-mid;
+	margin: 0;
+}
+
+.territories__legend-states {
 	list-style: none;
 	padding: 0;
-	margin: 0 0 $space-lg;
+	margin: $space-sm 0 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4px 16px;
 
 	li {
+		display: flex;
+		align-items: center;
+		gap: $space-2xs;
 		font-family: $font-body;
-		font-weight: $weight-bold;
-		font-size: $text-body;
-		color: $color-white;
-		padding: $space-3xs 0;
-		border-bottom: 1px solid rgba($color-white, 0.08);
-
-		&:last-child {
-			border-bottom: none;
-		}
+		font-weight: $weight-medium;
+		font-size: 13px;
+		color: $color-primary-dark;
+		padding: 2px 0;
 	}
 }
 
-.territories__sidebar-cta {
-	display: inline-flex;
+.territories__legend-dot {
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	flex-shrink: 0;
+
+	&--hot {
+		background-color: $color-secondary;
+	}
+	&--current {
+		background-color: $color-primary;
+	}
+}
+
+// ─── CALLOUT ───
+
+.territories__callout {
+	margin-top: $space-xl;
+	border: 2px solid rgba($color-primary, 0.12);
+	border-radius: $radius-xl;
+	padding: $space-lg;
+
+	@media (max-width: $bp-mobile) {
+		padding: $space-md;
+		margin-top: $space-lg;
+	}
+}
+
+.territories__callout-inner {
+	display: flex;
+	gap: $space-md;
+	align-items: flex-start;
+
+	@media (max-width: $bp-mobile) {
+		flex-direction: column;
+		gap: $space-sm;
+	}
+}
+
+.territories__callout-icon {
+	flex-shrink: 0;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background-color: rgba($color-primary, 0.08);
+	display: flex;
 	align-items: center;
-	gap: $space-2xs;
+	justify-content: center;
+	color: $color-primary;
+}
+
+.territories__callout-title {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 18px;
+	color: $color-primary-dark;
+	margin: 0 0 $space-3xs;
+}
+
+.territories__callout-text {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: $text-body-sm;
+	line-height: 1.6;
+	color: $color-neutral-mid;
+	margin: 0 0 $space-xs;
+}
+
+.territories__callout-link {
 	font-family: $font-body;
 	font-weight: $weight-bold;
-	font-size: $text-button;
-	letter-spacing: $tracking-button;
-	text-transform: uppercase;
+	font-size: $text-body-sm;
+	color: $color-secondary;
 	text-decoration: none;
-	color: $color-white;
-	background: $gradient-sunrise;
-	padding: $space-sm $space-lg;
-	border-radius: $radius-pill;
-	transition:
-		transform $transition-base,
-		box-shadow $transition-base;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	transition: color $transition-base;
 
 	&:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 8px 24px rgba($color-secondary, 0.35);
+		color: darken($color-secondary, 10%);
 	}
+}
+
+// ─── FOOTNOTE ───
+
+.territories__footnote {
+	font-family: $font-body;
+	font-weight: $weight-regular;
+	font-size: 12px;
+	font-style: italic;
+	color: $color-neutral-mid;
+	text-align: center;
+	margin-top: $space-lg;
 }
 
 // ─── SVG MAP ───
@@ -270,35 +395,53 @@
 		display: block;
 	}
 
+	// Default: all states gray (future development)
 	.state {
 		cursor: pointer;
 
 		path {
-			fill: $color-primary-dark;
+			fill: #d0cdd6;
 			transition: fill 0.25s ease;
 		}
 
 		rect {
-			fill: $color-primary-dark;
+			fill: #d0cdd6;
 			transition: fill 0.25s ease;
 		}
 
 		text {
 			pointer-events: none;
+			fill: #1b1033;
+			font-weight: 700;
+			font-family: "Poppins", "Helvetica Neue", sans-serif;
 		}
 
 		&:hover path,
 		&:hover rect {
-			fill: lighten($color-primary-dark, 12%);
+			fill: #b8b3c2;
 		}
 	}
 
-	.state.hot-territory {
+	// Hot Markets — orange
+	.state[data-state-name="Arkansas"],
+	.state[data-state-name="Florida"],
+	.state[data-state-name="Indiana"],
+	.state[data-state-name="Kentucky"],
+	.state[data-state-name="Louisiana"],
+	.state[data-state-name="Mississippi"],
+	.state[data-state-name="Ohio"],
+	.state[data-state-name="Oklahoma"],
+	.state[data-state-name="South Carolina"],
+	.state[data-state-name="Texas"],
+	.state[data-state-name="Virginia"] {
 		path {
 			fill: $color-secondary;
 		}
 		rect {
 			fill: $color-secondary;
+		}
+		text {
+			fill: $color-white;
 		}
 
 		&:hover path,
@@ -307,17 +450,32 @@
 		}
 	}
 
-	.state.limited-territory {
+	// Current Development — purple
+	.state[data-state-name="Alabama"],
+	.state[data-state-name="Delaware"],
+	.state[data-state-name="Georgia"],
+	.state[data-state-name="Illinois"],
+	.state[data-state-name="Iowa"],
+	.state[data-state-name="Kansas"],
+	.state[data-state-name="Maryland"],
+	.state[data-state-name="Missouri"],
+	.state[data-state-name="North Carolina"],
+	.state[data-state-name="Pennsylvania"],
+	.state[data-state-name="Tennessee"],
+	.state[data-state-name="West Virginia"] {
 		path {
-			fill: #aaa;
+			fill: $color-primary;
 		}
 		rect {
-			fill: #aaa;
+			fill: $color-primary;
+		}
+		text {
+			fill: $color-white;
 		}
 
 		&:hover path,
 		&:hover rect {
-			fill: #888;
+			fill: lighten($color-primary, 8%);
 		}
 	}
 
@@ -329,14 +487,9 @@
 // ─── MOBILE STATE LIST ───
 
 .territories__state-list {
-	display: none;
 	list-style: none;
 	padding: 0;
 	margin: 0;
-
-	@media (max-width: 768px) {
-		display: block;
-	}
 }
 
 .territories__state-item {
@@ -373,11 +526,43 @@
 	&--hot {
 		background-color: $color-secondary;
 	}
-	&--available {
-		background-color: $color-primary-dark;
+	&--current {
+		background-color: $color-primary;
 	}
-	&--limited {
-		background-color: #aaa;
+	&--future {
+		background-color: #d0cdd6;
+	}
+}
+
+// ─── MOBILE TIER TITLES ───
+
+.territories__mobile-list {
+	display: none;
+
+	@media (max-width: 768px) {
+		display: block;
+	}
+}
+
+.territories__mobile-tier-title {
+	font-family: $font-display;
+	font-weight: $weight-bold;
+	font-size: 18px;
+	color: $color-primary-dark;
+	margin: $space-xl 0 $space-xs;
+
+	&:first-child {
+		margin-top: $space-xl;
+	}
+
+	&--hot {
+		color: $color-secondary;
+	}
+	&--current {
+		color: $color-primary;
+	}
+	&--future {
+		color: #999;
 	}
 }
 
