@@ -4,7 +4,7 @@
      v1.0
      ============================================ -->
 
-<section class="territories">
+<section class="territories" style="padding: 96px 0">
 
   <div class="territories__inner">
 
